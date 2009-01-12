@@ -1,0 +1,5 @@
+#!/bin/sh
+export RUBYLIB=$HOME/lib/ruby
+export GEM_HOME=$HOME/gem.repos
+export PATH=$GEM_HOME/bin:$HOME/bin:$PATH
+$(dirname $0)/process/spawner -p 9100 -i 3
