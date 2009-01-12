@@ -1,0 +1,9 @@
+.ditz-config
+config/database.yml
+config/config_action_controller_session.rb
+config/initializers/site_keys.rb
+config/initializers/app_config.rb
+db/*.sqlite3
+db/schema.rb
+log/*.log
+backup/*.*
