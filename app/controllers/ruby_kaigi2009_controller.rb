@@ -19,7 +19,7 @@ class RubyKaigi2009Controller < ApplicationController
     preferred = request.preferred_language_from(availables)
     compatible = request.compatible_language_from(availables)
     logger.debug("preferred: #{preferred}, compatible: #{compatible}")
-    I18n.locale = (params[:locale] || preferred || compatible).split("-")[0]
+    I18n.locale = ((params[:locale] || preferred || compatible || I18n.default_locale.to_s ).split("-")[0])
   end
 
 end
