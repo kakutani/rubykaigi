@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   # The priority is based upon order of creation: first created -> highest priority.
   map.rubykaigi2009 '2009/:locale/:page', :controller => 'ruby_kaigi2009', :action => 'page', :page => 'index'
-  map.event '2009/:action', :controller => 'ruby_kaigi2009', :action => 'page', :page => 'index'
+  map.connect '2009', :controller => 'ruby_kaigi2009', :action => 'index'
   map.past_kaigi ':year', :controller => 'past_kaigi', :action => 'index',
   :requirements => { :year => /200[678]/ }
 

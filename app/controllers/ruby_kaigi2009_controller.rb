@@ -3,6 +3,10 @@ class RubyKaigi2009Controller < ApplicationController
 
   before_filter :specify_locale
 
+  def index
+    redirect_to "/2009/#{I18n.locale}"
+  end
+
   def page
     page_name = params[:page] || "index"
     render :template => "ruby_kaigi2009/#{page_name}_#{I18n.locale}"
