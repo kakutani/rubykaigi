@@ -14,12 +14,12 @@ class RubyKaigi2009Controller < ApplicationController
 
   private
   def specify_locale
-    availables = %w{ja en}
+    availables = %w{en-US en ja}
     logger.debug("preferred_languages: #{request.user_preferred_languages.join(',')}")
     preferred = request.preferred_language_from(availables)
     compatible = request.compatible_language_from(availables)
     logger.debug("preferred: #{preferred}, compatible: #{compatible}")
-    I18n.locale = params[:locale] || preferred || compatible
+    I18n.locale = (params[:locale] || preferred || compatible).split("-")[0]
   end
 
 end
