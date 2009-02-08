@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+body {
+  margin: 0px;
+  padding: 0 0 20px;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 12px;
+  font-family: "ヒラギノ角ゴ Pro W3", sans-serif;
+  color: #333;
+  background: #e7e7e7;
+}
+
+#container {
+  margin: 0 auto;
+  padding: 0 0 40px;
+  width: 780px;
+  border: 1px solid #de0000;
+  border-width: 0 1px 1px;
+  background: #FFF;
+  text-align: left;
+}
+
+#content {
+  margin: 10px 87px;
+}
+
+img {
+  vertical-align: top;
+  border-width: 0px;
+}
+
+h1 {
+  margin: -40px 87px 0;
+  text-align: right;
+  padding: 0;
+  font-size: 20px;
+}
+h2 {
+  margin: 0 0 1em;
+  padding: 0;
+  font-size: 18px;
+}
+h3 {
+  margin: 0 0 1em;
+  padding: 0;
+  font-size: 14px;
+}
+h4 {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}
+p {
+  margin: 0 0 1em;
+  padding: 0;
+}
+
+ol {
+  padding: 0em 0 1em 2em;
+  margin: 16px 0 0px 0px;
+}
+
+
+#footer {
+  clear: both;
+  margin: 30px 0;
+}
+
+.item {
+  margin: 0 0 40px;
+}
+
+.date {
+  font-size: 10px;
+}
+
+strong {
+  font-size: 12px;
+}
