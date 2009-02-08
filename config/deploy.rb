@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 set :application, "rubykaigi"
-set :repository,  "git://github.com/kakutani/rubykaigi.git"
+set :repository,  "http://github.com/kakutani/rubykaigi.git"
 set :branch, "master"
 
 # If you aren't deploying to /u/apps/#{application} on the target
