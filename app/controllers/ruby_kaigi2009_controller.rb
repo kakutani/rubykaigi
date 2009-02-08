@@ -4,7 +4,9 @@ class RubyKaigi2009Controller < ApplicationController
   before_filter :specify_locale
 
   def page
-    render :template => "ruby_kaigi2009/index"
+    page_name = params[:page] || "index"
+    @page_title = I18n.t(page_name)
+    render :template => "ruby_kaigi2009/#{page_name}_#{I18n.locale}"
   end
 
   private
