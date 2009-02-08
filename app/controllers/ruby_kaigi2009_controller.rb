@@ -11,8 +11,10 @@ class RubyKaigi2009Controller < ApplicationController
 
   private
   def specify_locale
-    availables = %{ja en}
-    I18n.locale = params[:locale] || request.compatible_language_from(availables)
+    availables = %w{ja en}
+    preferred = request.preferred_language_from(availables)
+    compatible = request.compatible_language_from(availables)
+    I18n.locale = params[:locale] || preferred || compatible
   end
 
 end
