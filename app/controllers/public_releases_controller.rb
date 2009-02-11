@@ -3,6 +3,7 @@ class PublicReleasesController < ApplicationController
   before_filter :readonly
   before_filter :page_name_is_valid
   before_filter :assign_locale
+  before_filter :redirect_to_past_kaigi
 
   layout proc{|c| "ruby_kaigi#{c.params[:year]}" }
 
@@ -22,6 +23,12 @@ class PublicReleasesController < ApplicationController
 
   def page_name_is_valid
     head(:not_found) unless /\A[A-Za-z_\-]*\Z/ =~ params[:page_name]
+  end
+
+  def redirect_to_past_kaigi
+    if (y = params[:year].to_i) < 2009
+      redirect_to "http://#{y}.rubykaigi.org"
+    end
   end
 
   def assign_locale

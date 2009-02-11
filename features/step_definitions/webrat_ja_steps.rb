@@ -75,3 +75,7 @@ Then /^"(.*?)"がリンクになっていないこと$/ do |label|
   response_body_text.should =~ /#{Regexp.escape(label)}/m
 end
 
+Then(/^#{sel}へのリダイレクトであること/) do |location|
+  response["Location"].should == location
+end
+
