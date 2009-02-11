@@ -36,5 +36,7 @@
           <p>RubyKaigi2009 スタッフにより選考いたします。</p>
           <h3>お問い合わせ</h3>
           <p>何か不明な点があれば、2009 at rubykaigi.org までお気軽にお問い合わせください。</p>
-  <div><%=link_to('Permalink', rubykaigi2009_path(:page => 'CallForPresentations', :locale => I18n.locale)) %></div>
+          <div>
+            <%=link_to('Permalink', pub_release_url(:year => 2009, :page_name => 'CallForPresentations', :locale => I18n.locale)) %>
+          </div>
         </div>

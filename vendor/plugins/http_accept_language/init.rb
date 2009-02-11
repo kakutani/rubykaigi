@@ -1,1 +1,5 @@
-ActionController::AbstractRequest.send :include, HttpAcceptLanguage
+(
+  (defined? ActionController::Request) ?
+    ActionController::Request : ActionController::AbstractRequest
+).send(:include, HttpAcceptLanguage)
+

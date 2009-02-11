@@ -1,10 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
-  # The priority is based upon order of creation: first created -> highest priority.
-  map.rubykaigi2009 '2009/:locale/:page', :controller => 'ruby_kaigi2009', :action => 'page', :page => 'index'
-  map.connect '2009', :controller => 'ruby_kaigi2009', :action => 'index'
-  map.past_kaigi ':year', :controller => 'past_kaigi', :action => 'index',
-  :requirements => { :year => /200[678]/ }
-
+  map.with_options( :controller => "public_releases", :action => "show",
+                    :defaults => {:page_name => "index"} ) do |pr|
+    pr.pub_release ":year/:locale/:page_name", :requirements => {:year => /2\d{3}/, :locale => /en|ja/ }
+    pr.connect     ":year/:page_name", :requirements => {:year => /2\d{3}/}
+ end
 
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
