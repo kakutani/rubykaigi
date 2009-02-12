@@ -1,3 +1,4 @@
+# coding: utf-8
 class PublicReleasesController < ApplicationController
   skip_before_filter :login_required
   before_filter :readonly
