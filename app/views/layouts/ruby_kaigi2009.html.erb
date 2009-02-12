@@ -8,31 +8,35 @@
   </head>
   <body>
 
-	<% if I18n.locale == "ja" -%>
-	<div id="analog">&nbsp;</div>
-	<% end -%>
+    <% if I18n.locale == "ja" -%>
+    <div id="analog">&nbsp;</div>
+    <% end -%>
     <div id="container">
       <div id="header">
-		<img src="/images/top.png" alt="RubyKaigi2009 @Tokyo July 17-19 2009" width="780" height="460" />
-        <h1><%=t :rubykaigi2009 %><br /><span style="font-size:small">[<a style="text-decoration: none" href="/2009/ja">ja</a>][<a style="text-decoration: none" href="/2009/en">en</a>]</span></h1>
+        <img src="/images/top.png" alt="RubyKaigi2009 @Tokyo July 17-19 2009" width="780" height="460" />
+        <h1>
+          <%=t :rubykaigi2009 %><br />
+          <span style="font-size:small">[<a style="text-decoration: none" href="/2009/ja">ja</a>][<a style="text-decoration: none" href="/2009/en">en</a>]</span>
+        </h1>
       </div>
       <div id="content">
 
 <%= yield %>
 
-<div style="text-align:right"><%= link_to t(:rubykaigi2009), "/2009/#{I18n.locale}" %></div>
+        <div style="text-align:right"><%= link_to t(:rubykaigi2009), "/2009/#{I18n.locale}" %></div>
       </div><!-- content -->
     </div><!-- container -->
-Feel free to contact us via e-mail to: 2009 at rubykaigi dot org.
+    Feel free to contact us via e-mail to: 2009 at rubykaigi dot org.
 
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-6972157-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
-</body>
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-6972157-1");
+        pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
+  </body>
 </html>
