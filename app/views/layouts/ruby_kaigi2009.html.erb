@@ -8,12 +8,9 @@
   </head>
   <body>
 
-    <% if I18n.locale == "ja" -%>
-    <div id="analog">&nbsp;</div>
-    <% end -%>
     <div id="container">
       <div id="header">
-        <%= link_to(image_tag('top.png', :alt => 'RubyKaigi2009 @Tokyo July 17-19 2009', :width => 780, :height => 460), '/2009/#{I18n.locale}') %>
+        <%= link_to(image_tag('top.png', :alt => 'RubyKaigi2009 @Tokyo July 17-19 2009', :width => 780, :height => 460), "/2009/#{I18n.locale}") %>
         <h1>
           <%=t :rubykaigi2009 %><br />
           <span style="font-size:small">[<a style="text-decoration: none" href="/2009/ja">ja</a>][<a style="text-decoration: none" href="/2009/en">en</a>]</span>
@@ -38,5 +35,10 @@
         pageTracker._trackPageview();
       } catch(err) {}
     </script>
+    
+    <% if I18n.locale == "ja" -%>
+    <div id="analog"><%= image_tag('analog.gif', :alt => 'ruby 1.8', :title => 'ruby 1.8') %></div>
+    <% end -%>
+    
   </body>
 </html>

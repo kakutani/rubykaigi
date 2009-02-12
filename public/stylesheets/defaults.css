@@ -26,16 +26,9 @@ body {
 }
 
 #analog {
-  position: fixed !important;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 27px;
-  background-image: url("/images/analog.gif");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: right top;
+  position: fixed;
+  top: 3px;
+  right: 3px;
 }
 
 img {
