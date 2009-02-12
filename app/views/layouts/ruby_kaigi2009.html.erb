@@ -13,7 +13,7 @@
     <% end -%>
     <div id="container">
       <div id="header">
-        <img src="/images/top.png" alt="RubyKaigi2009 @Tokyo July 17-19 2009" width="780" height="460" />
+        <%= link_to(image_tag('top.png', :alt => 'RubyKaigi2009 @Tokyo July 17-19 2009', :width => 780, :height => 460), '/2009/#{I18n.locale}') %>
         <h1>
           <%=t :rubykaigi2009 %><br />
           <span style="font-size:small">[<a style="text-decoration: none" href="/2009/ja">ja</a>][<a style="text-decoration: none" href="/2009/en">en</a>]</span>
