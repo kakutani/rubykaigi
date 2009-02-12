@@ -13,7 +13,7 @@ body {
 
 #container {
   margin: 0 auto;
-  padding: 0 0 40px;
+  padding: 0px;
   width: 780px;
   border: 1px solid #de0000;
   border-width: 0 1px 1px;
@@ -21,14 +21,24 @@ body {
   text-align: left;
 }
 
+#navigation {
+  margin: 0px 87px;
+  text-align: right;
+}
+
 #content {
   margin: 10px 87px;
 }
 
 #analog {
-  position: fixed;
+  position: fixed !important;
+  position: absolute;
   top: 3px;
   right: 3px;
+}
+
+a {
+  text-decoration: none;
 }
 
 img {
@@ -67,10 +77,8 @@ ol {
   margin: 16px 0 0px 0px;
 }
 
-
-#footer {
-  clear: both;
-  margin: 30px 0;
+strong {
+  font-size: 12px;
 }
 
 .item {
@@ -81,6 +89,31 @@ ol {
   font-size: 10px;
 }
 
-strong {
-  font-size: 12px;
+#footer {
+  margin: 30px 0 0;
+  padding: 30px 87px 40px;
+  background: #f4f4f4;
+  overflow: auto;
+  zoom: 1;
 }
+
+#footer h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+#footer ul,
+#footer li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#footer .item {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  float: left;
+}
+

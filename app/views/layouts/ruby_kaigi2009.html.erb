@@ -11,17 +11,36 @@
     <div id="container">
       <div id="header">
         <%= link_to(image_tag('top.png', :alt => 'RubyKaigi2009 @Tokyo July 17-19 2009', :width => 780, :height => 460), "/2009/#{I18n.locale}") %>
-        <h1>
-          <%=t :rubykaigi2009 %><br />
-          <span style="font-size:small">[<a style="text-decoration: none" href="/2009/ja">ja</a>][<a style="text-decoration: none" href="/2009/en">en</a>]</span>
-        </h1>
+        <h1><%=t :rubykaigi2009 %></h1>
+        <div id="navigation">[ <a href="/2009/ja">ja</a> | <a href="/2009/en">en</a> ]</div>
       </div>
       <div id="content">
 
 <%= yield %>
 
-        <div style="text-align:right"><%= link_to t(:rubykaigi2009), "/2009/#{I18n.locale}" %></div>
       </div><!-- content -->
+      
+      <div id="footer">
+        <div class="item">
+          <h2>Links</h2>
+          <ul>
+            <li><%= link_to(t(:RubyKaigiDiary), "http://rubykaigi.tdiary.net/") %></li>
+            <li><%= link_to('Regional RubyKaigi', 'http://regional.rubykaigi.org/') %></li>
+            <li><%= link_to('Ruby Association', 'http://www.ruby-assn.org/') %></li>
+            <li><%= link_to(t(:NihonRubynoKai), 'http://jp.rubyist.net/') %></li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h2>RubyKaigi Archive</h2>
+          <ul>
+            <li><%= link_to('RubyKaigi2009', "/2009/#{I18n.locale}") %></li>
+            <li><%= link_to('RubyKaigi2008', 'http://jp.rubyist.net/RubyKaigi2008/') %></li>
+            <li><%= link_to('RubyKaigi2007', 'http://jp.rubyist.net/RubyKaigi2007/') %></li>
+            <li><%= link_to('RubyKaigi2006', 'http://jp.rubyist.net/RubyKaigi2006/') %></li>
+          </ul>
+        </div>
+      </div><!-- footer -->
     </div><!-- container -->
     Feel free to contact us via e-mail to: 2009 at rubykaigi dot org.
 
