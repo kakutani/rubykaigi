@@ -1,4 +1,23 @@
 module Ruby19Monkey
+  module StringEach
+    module RackAppCall
+      def self.included(base)
+        base.alias_method_chain :_call, :string_each_fix
+      end
+
+      def _call_with_string_each_fix(env)
+        status, _h, body = _call_without_string_each_fix(env)
+        header = {}
+        _h.each{|k, vs| header[k] = array_or_line_enum(vs) }
+        [status, header, array_or_line_enum(body)]
+      end
+
+      private
+      def array_or_line_enum(obj)
+        obj.respond_to?(:each) ? obj : obj.to_s.each_line
+      end
+    end
+  end
   module StringBytesize
     module ResponseContentLength
       def self.included(base)
