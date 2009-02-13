@@ -13,7 +13,6 @@ class PublicReleasesController < ApplicationController
 
   def show
     # params[:page_name] pass white list at `page_name_is_valid'
-    logger.debug(I18n.locale)
     render :template => "ruby_kaigi2009/#{params[:page_name]}_#{I18n.locale}"
   end
 
