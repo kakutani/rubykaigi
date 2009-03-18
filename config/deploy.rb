@@ -18,7 +18,7 @@ set :use_sudo, false
 set :runner, "rubykaigi"
 ssh_options[:username] = application
 
-set :production_server, "regional.rubykaigi.org"
+set :production_server, "rubykaigi.org"
 role :app, production_server
 role :web, production_server
 role :db,  production_server, :primary => true
@@ -41,9 +41,15 @@ namespace :deploy do
     setup_shared("db", "production.sqlite3")
   end
 
-  desc "resart for our application"
-  task :restart, :roles => :app, :except => { :no_release => true } do |t|
-    stop
+  task :start do
+    run "touch #{latest_release}/tmp/restart.txt"
+  end
+
+  desc "resart our application"
+  task :restart do
     start
+  end
+
+  task :stop do
   end
 end
