@@ -1,7 +1,9 @@
+# -*- coding: utf-8 -*-
 # Commonly used webrat steps
 # http://github.com/brynary/webrat
+require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
 
-sel = %q|"([^"]*)"|
+sel = %q|"([^"]*)"| #"
 
 def response_body_text(source = response.body)
   Nokogiri::HTML(source).text
@@ -15,7 +17,7 @@ When /^"(.*)"ボタンをクリックする$/ do |button|
   click_button(button)
 end
 
-When(/^"([^"]*)"リンクをクリックする$/)do |link|
+When(/^"([^"]*)"(?:の)?リンクをクリックする$/)do |link|
   click_link(link)
 end
 
@@ -58,12 +60,12 @@ When /^"(.*)"としてファイル"(.*)"を添付する$/ do |field, path|
   attach_file(field, path)
 end
 
-Then /^"(.*)"と表示されていること$/ do |text|
-  response_body_text.should =~ /#{Regexp.escape(text)}/m
+Then /^"(.*)"(?:と|が)表示されていること$/ do |text|
+  response.should contain(/#{Regexp.escape(text)}/m)
 end
 
-Then /^"(.*)"と表示されていないこと$/ do |text|
-  response_body_text.should_not =~ /#{Regexp.escape(text)}/m
+Then /^"(.*)"(?:と|が|は)表示されていないこと$/ do |text|
+  response.should_not contain(/#{Regexp.escape(text)}/m)
 end
 
 Then /^"(.*)"がチェックされていること$/ do |label|
@@ -78,4 +80,3 @@ end
 Then(/^#{sel}へのリダイレクトであること/) do |location|
   response["Location"].should == location
 end
-

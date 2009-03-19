@@ -26,8 +26,8 @@ class PublicReleasesController < ApplicationController
   end
 
   def redirect_to_past_kaigi
-    if (y = params[:year].to_i) < 2009
-      redirect_to "http://#{y}.rubykaigi.org"
+    if (past = params[:year].to_i) < 2009
+      redirect_to "http://jp.rubyist.net/RubyKaigi#{past}"
     end
   end
 

@@ -1,10 +1,15 @@
-フィーチャ 参加者向け情報を提供する
-  RubyKaigi参加者として
-  過去のRubyKaigiにアクセスした場合は適切なサイトにリダイレクトしてほしい
+フィーチャ RubyKaigi2008以前の公式サイトへのリダイレクト
+  RubyKaigi2008以前のURLは覚えづらいようなので、
+  rubykaigi.orgを手掛りにそれっぽいURLは過去開催の公式サイトにリダイレクトするようにしたい
+  SEO的な観点から、サブドメイン(2008.rubykaigi.org)ではなくサブディレクトリ(rubykaigi.org/2008)で
+  アクセスできるようにする。
 
-  シナリオ 日本語のRubyKaigi2008のトップページを閲覧する
-    前提 言語は"ja-JP"
-    もし RubyKaigi2008の"トップページ"にアクセスする
-    ならば "You are being redirected"と表示されていること
-    かつ   "http://2008.rubykaigi.org"へのリダイレクトであること
+  シナリオテンプレ: サブディレクトリでの過去の開催へのアクセス
+    もし "<過去のRubyKaigi>"にアクセスする
+    ならば "<過去の公式サイトURL>"へのリダイレクトである
 
+  例:
+  |過去のRubyKaigi|過去の公式サイトURL|
+  |2006|http://jp.rubyist.net/RubyKaigi2006|
+  |2007|http://jp.rubyist.net/RubyKaigi2007|
+  |2008|http://jp.rubyist.net/RubyKaigi2008|
