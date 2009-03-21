@@ -8,7 +8,3 @@ end
 When /^"(.+)"にアクセスする/ do |page_name|
   visit path_to(page_name)
 end
-
-Then /^"(.+)"へのリダイレクトである/ do |location|
-  response["Location"].should == location
-end

@@ -77,6 +77,10 @@ Then /^"(.*?)"がリンクになっていないこと$/ do |label|
   response_body_text.should =~ /#{Regexp.escape(label)}/m
 end
 
-Then(/^#{sel}へのリダイレクトであること/) do |location|
+ならば(/^"(.+)"へのリダイレクトであること$/) do |location|
   response["Location"].should == location
+end
+
+ならば(/^"(.+)"へリダイレクトされること$/) do |page|
+  get_via_redirect path_to(page)
 end
