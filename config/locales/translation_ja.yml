@@ -1,0 +1,13 @@
+ja: 
+  activerecord: 
+    models: 
+      account: "口座"  #g
+
+    attributes: 
+      account: 
+        identity_url: "同一のURL"  #g
+
+  rubykaigi2009: "日本Ruby会議2009"  #g
+  RubyKaigiDiary: "RubyKaigi日記"  #g
+  NihonRubynoKai: "日本Rubyの会"  #g
+

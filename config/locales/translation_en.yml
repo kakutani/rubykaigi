@@ -1,0 +1,13 @@
+en: 
+  activerecord: 
+    models: 
+      account: "Account"  #g
+
+    attributes: 
+      account: 
+        identity_url: "Identity url"  #g
+
+  rubykaigi2009: "RubyKaigi2009"  #g
+  RubyKaigiDiary: "RubyKaigi Diary"  #g
+  NihonRubynoKai: "Nihon Ruby-no-Kai"  #g
+
