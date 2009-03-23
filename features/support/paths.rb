@@ -7,7 +7,10 @@ module NavigationHelpers
       ""
     when /^(200[678])$/
       "/#{$1}"
-    # Add more page name => path mappings here
+    when /ログイン/
+      login_path
+    when /新規アカウント作成/
+      new_account_path
     else
       page_name
     end

@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 # Commonly used webrat steps
 # http://github.com/brynary/webrat
-require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
+support_dir = File.join(File.dirname(__FILE__), "..", "support")
+require File.expand_path("paths", support_dir)
+require File.expand_path("langs", support_dir)
 
-sel = %q|"([^"]*)"| #"
-
-def response_body_text(source = response.body)
-  Nokogiri::HTML(source).text
+前提 /^"(.+)"にアクセス(?:する)?$/ do |page_name|
+  visit path_to(page_name)
 end
 
 When /言語は"(.*)"/ do |lang|
-  header("ACCEPT_LANGUAGE", lang)
+  header("ACCEPT_LANGUAGE", langs_of(lang))
 end
 
 When /^"(.*)"ボタンをクリックする$/ do |button|
@@ -25,16 +25,17 @@ When /^"(.*)"中の"(.*)"リンクをクリックする$/ do |selector, link|
   click_link_within(selector, link)
 end
 
+sel = %q|"([^"]*)"| #"
 When(/^テーブル#{sel}の"(\d+)"行目の#{sel}リンクをクリックする/) do |cls, nth, link|
   selector = "table.#{cls} tbody tr:nth(#{nth})"
   click_link_within(selector, link)
 end
 
 When /再読み込みする/ do
-  visit request.request_uri
+  reload
 end
 
-When /^"(.*)"に"(.*)"と入力する$/ do |field, value|
+When /^"(.*)"に"(.*)"と入力(?:する)?$/ do |field, value|
   fill_in(field, :with => value)
 end
 
@@ -56,8 +57,12 @@ When /^#{sel}を選択する$/ do |field|
 end
 
 # opposite order from Engilsh one(original)
-When /^"(.*)"としてファイル"(.*)"を添付する$/ do |field, path|
-  attach_file(field, path)
+When /^"(.*)"に"(.*)"を添付する$/ do |field, path|
+  attach_file(field, path.to_s)
+end
+
+もし /^"(.*)"フォームを送信(?:する)?$/ do |form_id|
+  submit_form(form_id)
 end
 
 Then /^"(.*)"(?:と|が)表示されていること$/ do |text|
@@ -72,6 +77,9 @@ Then /^"(.*)"がチェックされていること$/ do |label|
   field_labeled(label).should be_checked
 end
 
+def response_body_text(source = response.body)
+  Nokogiri::HTML(source).text
+end
 Then /^"(.*?)"がリンクになっていないこと$/ do |label|
   Nokogiri::HTML(response.body).search("a").select{|a| a.text == label }.should be_empty
   response_body_text.should =~ /#{Regexp.escape(label)}/m
@@ -81,6 +89,6 @@ end
   response["Location"].should == location
 end
 
-ならば(/^"(.+)"へリダイレクトされること$/) do |page|
+ならば(/^"(.+)"へリダイレクトされること/) do |page|
   get_via_redirect path_to(page)
 end
