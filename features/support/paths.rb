@@ -7,8 +7,8 @@ module NavigationHelpers
       ""
     when /^(200[678])$/
       "/#{$1}"
-    when /ログイン/
-      login_path
+    when /サインイン/
+      signin_path
     when /新規アカウント作成/
       new_account_path
     else
