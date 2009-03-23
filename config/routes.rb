@@ -1,20 +1,23 @@
 ActionController::Routing::Routes.draw do |map|
+  # Sample of regular route:
+  #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
+  # Keep in mind you can assign values other than :controller and :action
   map.with_options( :controller => "public_releases", :action => "show",
                     :defaults => {:page_name => "index"} ) do |pr|
     pr.pub_release ":year/:locale/:page_name", :requirements => {:year => /2\d{3}/, :locale => /en|ja/ }
     pr.connect     ":year/:page_name", :requirements => {:year => /2\d{3}/}
  end
 
-  # Sample of regular route:
-  #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
-  # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
   # This route can be invoked with purchase_url(:id => product.id)
+#  map.signin :controller => 'sessions', :action => 'new'
+#  map.signout :controller => 'sessions', :action => 'destroy', :method => :post
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products
+#  map.resources :sessions
 
   # Sample resource route with options:
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }

@@ -1,13 +1,12 @@
-en: 
-  activerecord: 
-    models: 
-      account: "Account"  #g
+en:
+  activerecord:
+    models:
+      account: "Account"
 
-    attributes: 
-      account: 
-        identity_url: "Identity url"  #g
+    attributes:
+      account:
+        identity_url: "OpenID"
 
-  rubykaigi2009: "RubyKaigi2009"  #g
-  RubyKaigiDiary: "RubyKaigi Diary"  #g
-  NihonRubynoKai: "Nihon Ruby-no-Kai"  #g
-
+  rubykaigi2009: "RubyKaigi2009"
+  RubyKaigiDiary: "RubyKaigi Diary"
+  NihonRubynoKai: "Nihon Ruby-no-Kai"

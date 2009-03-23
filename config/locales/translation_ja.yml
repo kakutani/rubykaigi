@@ -1,13 +1,13 @@
-ja: 
-  activerecord: 
-    models: 
-      account: "口座"  #g
+ja:
+  activerecord:
+    models:
+      account: "アカウント"
 
-    attributes: 
-      account: 
-        identity_url: "同一のURL"  #g
+    attributes:
+      account:
+        identity_url: "OpenID"
 
-  rubykaigi2009: "日本Ruby会議2009"  #g
-  RubyKaigiDiary: "RubyKaigi日記"  #g
-  NihonRubynoKai: "日本Rubyの会"  #g
-
+  rubykaigi2009: "日本Ruby会議2009"
+  RubyKaigiDiary: "RubyKaigi日記"
+  NihonRubynoKai: "日本Rubyの会"
+  signin: "サインイン'
