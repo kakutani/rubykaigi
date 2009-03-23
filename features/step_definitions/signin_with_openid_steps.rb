@@ -10,7 +10,7 @@ end
   submit_form "signin"
 end
 
-もし(/^OpenID Providerで認証に成功する/) do
+def authenticate_with_fake_open_id_server(url, success = :success)
   openid_auth = URI(response.headers["Location"])
   openid_authorized_query = nil
   Net::HTTP.start(openid_auth.host, openid_auth.port) do |h|
@@ -19,20 +19,24 @@ end
 
     auth_req = Net::HTTP::Post.new(auth_form["action"])
     auth_req["cookie"] = res["set-cookie"]
-#    auth_req.body = success ? "yes=yes" : "yes=no"
-    auth_req.body = true ? "yes=yes" : "yes=no"
+    auth_req.body = "yes=" << (success == :success ? "yes" : "no")
     auth_res = h.request(auth_req)
     openid_authorized_query = auth_res["location"]
   end
-
-  get_via_redirect URI(openid_authorized_query).request_uri
+  URI(openid_authorized_query).request_uri
 end
 
-ならば /^OpenIDのURLが表示されていること$/ do
+もし(/^OpenID Providerで認証に成功する/) do
+  url = response.headers["Location"]
+  authorized_uri = authenticate_with_fake_open_id_server(url, :success)
+  get_via_redirect authorized_uri
+end
+
+ならば(/^OpenIDのURLが表示されていること$/) do
   response.should contain(@identity_url)
 end
 
-ならば /^アカウントが作成されていること$/ do
+ならば(/^アカウントが作成されていること$/) do
   account = Account.find_by_identity_url(@identity_url)
   account.should_not be_nil
 end
