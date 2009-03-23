@@ -1,6 +1,6 @@
 <h1>Sign up</h1>
 
-<% form_for :account do |f| -%>
+<% form_for @account, accounts_path do |f| -%>
   OpenID: <%=h session[:openid_identifier] %>
   <%= f.submit 'Create' %>
 <% end -%>
