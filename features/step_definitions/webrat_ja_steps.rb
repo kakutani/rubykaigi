@@ -62,7 +62,6 @@ When /^"(.*)"に"(.*)"を添付する$/ do |field, path|
 end
 
 もし /^"(.*)"フォームを送信(?:する)?$/ do |form_id|
-  save_and_open_page
   submit_form(form_id)
 end
 
