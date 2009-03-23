@@ -1,3 +1,4 @@
+.generators
 .ditz-config
 config/database.yml
 config/config_action_controller_session.rb
@@ -10,3 +11,4 @@ backup/*.*
 coverage.aggregate
 coverage
 coverage.features
+tmp/*.*
