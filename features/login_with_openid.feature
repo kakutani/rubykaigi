@@ -22,4 +22,4 @@
     もし "OpenID"に"http://localhost:3333/user/kakutani"と入力
     かつ "signin"フォームを送信
     ならば "新規アカウント作成"へリダイレクトされること
-#    かつ "http://localhost:3333/user/kakutani"が表示されていること
+    かつ "http://localhost:3333/user/kakutani"が表示されていること
