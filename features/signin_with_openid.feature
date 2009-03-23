@@ -24,3 +24,6 @@
     かつ OpenID Providerで認証に成功する
     ならば "Sign up"と表示されていること
     かつ  OpenIDのURLが表示されていること
+
+    もし "new_account"フォームを送信する
+    ならば アカウントが作成されていること
