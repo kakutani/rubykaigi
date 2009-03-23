@@ -1,2 +1,6 @@
-<h1>Accounts#new</h1>
-<p>Find me in app/views/accounts/new.html.erb</p>
+<h1>Sign up</h1>
+
+<% form_for :account do |f| -%>
+  OpenID: <%=h session[:openid_identifier] %>
+  <%= f.submit 'Create' %>
+<% end -%>
