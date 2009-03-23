@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    redirect_to new_account_path
   end
 
   def destroy
