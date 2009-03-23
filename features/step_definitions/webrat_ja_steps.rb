@@ -86,9 +86,5 @@ Then /^"(.*?)"がリンクになっていないこと$/ do |label|
 end
 
 ならば(/^"(.+)"へのリダイレクトであること$/) do |location|
-  response["Location"].should == location
-end
-
-ならば(/^"(.+)"へリダイレクトされること/) do |page|
-  response["Location"].should match(/#{path_to(page)}/)
+  response["Location"].should match(/#{location}/)
 end

@@ -39,7 +39,7 @@ class SessionsController < ApplicationController
       # success but account doesn't exist
       logger.info("##################### #{identity_url}")
       session[:openid_identifier] = identity_url
-      new_account_path
+      redirect_to new_account_path
     end
   end
 end
