@@ -4,6 +4,7 @@
 support_dir = File.join(File.dirname(__FILE__), "..", "support")
 require File.expand_path("paths", support_dir)
 require File.expand_path("langs", support_dir)
+require File.expand_path("open_id_fake_server", support_dir)
 
 前提 /^"(.+)"にアクセス(?:する)?$/ do |page_name|
   visit path_to(page_name)
