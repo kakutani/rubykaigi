@@ -14,20 +14,7 @@
 <%= yield %>
 
 
-    <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-      try {
-        var pageTracker = _gat._getTracker("UA-6972157-1");
-        pageTracker._trackPageview();
-      } catch(err) {}
-    </script>
-
-    <% if I18n.locale == "ja" -%>
-    <div id="analog"><%= image_tag('analog.gif', :alt => 'ruby 1.8', :title => 'ruby 1.8') %></div>
-    <% end -%>
-
+<%= render :partial => "shared/analog_ruby" %>
+<%= render :partial => "shared/google_analytics" %>
   </body>
 </html>
