@@ -1,0 +1,62 @@
+Flash Message Conductor
+============
+
+A simple pattern for managing flash messages in your Ruby on Rails application.
+
+
+Example
+=======
+
+# Controller helpers
+
+add_message( 'foo' )
+
+is the equivalent of
+
+flash[:message] = 'foo'
+
+add_message( 'foo', { :state => :keep })
+
+is the equivalent of
+
+flash[:message] = 'foo'
+flash.keep(:message)
+
+Controller helpers included:
+
+add_message( message, options ) 
+add_notice( message, options )
+add_error( message, options )
+
+# View helpers
+
+<%= render_flash_messages %>
+
+produces:
+
+<div id="flash_messages">
+  <p class="message">You have successfully done XYZ...</p>
+</div>
+
+# or... if you set an error
+
+<div id="flash_messages">
+  <p class="error">Oops! Something went bonkers!</p>
+</div>
+
+Fade Options
+============
+
+If you want to fade the message out, call the controller helpers with the fade option:
+
+add_message( 'foo', { :fade => true })
+
+This will append the extra class name 'fade' to your p tag. Example:
+
+<div id="flash_messages">
+  <p class="message fade">You have successfully done XYZ...</p>
+</div>
+
+NOTE: In order to make the message fade it has to be done through Javascript. Copy from the provided code samples (either Prototype or jQuery) and paste it into your application.js file.
+
+Copyright (c) 2008 Planet Argon, released under the MIT license
