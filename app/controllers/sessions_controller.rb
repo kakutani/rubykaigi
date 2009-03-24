@@ -10,14 +10,14 @@ class SessionsController < ApplicationController
 
   def destroy
     logout_killing_session!
-    flash[:notice] = "You have been signed out."
+    add_notice("You have been signed out.", :fade => true)
     redirect_back_or_default('/')
   end
 
   private
   # Track failed login attempts
   def note_failed_signin
-    flash[:error] = "Couldn't sign you via '#{params[:openid_identifier]}'"
+    add_error("Couldn't sign you via '#{params[:openid_identifier]}'")
     logger.warn "Failed login for '#{params[:login]}' from #{request.remote_ip} at #{Time.now.utc}"
   end
 
@@ -29,15 +29,16 @@ class SessionsController < ApplicationController
         redirect_back_or_default('/')
         return
       end
-      account = (User.find_by_identity_url(identity_url) rescue nil)
+      logger.info("################### #{identity_url}")
+      account = (Account.find_by_identity_url(identity_url) rescue nil)
       if account
-        self.current_user = user
+        self.current_user = account
+        add_notice("Sign in successfully", :fade => true)
         redirect_back_or_default('/')
-        flash[:notice] = _("Logged in successfully")
         return
       end
       # success but account doesn't exist
-      logger.info("##################### #{identity_url}")
+      add_notice("Create new account", :fade => true)
       session[:openid_identifier] = identity_url
       redirect_to new_account_path
     end
