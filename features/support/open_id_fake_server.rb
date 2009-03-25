@@ -12,7 +12,7 @@ module OpenIDFakeServerHelpers
 
       auth_req = Net::HTTP::Post.new(auth_form["action"])
       auth_req["cookie"] = res["set-cookie"]
-      auth_req.body = "yes=" << (stub_result == :success ? "yes" : "no")
+      auth_req.body = (stub_result == :success ? "yes=yes" : "no=no")
       auth_res = h.request(auth_req)
       openid_authorized_query = auth_res["location"]
     end
