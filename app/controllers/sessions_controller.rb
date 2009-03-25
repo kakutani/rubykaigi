@@ -17,19 +17,18 @@ class SessionsController < ApplicationController
   private
   # Track failed login attempts
   def note_failed_signin
-    add_error("Couldn't sign you via '#{params[:openid_identifier]}'")
-    logger.warn "Failed login for '#{params[:login]}' from #{request.remote_ip} at #{Time.now.utc}"
+    add_error("Couldn't sign in via '#{session[:openid_identifier]}'")
+    logger.warn "Failed signin for '#{session[:openid_identifier]}' from #{request.remote_ip} at #{Time.now.utc}"
   end
 
   def open_id_authentication
     authenticate_with_open_id do |result, identity_url|
       unless result.successful?
+        session[:openid_identifier] = identity_url
         note_failed_signin
-        @openid_identifier = identity_url
-        redirect_back_or_default('/')
+        redirect_back_or_default(signin_path)
         return
       end
-      logger.info("################### #{identity_url}")
       account = (Account.find_by_identity_url(identity_url) rescue nil)
       if account
         self.current_user = account
