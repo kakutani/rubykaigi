@@ -1,4 +1,5 @@
-前提(/^新規アカウント"(.+)"の作成を試みる/) do |account|
+# -*- coding: utf-8 -*-
+前提(/^アカウント"(.+)"でのサインインを試みる/) do |account|
   @identity_url = Factory.attributes_for(account.to_sym)[:identity_url]
 end
 
@@ -12,6 +13,13 @@ end
   authorized_uri = authenticate_with_fake_open_id_server(url, :success)
   get_via_redirect authorized_uri
 end
+
+もし(/^OpenID Providerで認証に失敗する/) do
+  url = response.headers["Location"]
+  authorized_uri = authenticate_with_fake_open_id_server(url, :fail)
+  visit authorized_uri
+end
+
 
 ならば(/^OpenIDのURLが表示されていること$/) do
   response.should contain(@identity_url)
