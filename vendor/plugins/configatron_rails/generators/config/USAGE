@@ -1,0 +1,8 @@
+Description:
+    Generate a barebones configuration file for configatron.
+
+Example:
+    ./script/generate config
+
+    This will create:
+        config/config.yml

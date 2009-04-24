@@ -1,0 +1,77 @@
+h2. "ConfigatronRails":http://www.github.com/cmaggard/configatron-rails
+
+ConfigatronRails is a plugin born out of a want for environment-specific
+variables using a gem I've grown to appreciate: 
+"configatron":http://github.com/markbates/configatron.
+
+* "Installation":#INSTALL
+* "Sample Usage":#SAMPLE
+* "Version History":#VERSION
+
+<hr>
+
+<a id="#INSTALL"> </a>
+h3. Installation / Upgrading
+
+*Make sure you have configatron (2.0 or higher) installed before following these steps!*
+
+  <pre><code>
+    > sudo gem install configatron
+  
+    # Or toss this in your environment.rb (preferred method)
+    config.gem "configatron"
+  </code></pre>
+
+  <pre><code>
+    cd vendor/plugins
+    git clone git://github.com/cmaggard/configatron-rails.git configatron_rails
+    cd configatron_rails
+    git checkout 0.4
+    cd ..
+    rm -rf configatron_rails/.git
+    cd ../..
+    script/generate config
+  </code></pre>
+
+If upgrading, run @script/generate config@ again, as this will copy the necessary
+initializer file over.  Just don't overwrite your config.yml. ;)
+
+<hr>
+
+<a id="#SAMPLE"> </a>
+h3. Sample Usage:
+
+_In config.yml_
+  <pre><code>
+    development: &local
+      site_address: http://localhost:3000/
+
+    test:
+      <<: *local
+  
+    production:
+      site_address: http://www.thebestappev.er/
+  </code></pre>
+
+_In 'script/console development' and 'script/console test'_
+  <pre><code>
+    >> configatron.site_address  # => "http://localhost:3000/"
+  </code></pre>
+
+_In 'script/console production'_
+  <pre><code>
+    >> configatron.site_address  # => "http://www.thebestappev.er/"
+  </code></pre>
+
+<hr>
+
+<a id="#VERSION"> </a>
+h3. Version History
+
+* *0.4* - Updated for configatron 2.1.1, changed to initializer script
+* 0.3 - Updated for configatron 2.0
+* 0.2.1 - Minor tweaks to template file
+* 0.2 - Environment seeding of config.yml based upon database.yml
+* 0.1 - First Release
+
+Copyright (C) 2008 Cody Maggard, released under the MIT license
