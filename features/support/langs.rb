@@ -12,7 +12,8 @@ module LanguageHelpers
   end
 end
 
-World do |world|
-  world.extend LanguageHelpers
-  world
-end
+# World do |world|
+#   world.extend LanguageHelpers
+#   world
+# end
+World(LanguageHelpers)

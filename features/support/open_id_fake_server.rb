@@ -20,10 +20,11 @@ module OpenIDFakeServerHelpers
   end
 end
 
-World do |world|
-  world.extend OpenIDFakeServerHelpers
-  world
-end
+# World do |world|
+#   world.extend OpenIDFakeServerHelpers
+#   world
+# end
+World(OpenIDFakeServerHelpers)
 
 
 # require 'net/http'
