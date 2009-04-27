@@ -27,4 +27,4 @@ config.gem "cucumber", :lib => false, :version => ">= 0.3.0"
 config.gem "webrat", :lib => false
 config.gem "nokogiri", :lib => false
 config.gem "thoughtbot-factory_girl", :lib => 'factory_girl', :source => 'http://gems.github.com'
-config.gem "rr"
+config.gem "rr", :lib => false
