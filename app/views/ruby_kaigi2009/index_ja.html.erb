@@ -28,6 +28,11 @@
 		  </ul>
         </div>
 
-		<%= render :file => "ruby_kaigi2009/CallForPresentations_#{I18n.locale}.html.erb" %>
+		<%# render :file => "ruby_kaigi2009/CallForPresentations_#{I18n.locale}.html.erb" %>
 
-		<%= render :file => "ruby_kaigi2009/CallForSponsors_#{I18n.locale}.html.erb" %>
+		<%# render :file => "ruby_kaigi2009/CallForSponsors_#{I18n.locale}.html.erb" %>
+
+		<h2><%= link_to '参加登録について', registrations_path(:year => 2009) %></h2>
+		<div>
+		  RubyKaigi2009へ参加するには、事前に<%= link_to 'チケットの購入', registrations_path(:year => 2009) %>が必要です。
+		</div>

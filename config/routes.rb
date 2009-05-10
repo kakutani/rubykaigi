@@ -2,12 +2,15 @@ ActionController::Routing::Routes.draw do |map|
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
   # Keep in mind you can assign values other than :controller and :action
+  map.registrations("/:year/:locale/registrations/:action",
+    :controller => 'registrations', :action => 'index',
+    :requirements => {:year => /2\d{3}/, :locale => /en|ja/ })
+
   map.with_options( :controller => "public_releases", :action => "show",
                     :defaults => {:page_name => "index"} ) do |pr|
     pr.pub_release ":year/:locale/:page_name", :requirements => {:year => /2\d{3}/, :locale => /en|ja/ }
     pr.connect     ":year/:page_name", :requirements => {:year => /2\d{3}/}
  end
-
 
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
