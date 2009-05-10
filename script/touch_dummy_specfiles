@@ -1,0 +1,99 @@
+#!/usr/bin/env ruby
+require 'find'
+require 'rubygems'
+require 'activesupport'
+
+def collect_production_files_in(dir)
+  candidates = []
+  Find.find(dir) do |entry|
+    next if File.directory?(entry)
+    next if File.extname(entry) == ".rake"
+    candidates << entry
+  end
+  candidates.sort
+end
+
+def convert_to_specfile(prod_file)
+  unless prod_file =~ %r!lib/.+!
+    elements = prod_file.split('/')
+    elements[0] = "spec"
+    elements[-1] = File.basename(elements.last, ".rb") << "_spec.rb"
+    elements.join("/")
+  else
+    elements = prod_file.split('/')
+    elements.unshift "spec"
+    elements[-1] = File.basename(elements.last, ".rb") << "_spec.rb"
+    elements.join("/")
+  end
+end
+
+def specfile_candidates_for(type)
+  dir = if type != "lib"
+          "app/#{type}"
+        else
+          type
+        end
+  collect_production_files_in(dir).map do |entry|
+    convert_to_specfile(entry)
+  end
+end
+
+def detect_spec_helper_path_from(dirname)
+  parents = [".."]
+  loop do
+    spec_helper_rb = File.join(dirname, parents, "spec_helper.rb")
+    return parents if File.exist? spec_helper_rb
+    parents << ".."
+  end
+end
+
+def extract_klass_name(path)
+  elements = path.split("/")
+  elements.shift # spec
+  elements.shift # component
+  elements.delete("core")
+  elements.delete("ext")
+  elements.delete("ruby187_compat")
+  elements[-1] = File.basename(path, ".rb").sub(/_spec/, '')
+  elements.join("/").camelize
+end
+
+def describe_message_for(candidate)
+  if candidate =~ %r!/views/!
+    '"' << candidate.sub(/_spec.rb/, '') << '"'
+  else
+    extract_klass_name(candidate)
+  end
+end
+
+def generate_empty_spec_file_of(candidate)
+  return if File.exist?(candidate)
+
+  dirname = File.dirname(candidate)
+  FileUtils.mkdir_p dirname unless File.directory?(dirname)
+
+  parents = detect_spec_helper_path_from(dirname)
+
+  spec =<<-SPEC
+# -*- coding: utf-8 -*-
+require File.dirname(__FILE__) + '/#{parents.join("/")}/spec_helper'
+
+describe #{describe_message_for(candidate)} do
+  # this spec auto generated
+  it { true.should be_true }
+end
+  SPEC
+  File.open(candidate, 'w'){|f| f.write(spec)}
+  puts "generate empty spec '#{candidate}'"
+end
+
+["models", "controllers", "helpers", "views", "lib"].each do |comp|
+  specfile_candidates = specfile_candidates_for(comp)
+  specfile_candidates.each do |candidate|
+    generate_empty_spec_file_of(candidate)
+  end
+end
+
+#puts specfile_candidates_for("controllers")
+#puts specfile_candidates_for("views")
+#puts specfile_candidates_for("helpers")
