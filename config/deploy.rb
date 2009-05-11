@@ -38,6 +38,7 @@ end
 namespace :deploy do
   task :after_update_code do
     setup_shared_config("database.yml")
+    setup_shared_config("config.yml")
     setup_shared("db", "production.sqlite3")
   end
 
