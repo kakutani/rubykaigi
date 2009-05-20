@@ -9,7 +9,17 @@ class PublicReleasesController < LocaleBaseController
 
   def show
     # params[:page_name] pass white list at `page_name_is_valid'
-    render :template => "ruby_kaigi2009/#{params[:page_name]}_#{I18n.locale}"
+    begin
+      render :template => "ruby_kaigi2009/#{params[:page_name]}_#{I18n.locale}"
+    rescue Errno::ENOENT, ActionView::MissingTemplate => e
+      alternative = Dir.glob(Rails.root + "app/views/ruby_kaigi2009/#{params[:page_name]}*").first
+      if File.exist? alternative
+        alt_locale = alternative.split("_").last.split(".").first
+        redirect_to(:action => :show, :year => params[:year], :page_name => params[:page_name], :locale => alt_locale)
+      else
+        raise e
+      end
+    end
   end
 
   private
