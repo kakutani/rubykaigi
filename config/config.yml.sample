@@ -1,17 +1,20 @@
-# This file was auto-generated.  Feel free to customize it to your whim.
-
-development:
-    site_name: Test Site
-    admin_email: admin@test.com
-    site_url: http://localhost:3000/
+development: &local
+  basic_auth:
+    admin:
+      username: basic_user
+      password: basic_passwd
+    sponsor:
+      username: sponsor_username
+      password: sponsor_password
 
 production:
-    site_name: Test Site
-    admin_email: admin@test.com
-    site_url: http://localhost:3000/
+  basic_auth:
+    admin:
+      username: itsumono
+      password: itsumono
+    sponsor:
+      username: sponsor_username
+      password: sponsor_password
 
 test:
-    site_name: Test Site
-    admin_email: admin@test.com
-    site_url: http://localhost:3000/
-
+  <<: *local

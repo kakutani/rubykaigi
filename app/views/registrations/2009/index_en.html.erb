@@ -1,5 +1,22 @@
+<%# coding: utf-8 -%>
+<div class="item">
 <h1>RubyKaigi2009 Registration</h1>
 
-<p>
-Coming soon...
-</p>
+<h2>RubyKaigi 2009</h2>
+
+<form action="<%= configatron.paypal.base_url %>/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="<%= configatron.paypal.hosted_button_id.rubykaigi2009.conference %>">
+<input type="image" src="https://www.sandbox.paypal.com/en_US/JP/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+<h2>RubyKaigi 2009 Party</h2>
+
+<form action="<%= configatron.paypal.base_url %>/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="<%= configatron.paypal.hosted_button_id.rubykaigi2009.conference %>">
+<input type="image" src="https://www.sandbox.paypal.com/en_US/JP/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>

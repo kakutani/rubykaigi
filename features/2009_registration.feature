@@ -25,3 +25,13 @@
 	かつ ちょっとペンディング
     もし "/2009/registrations"にアクセスする
     ならば "RubyKaigi2009 Registration"が表示されていること
+
+  シナリオ: BASIC認証経由でアクセス
+    前提 "/2009/en/registrations"にアクセスする
+    ならば "RubyKaigi2009 Registration"と表示されていないこと
+
+
+  シナリオ: BASIC認証経由でアクセス
+    前提 "admin"でBASIC認証している
+	かつ "/2009/en/registrations"にアクセスする
+    ならば "RubyKaigi2009 Registration"が表示されていること

@@ -21,6 +21,12 @@ When(/RubyKaigi(\d{4})の"(\w+)"にアクセスする/)do |year, page|
   visit "/#{path}"
 end
 
+Given(/"(\w+)"でBASIC認証している/) do |user_type|
+  user = configatron.basic_auth.send(user_type.to_sym).username
+  password = configatron.basic_auth.send(user_type.to_sym).password
+  basic_auth(user, password)
+end
+
 Then "ちょっとペンディング" do
   pending
 end

@@ -6,6 +6,9 @@ ActionController::Routing::Routes.draw do |map|
     :controller => 'registrations', :action => 'index',
     :requirements => {:year => /2\d{3}/, :locale => /en|ja/ })
 
+  map.paypal("/paypal/:action",
+    :controller => 'paypal', :action => 'index')
+
   map.with_options( :controller => "public_releases", :action => "show",
                     :defaults => {:page_name => "index"} ) do |pr|
     pr.pub_release ":year/:locale/:page_name", :requirements => {:year => /2\d{3}/, :locale => /en|ja/ }

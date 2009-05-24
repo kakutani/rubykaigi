@@ -15,4 +15,11 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password").
   # filter_parameter_logging :password
 
+
+  def basic_auth_required_by_admin
+    authenticate_or_request_with_http_basic("restricted ared: username is rubykaigi, password is itsumono.") do |username, password|
+      username == configatron.basic_auth.admin.username &&
+        password == configatron.basic_auth.admin.password
+    end
+  end
 end

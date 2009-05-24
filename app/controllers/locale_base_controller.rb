@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-class LocaleBaseController < ActionController::Base
+class LocaleBaseController < ApplicationController
   cattr_accessor :language_detector
   self.language_detector = LanguageDetector.new(%w[en ja]).freeze
 

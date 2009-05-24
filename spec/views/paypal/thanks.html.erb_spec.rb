@@ -1,12 +1,12 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/registrations/index" do
+describe "/paypal/thanks" do
   before(:each) do
-    render :template => 'registrations/2009/index_en'
+    render 'paypal/thanks'
   end
-
+  
   #Delete this example and add some real ones or delete this file
   it "should tell you where to find the file" do
-    response.should contain(/Registration/)
+    response.should have_tag('p', %r[Find me in app/views/paypal/thanks])
   end
 end
