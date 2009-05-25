@@ -23,7 +23,7 @@ config.action_mailer.delivery_method = :test
 
 config.gem "rspec", :lib => false, :version => ">= 1.2.6"
 config.gem "rspec-rails", :lib => false, :version => ">= 1.2.6"
-config.gem "cucumber", :lib => false, :version => ">= 0.3.2"
+config.gem "cucumber", :lib => false, :version => ">= 0.3.7"
 config.gem "webrat", :lib => false
 config.gem "nokogiri", :lib => false
 config.gem "thoughtbot-factory_girl", :lib => 'factory_girl', :source => 'http://gems.github.com'

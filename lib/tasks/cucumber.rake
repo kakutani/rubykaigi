@@ -4,7 +4,8 @@ begin
   require 'cucumber/rake/task'
 
   Cucumber::Rake::Task.new(:features) do |t|
-    t.cucumber_opts = "--format progress --language ja"
+    t.fork = true
+    t.cucumber_opts = ['--format', (ENV['CUCUMBER_FORMAT'] || 'pretty'), '--language', 'ja']
   end
   task :features => 'db:test:prepare'
 rescue LoadError
