@@ -22,4 +22,12 @@ class ApplicationController < ActionController::Base
         password == configatron.basic_auth.admin.password
     end
   end
+
+  def basic_auth_required_by_sponsor
+    authenticate_or_request_with_http_basic("restricted ared: sonsors only.") do |username, password|
+      username == configatron.basic_auth.sponsor.username &&
+        password == configatron.basic_auth.sponsor.password
+    end
+  end
+
 end

@@ -4,6 +4,7 @@ class PublicReleasesController < LocaleBaseController
   before_filter :readonly
   before_filter :page_name_is_valid
   before_filter :redirect_to_past_kaigi
+  before_filter :sponsors_only
 
   layout proc{|c| "ruby_kaigi#{c.params[:year]}" }
 
@@ -35,5 +36,10 @@ class PublicReleasesController < LocaleBaseController
     if (past = params[:year].to_i) < 2009
       redirect_to "http://jp.rubyist.net/RubyKaigi#{past}"
     end
+  end
+
+  def sponsors_only
+    return basic_auth_required_by_sponsor if params[:page_name] == "Sponsors"
+    true
   end
 end
