@@ -1,7 +1,8 @@
 <%# coding: utf-8 -%>
-<h1>RubyKaigi2009への参加登録</h1>
+<div class="item">
+<h2>RubyKaigi2009への参加登録</h2>
 
-<h2>RubyKaigi 2009</h2>
+<h3>RubyKaigi 2009</h3>
 
 <form action="<%= configatron.paypal.base_url %>/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -10,10 +11,11 @@
 <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 
-<h2>RubyKaigi 2009 懇親会</h2>
+<h3>RubyKaigi 2009 懇親会</h3>
 <form action="<%= configatron.paypal.base_url %>/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="<%= configatron.paypal.hosted_button_id.rubykaigi2009.conference %>">
 <input type="image" src="https://www.sandbox.paypal.com/ja_JP/JP/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - オンラインで安全・簡単にお支払い">
 <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
+</div>
