@@ -1,2 +1,25 @@
-<h1>Paypal#thanks</h1>
-<p>Find me in app/views/paypal/thanks.html.erb</p>
+<% content_for :inline_css do -%>
+<style type="text/css" rel="stylesheet" media="screen">
+h3 {
+  margin-bottom: 2em;
+}
+h4 {
+  margin-bottom: 1em;
+}
+</style>
+<% end -%>
+<h3>Thank you for your registration.</h3>
+
+<hr />
+<h4>Exchange Ticket</h4>
+<table class="exchange_ticket">
+<tr><th>Item Name</th><td><%=h item_number_label(@paypal) %></td></tr>
+<tr><th>Transaction ID</th><td><%=h @paypal.txn_id %></td></tr>
+<tr><th>Last Name</th><td><%=h @paypal.last_name %></td></tr>
+<tr><th>First Name</th><td><%=h @paypal.first_name %></td></tr>
+<tr><th>Email Address</th><td><%=h @paypal.payer_email %></td></tr>
+</table>
+
+<hr />
+
+<%= link_to 'RubyKaigi2009 Registration', "/2009/#{I18n.locale}/registrations" %>

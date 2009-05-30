@@ -1,6 +1,6 @@
 class RegistrationsController < LocaleBaseController
   before_filter :basic_auth_required_by_admin
-  protect_from_forgery :only => [:index]
+  caches_page :index
 
   layout proc{|c| "ruby_kaigi#{c.params[:year]}" }
 

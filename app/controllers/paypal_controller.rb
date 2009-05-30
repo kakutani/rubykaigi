@@ -1,9 +1,7 @@
-require 'net/https'
-Net::HTTP.version_1_2
-
 class PaypalController < ApplicationController
   before_filter :configure_ruby_kaigi_year
   skip_before_filter :verify_authenticity_token
+  caches_page :cancelled, :sold_out
 
   layout "ruby_kaigi2009"
 
@@ -12,6 +10,13 @@ class PaypalController < ApplicationController
   end
 
   def thanks
+    if params[:tx].blank?
+      redirect_to root_path
+    end
+    @paypal = PaypalTransaction.find_by_txn_id(params[:tx])
+    unless @paypal.validate_transaction
+      # TODO
+    end
   end
 
   def cancelled
@@ -21,7 +26,13 @@ class PaypalController < ApplicationController
   end
 
   def instant_payment_notification
-    render :nothing => true
+    begin
+      PaypalTransaction.create_for_verify_later!(params)
+      render :nothing => true, :status => 200
+    rescue => e
+      logger.error(e)
+      render :nothing => true, :status => 500
+    end
   end
 
   def payment_data_transfer
