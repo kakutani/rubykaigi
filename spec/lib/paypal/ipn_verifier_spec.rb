@@ -8,7 +8,7 @@ module Paypal
       @ipn_verifier = Paypal::IPNVerifier.new
     end
     # 実装のテスト
-    it { @ipn_verifier.send(:postback_host).should == "sandbox.paypal.com" } # productionでは www.paypal.com
+    it { @ipn_verifier.send(:postback_host).should == "www.sandbox.paypal.com" } # productionでは www.paypal.com
     it { @ipn_verifier.send(:postback_request_uri).should == "/cgi-bin/webscr" }
 
     describe "#https_postback" do

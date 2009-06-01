@@ -22,7 +22,4 @@ describe "/paypal/thanks" do
     response.should have_tag('h4', 'Exchange Ticket')
   end
 
-  it "should render" do
-    puts response.body
-  end
 end

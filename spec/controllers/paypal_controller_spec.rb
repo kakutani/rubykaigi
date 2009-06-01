@@ -10,6 +10,7 @@ describe PaypalController do
 
   describe "GET 'thanks'" do
     it "should be successful" do
+      pending
       get 'thanks'
       response.should be_success
     end
@@ -31,6 +32,7 @@ describe PaypalController do
 
   describe "GET 'instant_payment_notification'" do
     it "should be successful" do
+      pending
       get 'instant_payment_notification'
       response.should be_success
     end

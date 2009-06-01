@@ -1,6 +1,5 @@
 class RegistrationsController < LocaleBaseController
   before_filter :registration_open
-  caches_page :index
 
   layout proc{|c| "ruby_kaigi#{c.params[:year]}" }
 
