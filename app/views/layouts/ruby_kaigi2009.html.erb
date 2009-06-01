@@ -24,17 +24,56 @@
 <%= yield %>
 
       </div><!-- content -->
-
-      <dl id="navigation">
-        <dt><%=t :rubykaigi2009 %> [ <a href="/2009/ja">ja</a> | <a href="/2009/en">en</a> ]</dt>
-        <dd>
-          <ul>
-            <li><%=t :tickets %></li>
-            <li><%=t :sponsors %></li>
-          </ul>
-        </dd>
-      </dl><!-- navigation -->
-
+      
+      <div id="side">
+        <dl id="navigation">
+          <dt><%=t :rubykaigi2009 %> [ <a href="/2009/ja">ja</a> | <a href="/2009/en">en</a> ]</dt>
+          <dd>
+            <ul>
+              <li><%=t :tickets %></li>
+              <li><%=t :sponsors %></li>
+            </ul>
+          </dd>
+        </dl><!-- navigation -->
+      
+        <dl id="sponsors">
+          <dt>Ruby <%=t :sponsors %></dt>
+          <dd>
+            <ul>
+              <li><%= link_to(image_tag('sponsors/ctc-g.png', :alt => '伊藤忠テクノソリューションズ株式会社'), "http://www.ctc-g.co.jp/") %></li>
+              <li><%= link_to(image_tag('sponsors/nacl.png', :alt => '株式会社ネットワーク応用通信研究所'), "http://www.netlab.jp/") %></li>
+              <li><%= link_to(image_tag('sponsors/ricoh.png', :alt => '株式会社リコー'), "http://www.ricoh.co.jp/") %></li>
+            </ul>
+          </dd>
+          <dt>Platinum <%=t :sponsors %></dt>
+          <dd>
+            <ul>
+              <li><%= link_to(image_tag('sponsors/esm.png', :alt => '株式会社永和システムマネジメント'), "http://ruby.agile.esm.co.jp/") %></li>
+              <li><%= link_to(image_tag('sponsors/nifty.png', :alt => 'ニフティ株式会社'), "http://www.nifty.com/") %></li>
+              <li><%= link_to(image_tag('sponsors/raw-hide.png', :alt => '株式会社RAWHIDE'), "http://raw-hide.co.jp/") %></li>
+              <li><%= link_to(image_tag('sponsors/recruit.png', :alt => '株式会社リクルート'), "http://www.recruit.jp/") %></li>
+              <li><%= link_to(image_tag('sponsors/tnt.png', :alt => '株式会社トランス・ニュー・テクノロジー'), "http://www.trans-nt.com/") %></li>
+              <li><%= link_to(image_tag('sponsors/web-career.png', :alt => '株式会社ウェブキャリア'), "http://www.web-career.com/") %></li>
+            </ul>
+          </dd>
+          <dt>Gold <%=t :sponsors %></dt>
+          <dd>
+            <ul>
+              <li><%= link_to(image_tag('sponsors/antas.png', :alt => '株式会社アンタス'), "http://antas.jp/") %></li>
+              <li><%= link_to(image_tag('sponsors/clear-code.png', :alt => '株式会社クリアコード'), "http://www.clear-code.com/") %></li>
+              <li><%= link_to(image_tag('sponsors/cuon.png', :alt => '株式会社クオン'), "http://www.cuon.co.jp/") %></li>
+              <li><%= link_to(image_tag('sponsors/everyleaf.png', :alt => '株式会社万葉'), "http://everyleaf.com/") %></li>
+              <li><%= link_to(image_tag('sponsors/irubysystems.png', :alt => '株式会社iRubySystems'), "http://irubysystems.com/") %></li>
+              <li><%= link_to(image_tag('sponsors/rabbix.png', :alt => '有限会社ラビックス'), "http://www.rabbix.jp/") %></li>
+              <li><%= link_to(image_tag('sponsors/rakuten.png', :alt => '楽天株式会社'), "http://www.rakuten.co.jp/") %></li>
+              <li><%= link_to(image_tag('sponsors/sug.png', :alt => 'SKIPユーザグループ'), "http://user.openskip.org/") %></li>
+              <li><%= image_tag('sponsors/towersquest.png', :alt => 'タワーズ･クエスト株式会社') %></li>
+              <li><%= link_to(image_tag('sponsors/waicrew.png', :alt => 'ワイクル株式会社'), "http://www.waicrew.com/") %></li>
+            </ul>
+          </dd>
+        </dl><!-- sponsors -->
+      </div><!-- side -->
+      
       <div id="footer">
         <div class="item">
           <h2>Links</h2>
