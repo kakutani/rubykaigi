@@ -23,7 +23,7 @@ role :app, production_server
 role :web, production_server
 role :db,  production_server, :primary => true
 
-set :rake, "/home/#{application}/bin/rake"
+set :rake, "/home/#{application}/gem.repos/bin/rake"
 
 def setup_shared(dir, path)
   src = "#{shared_path}/#{dir}/#{path}"
