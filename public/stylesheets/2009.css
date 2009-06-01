@@ -23,26 +23,28 @@ img {
 h1 {
   margin: 0;
   padding: 0;
-  border-top: 4px solid #1B1B1B;
+  border-top: 6px solid #1B1B1B;
   border-bottom: 2px solid #000;
 }
 h2 {
   margin: 0 0 0.5em;
   padding: 1em 50px 0.5em;
   font-size: 18px;
-  border-top: 4px solid #1B1B1B;
+  border-top: 6px solid #1B1B1B;
   background: #fff;
   color: #000;
 }
 h3 {
   margin: 0 0 1em;
-  padding: 0;
+  padding: 1em 50px 0.5em;
   font-size: 14px;
+  clear: both;
 }
 h4 {
   margin: 0;
-  padding: 0;
+  padding: 1em 50px 0.5em;
   font-size: 12px;
+  clear: both;
 }
 p {
   margin: 0 0 1em;
@@ -159,7 +161,6 @@ strong {
   right: 3px;
 }
 
-
 .item {
   margin: 0 0 40px;
 }
@@ -169,9 +170,23 @@ strong {
 .article {
   margin: 0 50px 1em;
 }
+.article h3 {
+  margin: 0 0 1em;
+  padding: 1em 0px 0.5em;
+}
 
 .date {
   font-size: 10px;
+}
+
+img.logo {
+  margin: 0 10px 10px 0;
+  padding: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  float: left;
+  background: #fff;
 }
 
 #footer {
