@@ -17,6 +17,7 @@ development: &local
       rubykaigi2009:
         conference: false
         party: false
+    open_at: 2009-06-01 16:00:00
 production:
   basic_auth:
     admin:
