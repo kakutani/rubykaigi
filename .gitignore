@@ -7,6 +7,7 @@ config/initializers/site_keys.rb
 config/initializers/app_config.rb
 db/*.sqlite3
 db/schema.rb
+db/backup/*.sqlite3
 log/*.log
 backup/*.*
 coverage.aggregate
