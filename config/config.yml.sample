@@ -2,11 +2,22 @@ development: &local
   basic_auth:
     admin:
       username: basic_user
-      password: basic_passwd
+      password: basic_password
     sponsor:
       username: sponsor_username
       password: sponsor_password
-
+  paypal:
+    base_url: https://www.sandbox.paypal.com
+    request_uri: /cgi-bin/webscr
+    hosted_button_id:
+      rubykaigi2009:
+        conference: number
+        party: number
+    soldout:
+      rubykaigi2009:
+        conference: false
+        party: false
+    open_at: 2009-06-01 16:00:00
 production:
   basic_auth:
     admin:

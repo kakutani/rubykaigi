@@ -12,10 +12,13 @@ class PaypalController < ApplicationController
   def thanks
     if params[:tx].blank?
       redirect_to root_path
+      return
     end
     @paypal = PaypalTransaction.find_by_txn_id(params[:tx])
-    unless @paypal.validate_transaction
-      # TODO
+    if !@paypal || !@paypal.validate_transaction
+      logger.error "INVALID TRANSACTION: '#{@paypal.txn_id}', #{@paypal.item_number}, #{@paypal.payment_status}, #{@paypal.verify}" if @paypal
+      render :template => "paypal/txn_id_was_not_verified"
+      return
     end
   end
 

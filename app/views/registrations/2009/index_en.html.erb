@@ -1,23 +1,46 @@
 <%# coding: utf-8 -%>
+<% content_for :css do -%>
+<%= stylesheet_link_tag '2009_registration' %>
+<% end -%>
 <div class="item">
-  <h2>RubyKaigi2009 Registration</h2>
-  <div class="article">
-    <h3>RubyKaigi 2009</h3>
-    <form action="<%= configatron.paypal.base_url %>/cgi-bin/webscr" method="post">
-      <input type="hidden" name="cmd" value="_s-xclick">
-      <input type="hidden" name="hosted_button_id" value="<%= configatron.paypal.hosted_button_id.rubykaigi2009.conference %>">
-      <input type="hidden" name="charset" value="utf-8">
-      <input type="image" src="https://www.sandbox.paypal.com/en_US/JP/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-      <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-    </form>
+<h2>RubyKaigi2009 Registration</h2>
+<ul>
+<li>You'll have to registration to attend RubyKaigi2009 via paypal.com.</li>
+<li>We'll store your name and e-mail for admission.</li>
+<li>Please <strong>bring an exchange ticket page to the venue for admissions.</strong></li>
+<li>Feel free to contact up via e-mail to pypal at rubykaigi dor org.</li>
+</ul>
+</p>
 
-    <h3>RubyKaigi 2009 Party</h3>
-    <form action="<%= configatron.paypal.base_url %>/cgi-bin/webscr" method="post">
-      <input type="hidden" name="cmd" value="_s-xclick">
-      <input type="hidden" name="hosted_button_id" value="<%= configatron.paypal.hosted_button_id.rubykaigi2009.party %>">
-      <input type="hidden" name="charset" value="utf-8">
-      <input type="image" src="https://www.sandbox.paypal.com/en_US/JP/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-      <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-    </form>
-  </div>
+<div class="article">
+<h3>RubyKaigi 2009</h3>
+  <table>
+  <tr>
+  <td>
+Dates: July 17 - 19 2009<br />
+Venue: Hitotsubashi Conference Hall in Chiyoda-ku, Tokyo (<a href="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E4%B8%80%E3%83%84%E6%A9%8B2%E4%B8%81%E7%9B%AE1%E7%95%AA2%E5%8F%B7&sll=37.0625,-95.677068&sspn=56.243791,87.802734&ie=UTF8&z=17&iwloc=addr">Map</a>)<br />
+Fee: 6,000 JPY (3 days pass)
+  </td>
+  <td class="paypal_form">
+    <%= render_paypal_buynow_form(configatron.paypal.hosted_button_id.rubykaigi2009.conference, :rubykaigi2009) %>
+  </td>
+  </tr>
+  </table>
 </div>
+
+<div class="article">
+<h3>RubyKaigi 2009 Party</h3>
+  <table>
+  <tr>
+  <td>
+Date: Jul 17 2009, Open 19:00, Start 19:30(Planned)<br />
+Venue: Kizan Club(<a href="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E4%B8%80%E3%83%84%E6%A9%8B2%E2%80%906%E2%80%902&sll=37.0625,-95.677068&sspn=49.978077,77.34375&ie=UTF8&z=17&iwloc=A">Map</a>)<br />
+Fee: 5,000 JPY<br />
+  </td>
+  <td class="paypal_form">
+    <%= render_paypal_buynow_form(configatron.paypal.hosted_button_id.rubykaigi2009.party, :rubykaigi2009party) %>
+  </td>
+  </tr>
+  </table>
+</div>
+</div><!-- item -->
