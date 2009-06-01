@@ -22,11 +22,16 @@
   <div class="item">
     <h2>Powerd by</h2>
     <ul>
-      <li>Ruby <%= RUBY_VERSION %></li>
-      <li>Rails <%= Rails::VERSION::STRING %></li>
+      <li><%= link_to("Ruby #{RUBY_VERSION}", 'http://www.ruby-lang.org/') %></li>
+      <li><%= link_to("Rails #{Rails::VERSION::STRING}", 'http://rubyonrails.org/') %></li>
     </ul>
   </div>
-
-  <div id="contact">Feel free to contact us via e-mail to: 2009 at rubykaigi dot org.</div>
+  
+  <div class="item">
+    <h2>Contact</h2>
+    <ul>
+      <li>Feel free to contact us via e-mail to: 2009 at rubykaigi dot org.</li>
+    </ul>
+  </div>
 </div><!-- footer -->
 
