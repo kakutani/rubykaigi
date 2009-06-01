@@ -15,10 +15,10 @@
   <body>
     <div id="container">
       <%= render_flash_messages %>
-      <div id="header">
-        <%= render :partial => "shared/header_image" %>
-      </div>
       <div id="content">
+        <div id="header">
+          <%= render :partial => "shared/header_image" %>
+        </div>
 
 <%= yield %>
 
