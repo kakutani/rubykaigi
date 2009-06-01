@@ -1,0 +1,10 @@
+<% if @headline_entries -%>
+  <h3><%= link_to 'RubyKaigi日記', 'http://rubykaigi.tdiary.net/' %></h3>
+  <ul>
+    <% @headline_entries.each do |he|-%>
+      <li>
+      <%= link_to h(he.title), he.link %> (<%=h time_ago_in_words(he.time) %><%= t(:ago) %>)
+      </li>
+    <% end -%>
+  </ul>
+<% end -%>
