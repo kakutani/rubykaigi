@@ -30,8 +30,8 @@
           <dt><%=t :rubykaigi2009 %> [ <a href="/2009/ja">ja</a> | <a href="/2009/en">en</a> ]</dt>
           <dd>
             <ul>
-              <li><%=t :tickets %></li>
-              <li><%=t :sponsors %></li>
+              <li><%= link_to(t(:tickets), "/2009/#{I18n.locale}/registrations") %></li>
+              <li><%= link_to(t(:sponsors), "/2009/#{I18n.locale}/Sponsors") %></li>
             </ul>
           </dd>
         </dl><!-- navigation -->
