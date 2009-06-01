@@ -5,12 +5,12 @@
       <a href="/2009/en">English</a> | <a href="/2009/ja">日本語</a></dt>
     <dd>
       <ul>
-        <li><%= link_to(t(:tickets), "/2009/#{I18n.locale}/registrations") %></li>
+        <li><%= link_to_if(controller.registration_open?, t(:tickets), "/2009/#{I18n.locale}/registrations") %></li>
         <!-- <li><%= link_to(t(:sponsors), "/2009/#{I18n.locale}/Sponsors") %></li> -->
       </ul>
     </dd>
   </dl><!-- navigation -->
-  
+
   <!-- <dl id="sponsors">
     <dt>Ruby <%=t :sponsors %></dt>
     <dd>
@@ -20,7 +20,7 @@
         <li><%= link_to(image_tag('sponsors/ricoh.png', :alt => '株式会社リコー'), "http://www.ricoh.co.jp/") %></li>
       </ul>
     </dd>
-    
+
     <dt>Platinum <%=t :sponsors %></dt>
     <dd>
       <ul>
@@ -32,7 +32,7 @@
         <li><%= link_to(image_tag('sponsors/web-career.png', :alt => '株式会社ウェブキャリア'), "http://www.web-career.com/") %></li>
       </ul>
     </dd>
-    
+
     <dt>Gold <%=t :sponsors %></dt>
     <dd>
       <ul>
