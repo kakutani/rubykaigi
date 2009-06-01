@@ -225,3 +225,10 @@ img.logo {
   color: #aaa;
 }
 
+div.soldout_notice {
+  padding:10px;
+  background-color:#fff;
+  color:#f00;
+  border: 1px solid #aaa;
+  font-weight:bold;
+}

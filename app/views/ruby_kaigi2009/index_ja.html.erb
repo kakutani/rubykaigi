@@ -49,6 +49,10 @@
 
 <div class="item">
   <h2><%= link_to_if controller.registration_open?, '参加登録について', registrations_path(:year => '2009', :locale => 'ja') %></h2>
+  <div class="soldout_notice"
+>RubyKaigi2009本編のチケットは予定販売枚数を終了しました。<br/>現在、追加販売について検討中です。詳細は決まり次第、<a href="http://rubykaigi.tdiary.net/">RubyKaigi日記</a>および本サイトにて告知します。
+
+  </div>
   <p>RubyKaigi2009への参加にあたっては、事前にチケットの購入が必要です。チケットは6月1日(月) 19:00(JST)から<%= link_to_if controller.registration_open?, '販売', registrations_path(:year => '2009', :locale => 'ja') %>します。決済にはpaypal.comを利用します。</p>
   <p>懇親会についても同様です。</p>
 </div>
