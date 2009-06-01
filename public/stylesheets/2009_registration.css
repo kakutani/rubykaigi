@@ -1,0 +1,36 @@
+div.registration {
+  margin-bottom: 3em;
+  float: clear;
+}
+
+div.registration h3 {
+  font-size: 32px;
+  margin-bottom: 3px;
+}
+
+div.sold_out {
+  border: 1px solid #ccc;
+  padding: 6px;
+  margin: 1em;
+  color: #c00;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+td.paypal_form {
+	padding: 20px;
+}
+
+div.student_discount {
+  margin-top:1em;
+  font-size: 80%;
+}
+
+div.item ul {
+  margin-left: 0em;
+  padding-left: 10px;
+}
+
+div.item ul li {
+  margin-left: 1em;
+}

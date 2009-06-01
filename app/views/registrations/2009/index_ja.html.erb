@@ -1,25 +1,57 @@
 <%# coding: utf-8 -%>
+<% content_for :css do -%>
+<%= stylesheet_link_tag '2009_registration' %>
+<% end -%>
 <div class="item">
-  <h2>RubyKaigi2009への参加登録</h2>
-  <div class="article">
-    <h3>RubyKaigi 2009</h3>
-    <form action="<%= configatron.paypal.base_url %>/cgi-bin/webscr" method="post">
-      <input type="hidden" name="cmd" value="_s-xclick">
-      <input type="hidden" name="hosted_button_id" value="<%= configatron.paypal.hosted_button_id.rubykaigi2009.conference %>">
-      <input type="hidden" name="charset" value="utf-8">
-      <input type="hidden" name="lc" value="JP">
-      <input type="image" src="https://www.sandbox.paypal.com/ja_JP/JP/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - オンラインで安全・簡単にお支払い">
-      <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-    </form>
+<h2>RubyKaigi2009への参加登録</h2>
+<p>RubyKaigi2009へ参加するには、事前にチケットの購入が必要です。:
+<ul>
+<li>「Buy Now」ボタンを押すとPayPalに遷移します。決済はPayPalで行ってください。決済にあたり、PayPalアカウントを作成する<a href="http://img.skitch.com/20090601-c8mke2267r6hjs9kcf94y9wxyi.png" target="_blank">必要はありません。</a></li>
+<li>会場での認証のために、rubykaigi.orgで購入者の<strong>姓名とメールアドレスを保存します</strong>。ご協力をよろしくお願いします。保存した個人情報はRubyKaigi2009会期終了後に破棄します。</li>
+<li>決済完了後、<strong>Transaction IDの記されたExchange Ticketの画面を印刷して会場までお持ちください</strong>。会場での認証に使います。</li>
+<li>チケット購入に関するお問い合わせは paypal at rubykaigi dor org までメールにてお問い合わせください。</li>
+</ul>
+</p>
 
-    <h3>RubyKaigi 2009 懇親会</h3>
-    <form action="<%= configatron.paypal.base_url %>/cgi-bin/webscr" method="post">
-      <input type="hidden" name="cmd" value="_s-xclick">
-      <input type="hidden" name="hosted_button_id" value="<%= configatron.paypal.hosted_button_id.rubykaigi2009.party %>">
-      <input type="hidden" name="charset" value="utf-8">
-      <input type="hidden" name="lc" value="JP">
-      <input type="image" src="https://www.sandbox.paypal.com/ja_JP/JP/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - オンラインで安全・簡単にお支払い">
-      <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-    </form>
-  </div>
+<div class="article">
+<h3>RubyKaigi 2009</h3>
+  <table>
+  <tr>
+  <td>
+会期: 2009.07.17(金)〜07.19(日)<br />
+会場: <a href="http://www.zam.go.jp/e00/e0000800.htm">学術総合センター</a>(東京都千代田区)<br />
+料金: 6,000円(税込)<br />
+3日通し券です。日割による払い戻しはいたしかねます。
+  </td>
+  <td class="paypal_form">
+    <%= render_paypal_buynow_form(configatron.paypal.hosted_button_id.rubykaigi2009.conference, :rubykaigi2009) %>
+  </td>
+  </tr>
+  </table>
+<div class="student_discount"><h4>学生割引について</h4>
+<p>数に限りはありますが、今年のRubyKaigiでは学割を用意します。学割の適用対象者の皆さんには、3,000円を会期中に会場でキャッシュバックします。PayPalの支払い確認の画面にある<a href="http://img.skitch.com/20090601-tufg3gcbwsh7uaj4whuhwiq3fe.png" target="_blank">「Add special instractions to seller:」をクリック</a>して、テキストボックスに<a href="http://img.skitch.com/20090601-gspsa36qcwj6x4dp2br4mq2ar4.png" target="_blank">学生である旨を入力</a>のうえ、通常の購入手続きを済ませてください。学生割引の可否については、追って日本Ruby会議2009実行委員会から連絡いたします。
+</p>
 </div>
+
+</div>
+
+<div class="article">
+<h3>RubyKaigi 2009 懇親会</h3>
+  <table>
+  <tr>
+  <td>
+日時: 2009.07.17(金)19:00開場、19:30開宴<br />
+会場: <a href="http://r.gnavi.co.jp/a380002/">喜山倶楽部</a>(日本教育会館内,東京都千代田区)<br />
+料金: 5,000円(税込)<br />
+開場・開宴時刻については予定時刻です。
+  </td>
+  <td class="paypal_form">
+    <%= render_paypal_buynow_form(configatron.paypal.hosted_button_id.rubykaigi2009.party, :rubykaigi2009party) %>
+  </td>
+  </tr>
+  </table>
+<div class="student_discount"><h4>学生割引について</h4>
+<p>懇親会の学生割引はありません。</p>
+</div>
+</div>
+</div><!-- item -->

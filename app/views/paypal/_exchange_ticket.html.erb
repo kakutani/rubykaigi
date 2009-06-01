@@ -1,0 +1,56 @@
+<% content_for :inline_css do -%>
+<style type="text/css" rel="stylesheet" media="screen">
+h3 {
+  margin-bottom: 2em;
+}
+h4 {
+  margin-bottom: 1em;
+}
+
+table.exchange_ticket {
+  font-size: 18px;
+}
+
+table.exchange_ticket tr {
+  margin-bottom: 5px;
+}
+
+table.exchange_ticket th, table.exchange_ticket td {
+  padding: 4px;
+}
+
+table.exchange_ticket th {
+  font-weight: normal;
+  padding-left: 12px;
+}
+
+table.exchange_ticket td {
+}
+
+hr {
+  border: 1px solid #ccc;
+}
+
+.to_verify {
+  font-size: 24px;
+  font-weight: bold;
+}
+</style>
+<style type="text/css" rel="stylesheet" media="print">
+  div#header { display: none; }
+  div#footer { display: none; }
+  div#analog { display: none; }
+  div#powerd_by { display: none; }
+</style>
+<% end -%>
+
+<h4>Exchange Ticket</h4>
+<p>Please bring a printout of this page to the venue for admission.</p>
+<table class="exchange_ticket">
+<tr><th>Item Name</th><td class="to_verify"><%=h item_number_label(@paypal) %></td></tr>
+<tr><th>Transaction ID</th><td class="to_verify"><%=h @paypal.txn_id %></td></tr>
+<tr><th>Last Name</th><td class="to_verify"><%=h @paypal.last_name %></td></tr>
+<tr><th>First Name</th><td><%=h @paypal.first_name %></td></tr>
+<tr><th>E-mail</th><td><%=h @paypal.payer_email %></td></tr>
+<tr><th>Status</th><td><%=h @paypal.verify %></td></tr>
+</table>
