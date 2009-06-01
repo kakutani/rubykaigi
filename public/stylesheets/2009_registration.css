@@ -23,14 +23,16 @@ td.paypal_form {
 
 div.student_discount {
   margin-top:1em;
+  margin-left: 0;
   font-size: 80%;
 }
 
-div.item ul {
+div.student_discount h4 {
+  padding-top: 0;
+  padding-left: 1em;
   margin-left: 0em;
-  padding-left: 10px;
 }
 
-div.item ul li {
-  margin-left: 1em;
+div.student_discount p {
+  margin-left: 2em;
 }
