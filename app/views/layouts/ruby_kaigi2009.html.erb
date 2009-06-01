@@ -18,13 +18,22 @@
       <div id="header">
         <%= render :partial => "shared/header_image" %>
         <h1><%=t :rubykaigi2009 %></h1>
-        <div id="navigation">[ <a href="/2009/ja">ja</a> | <a href="/2009/en">en</a> ]</div>
       </div>
       <div id="content">
 
 <%= yield %>
 
       </div><!-- content -->
+
+      <dl id="navigation">
+        <dt><%=t :rubykaigi2009 %> [ <a href="/2009/ja">ja</a> | <a href="/2009/en">en</a> ]</dt>
+        <dd>
+          <ul>
+            <li><%=t :tickets %></li>
+            <li><%=t :sponsors %></li>
+          </ul>
+        </dd>
+      </dl><!-- navigation -->
 
       <div id="footer">
         <div class="item">
