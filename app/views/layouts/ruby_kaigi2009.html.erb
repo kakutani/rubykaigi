@@ -5,16 +5,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><%= [@title, t("rubykaigi2009")].compact.join(" - ")  %></title>
-	<%= javascript_include_tag "jquery-1.3.2.min.js" %>
-	<%= javascript_include_tag "application.js" %>
-	<%= stylesheet_link_tag %w[application 2009] %>
-	<%= yield :css %>
-	<%= yield :inline_css %>
-	<link rel="icon" href="/favicon.ico" />
+    <%= javascript_include_tag "jquery-1.3.2.min.js" %>
+    <%= javascript_include_tag "application.js" %>
+    <%= stylesheet_link_tag %w[application 2009] %>
+    <%= yield :css %>
+    <%= yield :inline_css %>
+    <link rel="icon" href="/favicon.ico" />
   </head>
   <body>
     <div id="container">
-	  <%= render_flash_messages %>
+      <%= render_flash_messages %>
       <div id="header">
         <%= render :partial => "shared/header_image" %>
         <h1><%=t :rubykaigi2009 %></h1>
@@ -48,11 +48,12 @@
         </div>
       </div><!-- footer -->
     </div><!-- container -->
-Feel free to contact us via e-mail to: 2009 at rubykaigi dot org.
-<div id="powerd_by">
-  <ul> Ruby <%= RUBY_VERSION %> </ul>
-  <ul> Rails <%= Rails::VERSION::STRING %> </ul>
-</div>
+
+    Feel free to contact us via e-mail to: 2009 at rubykaigi dot org.
+    <div id="powerd_by">
+      <ul> Ruby <%= RUBY_VERSION %> </ul>
+      <ul> Rails <%= Rails::VERSION::STRING %> </ul>
+    </div>
 
     <%= render :partial => "shared/analog_ruby" %>
     <%= render :partial => "shared/google_analytics" %>
