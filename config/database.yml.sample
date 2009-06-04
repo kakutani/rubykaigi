@@ -2,7 +2,7 @@ development:
   adapter: mysql
   encoding: utf8
   database: rubykaigi_development
-  user: root
+  username: root
   password:
   pool: 5
   timeout: 5000
@@ -12,7 +12,7 @@ test:
   adapter: mysql
   encoding: utf8
   database: rubykaigi_test
-  user: root
+  username: root
   password:
   pool: 5
   timeout: 5000
@@ -22,7 +22,7 @@ production:
   adapter: mysql
   encoding: utf8
   database: rubykaigi
-  user: rubykaigi
+  username: rubykaigi
   password:
   pool: 5
   timeout: 5000
