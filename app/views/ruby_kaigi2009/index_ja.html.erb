@@ -19,9 +19,11 @@
     <li>会場: <a href="http://www.zam.go.jp/e00/e0000800.htm">学術総合センター</a>（東京都千代田区）<a href="http://maps.google.co.jp/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E4%B8%80%E3%83%84%E6%A9%8B2%E4%B8%81%E7%9B%AE1%E7%95%AA2%E5%8F%B7&amp;lr=lang_ja&amp;oe=utf-8&amp;client=firefox&amp;ie=UTF8&amp;split=0&amp;gl=jp&amp;ei=IEGOScu3EtXFkAWLl9zLDA&amp;z=16&amp;iwloc=addr">地図</a></li>
     <li>料金: 6,000円
       <ul>
-        <li>3日間の通し券です。</li>
-        <li>チケットは6月1日(月) 19:00(JST)から本サイトにて<%= link_to_if controller.registration_open?, '販売', registrations_path(:year => '2009', :locale => 'ja') %>します。</li>
-        <li>決済にはPayPalを利用します。
+        <li>3日間の通し券です(日割はいたしかねます)。</li>
+        <li>決済には<a href="http://paypal.com/">PayPal</a>を利用しますが、購入にあたりPayPalアカウントの用意は必須ではありません。</li>
+        <li>チケットは6月1日(月) 19:00(JST)から本サイトにて<%= link_to_if controller.registration_open?, '販売', registrations_path(:year => '2009', :locale => 'ja') %>しましたが、2時間弱で予定販売枚数を終了しました。</li>
+        <li>追加販売については、決定しだい本サイトならびに<a href="http://rubykaigi.tdiary.net/">RubyKaigi日記</a>にてアナウンスします。</li>
+
       </ul>
     </li>
     <li>公式タグ: rubykaigi2009</li>
