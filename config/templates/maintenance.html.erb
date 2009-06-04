@@ -38,10 +38,11 @@
      <div class="DialogBody" style="text-align: center;">
        <div style="text-align: center; width: 480px; margin: 0 auto;">
          <p style="color: red; font-size: 16px; line-height: 20px;">
-           rubykaigi.org is down for maintenance.
+           rubykaigi.org is down for <%= reason ? reason : "maintenance" %>
+           as of <%= Time.now.strftime("%H:%M %Z") %>.
          </p>
          <p style="color: #666;">
-           We'll be back shortly.
+           We'll be back <%= deadline ? deadline : "shortly" %>.
          </p>
        </div>
        <div><img src="/images/kaigi2009-flame-medium.png" width="300" height="400" /></div>

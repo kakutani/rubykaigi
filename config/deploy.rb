@@ -42,32 +42,30 @@ namespace :deploy do
     setup_shared("db", "production.sqlite3")
   end
 
-  task :start do
+  task :start, :roles => :app do
+  end
+
+  desc "Restart Passenger"
+  task :restart do
     run "touch #{latest_release}/tmp/restart.txt"
   end
 
-  desc "resart our application"
-  task :restart do
-    start
-  end
-
-  task :stop do
-  end
-end
-
-namespace :passenger do
-  desc "Restart Passenger"
-  task :restart, :roles => :app do
-    run "touch #{current_path}/tmp/restart.txt"
-  end
-
-  desc "Stop Passenger"
   task :stop, :roles => :app do
-    run "touch #{current_path}/tmp/stop.txt"
   end
 
-  desc "Start (or un-stop) Passenger"
-  task :start, :roles => :app do
-    run "rm -f #{current_path}/tmp/stop.txt"
+  namespace :web do
+    desc "maintenance variable: REASON,UNTIL"
+    task :disable, :roles => :web, :except => { :no_release => true } do
+      require 'erb'
+      on_rollback { run "rm #{shared_path}/system/maintenance.html" }
+
+      reason = ENV['REASON']
+      deadline = ENV['UNTIL']
+
+      template = File.read(File.join(File.dirname(__FILE__), 'templates', 'maintenance.html.erb'))
+      result = ERB.new(template).result(binding)
+
+      put result, "#{shared_path}/system/maintenance.html", :mode => 0644
+    end
   end
 end
