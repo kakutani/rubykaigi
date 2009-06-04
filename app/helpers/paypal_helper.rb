@@ -7,4 +7,10 @@ module PaypalHelper
       "RubyKaigi2009(Party)"
     end
   end
+
+  def receipt_id_label(paypal)
+    receipt_id = paypal.receipt_id
+    return "N/A" if receipt_id.blank?
+    receipt_id
+  end
 end

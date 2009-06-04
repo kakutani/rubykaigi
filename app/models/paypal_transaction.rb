@@ -2,12 +2,13 @@ require 'paypal/ipn_verifier'
 class PaypalTransaction < ActiveRecord::Base
   validates_presence_of :txn_id, :item_number, :payer_email, :last_name, :first_name,
     :payment_status, :residence_country,:verify, :notified_json
+  validates_uniqueness_of :txn_id
 
   class << self
     def create_for_verify_later!(called_back_params)
       attrs = HashWithIndifferentAccess.new
-      [:txn_id, :item_number, :payer_email, :last_name, :first_name,
-        :payment_status, :residence_country].each do |sym|
+      [:txn_id, :receipt_id, :item_number, :payer_email, :last_name, :first_name,
+        :payment_status, :residence_country, :memo].each do |sym|
         attrs[sym] = called_back_params[sym]
       end
       attrs[:verify] = "NOTYET"
