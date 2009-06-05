@@ -6,9 +6,12 @@ module Paypal
 
     before(:all) do
       @ipn_verifier = Paypal::IPNVerifier.new
+      configatron.paypal.base_url = "https://www.sandbox.paypal.com"
     end
     # 実装のテスト
-    it { @ipn_verifier.send(:postback_host).should == "www.sandbox.paypal.com" } # productionでは www.paypal.com
+    it "ホスト名だけを返すこと" do
+      @ipn_verifier.send(:postback_host).should == "www.sandbox.paypal.com"
+    end
     it { @ipn_verifier.send(:postback_request_uri).should == "/cgi-bin/webscr" }
 
     describe "#https_postback" do
@@ -40,6 +43,20 @@ module Paypal
         subject { @ipn_verifier }
         it { should_not be_verified }
         it { should be_invalid }
+      end
+    end
+
+    describe "#postback_submit_data" do
+      context "when param(s) need escape" do
+        before do
+          stub(@ipn_verifier).postback_params do
+            {"name" => "kakutani","email" => "kakutani+ext@rubykaigi.org"}
+          end
+        end
+        subject { @ipn_verifier.send(:postback_submit_data) }
+        it "should be escaped" do
+          should == "name=kakutani&email=kakutani%2Bext%40rubykaigi.org"
+        end
       end
     end
   end

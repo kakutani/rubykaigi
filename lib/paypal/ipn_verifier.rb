@@ -5,10 +5,7 @@ module Paypal
   class IPNVerifier
     def https_postback(params)
       @params = params.dup
-      https = Net::HTTP.new(postback_host,443)
-      https.use_ssl=true
-      https_verify_mode = OpenSSL::SSL::VERIFY_PEER
-      https.start do |req|
+      https_client.start do |req|
         res = req.post(postback_request_uri,postback_submit_data)
         @postback_result = res.body
       end
@@ -36,7 +33,15 @@ module Paypal
     end
 
     def postback_submit_data
-      postback_params.map{|k,v|"#{k}=#{v}"}.join("&")
+      postback_params.map{|k,v|"#{k}=#{CGI.escape(v)}"}.join("&")
+    end
+
+    def https_client
+      client = Net::HTTP.new(postback_host,443)
+      client.use_ssl = true
+      client.verify_mode = OpenSSL::SSL::VERIFY_PEER
+      client.ca_file = File.expand_path("cacert.pem", File.join(File.dirname(__FILE__), "..", "..", "config"))
+      client
     end
   end
 end
