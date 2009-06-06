@@ -2,10 +2,18 @@ ja:
   activerecord:
     models:
       account: "アカウント"
+      lightning_talk_submission: 'ライトニングトーク応募'
 
     attributes:
       account:
         identity_url: "OpenID"
+      lightning_talk_submission:
+        name: 'お名前'
+        title: '発表タイトル'
+        abstract: '概要'
+        email: 'E-mail'
+        has_ticket: '私はRubyKaigi2009本編チケットを持っています'
+        note: '備考'
 
   rubykaigi2009: "日本Ruby会議2009"
   RubyKaigiDiary: "RubyKaigi日記"
@@ -14,3 +22,4 @@ ja:
   tickets: "チケット"
   sponsors: "スポンサー"
   ago: "前"
+  lightning_talk_submission: 'ライトニングトーク応募'

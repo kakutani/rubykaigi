@@ -1,0 +1,40 @@
+<div class="item">
+  <h2><%=t :lightning_talk_submission %></h2>
+
+  <% form_for(@lightning_talk_submission) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+    </p>
+    <p>
+    <%= f.label :organization %><br />
+    <%= f.text_field :organization %>
+    </p>
+    <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email, :size => 40 %>
+    </p>
+    <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title, :size => 60 %>
+    </p>
+    <p>
+    <%= f.label :abstract %><br />
+    <%= f.text_area :abstract, :cols => 60, :rows => 10 %>
+    </p>
+    <p>
+    <%= f.check_box :has_ticket %> <%= f.label :has_ticket %>
+    </p>
+    <p>
+    <%= f.label :note %><br />
+    <%= f.text_area :note, :cols => 60, :rows => 5 %>
+    </p>
+    <p>
+    <%= f.submit 'Create' %>
+    </p>
+  <% end %>
+
+  <p><%= link_to 'Back', lightning_talk_submissions_path %></p>
+</div>
