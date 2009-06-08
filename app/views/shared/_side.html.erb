@@ -6,6 +6,7 @@
     <dd>
       <ul>
         <li><%= link_to_if(controller.registration_open?, t(:tickets), "/2009/#{I18n.locale}/registrations") %></li>
+		<li><%= link_to t(:exchange_ticket_reissue), "/exchange_tickets" %></li>
         <!-- <li><%= link_to(t(:sponsors), "/2009/#{I18n.locale}/Sponsors") %></li> -->
       </ul>
     </dd>

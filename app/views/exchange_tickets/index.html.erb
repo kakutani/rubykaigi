@@ -23,7 +23,14 @@
 <div style="margin-bottom: 2px;"><%= t(:your_email_on_paypal) %>:</div>
 <% form_tag(reissue_exchange_tickets_path, :id => 'reissue_exchange_tickets') do -%>
   <%= text_field_tag 'email', "", :size => 30, :class => "email" %>
-  <%= submit_tag t(:reissue), :class => "submit" %>
+  <%= submit_tag t(:reissue), :class => "submit", :onclick => 'disable_button(this)'  %>
 <% end -%>
 </p>
 </div>
+<script type="text/javascript">
+function disable_button(btn) {
+  btn.disabled = true;
+  btn.value = '<%= t(:processing) %>';
+  btn.form.submit();
+};
+</script>
