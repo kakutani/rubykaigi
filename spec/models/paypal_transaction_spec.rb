@@ -13,5 +13,6 @@ describe PaypalTransaction do
     it { should be_valid }
     it { subject.verify.should == "NOTYET"}
     it { subject.notified_params.should  == @called_back }
+    it { subject.exchange_ticket.should_not be_nil }
   end
 end

@@ -1,0 +1,30 @@
+Hi,
+
+We've received your registration from paypal.com(or received your reissue requested).
+
+This is notification of your exchange ticket to <%= @ticket.item_name %>.
+To see html formatted exchange ticket, please access to rubykaigi.org :
+<%= show_exchange_ticket_url(:code4u => @ticket.code4u) %>
+
+Please bring a printout of the web page(or this email) to the venue for admission.
+Thank you for your cooperation.
+----------------------------------------------------------------------
+[Exchange Ticket]
+
+Item Name      : <%= @ticket.item_name %>
+Transaction ID : <%= @ticket.txn_id %>
+Receipt ID     : <%= @ticket.receipt_id %>
+Last Name      : <%= @ticket.last_name %>
+First Name     : <%= @ticket.first_name %>
+E-mail         : <%= @ticket.email %>
+Verify         : <%= @ticket.verify %>
+Memo           : <%= @ticket.memo %>
+----------------------------------------------------------------------
+
+If you have any question, feel free to cotact us via e-mail to 2009@rubykaigi.org.
+
+Regards,
+
+--
+RubyKaigi2009 Team
+2009@rubykaigi.org

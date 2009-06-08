@@ -23,3 +23,10 @@ ja:
   sponsors: "スポンサー"
   ago: "前"
   lightning_talk_submission: 'ライトニングトーク応募'
+  exchange_ticket_reissue: "Exchange Ticket (再発行)"
+  exchange_ticket_reissue_desc: "PayPal.comでの決済に利用したメールアドレスを入力することで、Exchange Ticketを再発行できます。再発行されたExchange Ticketは、メールで通知されます。メールには、Webで表示させるためのプライベートなURLが含まれています。"
+  your_email_on_paypal: "PayPalで決済に利用したメールアドレス"
+  reissue: "再発行"
+  processing: "処理中..."
+  reissue_mailback: "入力されたメールアドレスが正しければ、Exchange Ticketに関する情報が次のアドレス宛に送信されています: "
+  reissue_when_match_exactly: "このメールアドレスがPayPal.comでの決済に利用したアドレス以外の場合、メールは送信されません"

@@ -1,7 +1,13 @@
 <h3>Thank you for your registration.</h3>
 
-<hr />
-<%= render :partial => "exchange_ticket" %>
-<hr />
+<p>
+Your transaction id is: <%=h @notified_transaction_id %><br />
+</p>
+
+<p>
+We'll sent you Exchange Ticket information via email (used for buying ticket on paypal.com) later.<br />
+Plese check it and bring printout to the venue for admission.
+</p>
+
 
 <%= link_to 'RubyKaigi2009 Registration', "/2009/#{I18n.locale}/registrations" %>

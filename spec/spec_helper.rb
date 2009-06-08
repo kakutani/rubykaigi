@@ -5,7 +5,13 @@ require File.dirname(__FILE__) + "/../config/environment" unless defined?(RAILS_
 require 'spec/autorun'
 require 'spec/rails'
 require 'webrat'
-require File.dirname(__FILE__) + '/paypal_spec_helper'
+
+require 'email_spec/helpers'
+require 'email_spec/matchers'
+
+require 'factory_girl'
+require File.dirname(__FILE__) + '/factories/rubykaigi2009.rb'
+require File.dirname(__FILE__) + '/paypal_spec_helper.rb'
 
 Spec::Runner.configure do |config|
   # If you're not using ActiveRecord you should remove these
@@ -15,6 +21,8 @@ Spec::Runner.configure do |config|
   config.use_instantiated_fixtures  = false
   config.fixture_path = RAILS_ROOT + '/spec/fixtures/'
   config.include Webrat::Matchers, :type => :views
+  config.include EmailSpec::Helpers
+  config.include EmailSpec::Matchers
 
   # == Fixtures
   #
