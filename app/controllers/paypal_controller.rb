@@ -12,13 +12,8 @@ class PaypalController < ApplicationController
   def thanks
     if params[:tx].blank?
       redirect_to root_path
-      return
-    end
-    @paypal = PaypalTransaction.find_by_txn_id(params[:tx])
-    if !@paypal || !@paypal.validate_transaction
-      logger.error "INVALID TRANSACTION: '#{@paypal.txn_id}', #{@paypal.item_number}, #{@paypal.payment_status}, #{@paypal.verify}" if @paypal
-      render :template => "paypal/txn_id_was_not_verified"
-      return
+    else
+      @notified_transaction_id = params[:tx]
     end
   end
 
@@ -30,9 +25,15 @@ class PaypalController < ApplicationController
 
   def instant_payment_notification
     begin
-      PaypalTransaction.create_for_verify_later!(params)
+      @paypal = PaypalTransaction.create_for_verify_later!(params)
+      if @paypal.validate_transaction
+        @paypal.notify_exchange_ticket_information_to_payer
+      else
+        logger.error("PaypalTransaction was invalid: '#{@paypal.txn_id}'")
+      end
       render :nothing => true, :status => 200
     rescue => e
+      logger.error("Something wrong with processing PaypalTransaction: '#{@paypal.txn_id}'")
       logger.error(e)
       render :nothing => true, :status => 500
     end

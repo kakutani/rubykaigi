@@ -28,3 +28,4 @@ config.gem "webrat", :lib => false
 config.gem "nokogiri", :lib => false
 config.gem "thoughtbot-factory_girl", :lib => 'factory_girl', :source => 'http://gems.github.com'
 config.gem "rr", :lib => false
+config.gem 'bmabey-email_spec', :lib => 'email_spec'

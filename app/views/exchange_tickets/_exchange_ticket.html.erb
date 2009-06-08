@@ -32,6 +32,8 @@ table.exchange_ticket th, table.exchange_ticket td {
 }
 
 table.exchange_ticket th {
+  padding-right: 30px;
+  text-align: right;
   font-weight: normal;
   padding-left: 12px;
 }
@@ -60,10 +62,12 @@ hr {
 <h4>Exchange Ticket</h4>
 <p>Please bring a printout of this page to the venue for admission.</p>
 <table class="exchange_ticket">
-<tr><th>Item Name</th><td class="to_verify"><%=h item_number_label(@paypal) %></td></tr>
-<tr><th>Transaction ID</th><td class="to_verify"><%=h @paypal.txn_id %></td></tr>
-<tr><th>Receipt ID</th><td class="to_verify"><%=h receipt_id_label(@paypal) %></td></tr>
-<tr><th>Last Name</th><td class="to_verify"><%=h @paypal.last_name %></td></tr>
-<tr><th>First Name</th><td><%=h @paypal.first_name %></td></tr>
-<tr><th>E-mail</th><td><%=h @paypal.payer_email %></td></tr>
+<tr><th>Item Name</th><td class="to_verify"><%=h @ticket.item_name %></td></tr>
+<tr><th>Transaction ID</th><td class="to_verify"><%=h @ticket.txn_id %></td></tr>
+<tr><th>Receipt ID</th><td class="to_verify"><%=h @ticket.receipt_id %></td></tr>
+<tr><th>Last Name</th><td class="to_verify"><%=h @ticket.last_name %></td></tr>
+<tr><th>First Name</th><td><%=h @ticket.first_name %></td></tr>
+<tr><th>E-mail</th><td><%=h @ticket.email %></td></tr>
+<tr><th>Verify</th><td><%=h @ticket.verify %></td></tr>
+<tr><th>Memo</th><td><%=h @ticket.memo %></td></tr>
 </table>

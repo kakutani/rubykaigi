@@ -22,3 +22,15 @@ config.action_controller.perform_caching             = true
 
 # Disable delivery errors, bad email addresses will be ignored
 # config.action_mailer.raise_delivery_errors = false
+
+config.after_initialize do
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => "rubykaigi.org",
+    :authentication => :login,
+    :user_name => configatron.gmail.user_name,
+    :password => configatron.gmail.password
+  }
+end

@@ -15,6 +15,16 @@ ActionController::Routing::Routes.draw do |map|
     pr.connect     ":year/:page_name", :requirements => {:year => /2\d{3}/}
  end
 
+  map.with_options(:controller => 'exchange_tickets') do |tickets|
+    tickets.show_exchange_ticket("/exchange_tickets/show/:code4u",
+      :action => "show",
+      :requirements => {:code4u => /\w{24}/})
+    tickets.reissue_exchange_tickets("/exchange_tickets/reissue",
+      :action => "reissue",
+      :conditions => {:method => :post})
+    tickets.connect "/exchange_tickets/:action", :defaults => {:action => 'index'}
+  end
+
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
   # This route can be invoked with purchase_url(:id => product.id)

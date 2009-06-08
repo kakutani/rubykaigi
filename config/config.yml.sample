@@ -18,6 +18,9 @@ development: &local
         conference: false
         party: false
     open_at: 2009-06-01 16:00:00
+  gmail:
+    user_name: gmail_user_name
+    password: gmail_password
 production:
   basic_auth:
     admin:

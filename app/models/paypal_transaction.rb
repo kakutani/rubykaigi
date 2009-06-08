@@ -1,5 +1,7 @@
 require 'paypal/ipn_verifier'
 class PaypalTransaction < ActiveRecord::Base
+  has_one :exchange_ticket
+
   validates_presence_of :txn_id, :item_number, :payer_email, :last_name, :first_name,
     :payment_status, :residence_country,:verify, :notified_json
   validates_uniqueness_of :txn_id
@@ -13,7 +15,10 @@ class PaypalTransaction < ActiveRecord::Base
       end
       attrs[:verify] = "NOTYET"
       attrs[:notified_json] = called_back_params.to_json
-      PaypalTransaction.create!(attrs)
+      attrs[:exchange_ticket] = ExchangeTicket.new
+      PaypalTransaction.transaction do
+        trans = PaypalTransaction.create!(attrs)
+      end
     end
 
   end
@@ -33,4 +38,7 @@ class PaypalTransaction < ActiveRecord::Base
     ActiveSupport::JSON.decode(notified_json)
   end
 
+  def notify_exchange_ticket_information_to_payer
+    exchange_ticket.deliver_confirmation_email
+  end
 end
