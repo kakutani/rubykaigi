@@ -14,7 +14,6 @@ en:
   tickets: "Tickets"
   sponsors: "Sponsors"
   ago: " ago"
-  lightning_talk_submission: 'Lightning Talk Submission'
   exchange_ticket_reissue: "Exchange Ticket (Reissue)"
   exchange_ticket_reissue_desc: "To reissue exchange ticket, Please enter your e-mail address (used to registration on paypal.com).
 We'll mail you back the exchange ticket information(s) (including private url)."
@@ -23,3 +22,15 @@ We'll mail you back the exchange ticket information(s) (including private url)."
   processing: "Processing..."
   reissue_mailback: "We mailed you back the exchange ticket(s) information to "
   reissue_when_match_exactly: "when the e-mail address was matched to our database exactly."
+  lightning_talk_submission: 'Lightning Talk Submission'
+  required: "Required"
+  lt:
+    name: "Name"
+    organization: "Organization"
+    email: "E-mail"
+    subject: "Talk Subject"
+    abstract: "Talk Abstract"
+    note: "Message"
+    has_ticket: "I have my own ticket for RubyKaigi2009 Conference."
+    are_you_sure: "Are you sure to submit talk?"
+    submit: "Submit your talk"
