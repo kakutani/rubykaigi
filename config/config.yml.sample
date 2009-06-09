@@ -21,6 +21,9 @@ development: &local
   gmail:
     user_name: gmail_user_name
     password: gmail_password
+  action_mailer:
+    from: "RubyKaigi2009 <2009@rubykaigi.org>"
+    bcc: "RubyKaigi2009 <2009@rubykaigi.org>"
 production:
   basic_auth:
     admin:
