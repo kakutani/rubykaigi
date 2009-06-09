@@ -1,30 +1,27 @@
-<%# TODO 文面, このメールに覚えのない場合は...とか -%>
-<%= @submission.name %> さま
-
-Ruby会議2009ライトニングトークスへのご応募ありがとうございました。
-選考結果は後ほどお送りします。
-
-
-Dear <%= @submission.name %>,
+Hi, this is an Auto Response to your submission.
 
 Thank you for your submission to Rubykaigi2009 Lightning Talks.
-The result of selection will be sent later. <%# TODO いつ %>
-
---
+----------------------------------------------------------------------
 Name: <%= @submission.name %>
 Organization: <%= @submission.organization %>
 Email: <%= @submission.email %>
 <% if @submission.has_ticket? -%>
-I have my own RubyKaigi2009 conference ticket.
+'I have my own RubyKaigi2009 conference ticket.'
 <% else -%>
-I don't have my RubyKaigi2009 conference ticket.
+'I don't have my RubyKaigi2009 conference ticket.'
 <% end -%>
 
 Title:
 <%= @submission.title %>
+
 Abstract:
 <%= @submission.abstract %>
+----------------------------------------------------------------------
+We'll e-mail you back to notify your submission is
+accepted or rejected until June XX 2009.
+<%# いつまで? %>
 
+Regards,
 --
-RubyKaigi2009
-2009 at rubykaigi dot org
+RubyKaigi2009 Team
+2009@rubykaigi.org

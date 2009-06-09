@@ -7,6 +7,15 @@ en:
       account:
         identity_url: "OpenID"
 
+      lightning_talk_submission:
+        name: 'Name'
+        title: 'Title of your talk'
+        abstract: 'Abstract of your talk'
+        email: 'E-mail'
+        has_ticket: 'I have my own ticket for RubyKaigi2009 Conference.'
+        note: 'Message'
+        organization: "Organization"
+
   rubykaigi2009: "RubyKaigi2009"
   RubyKaigiDiary: "RubyKaigi Diary"
   NihonRubynoKai: "Nihon Ruby-no-Kai"
@@ -25,12 +34,5 @@ We'll mail you back the exchange ticket information(s) (including private url)."
   lightning_talk_submission: 'Lightning Talk Submission'
   required: "Required"
   lt:
-    name: "Name"
-    organization: "Organization"
-    email: "E-mail"
-    subject: "Talk Subject"
-    abstract: "Talk Abstract"
-    note: "Message"
-    has_ticket: "I have my own ticket for RubyKaigi2009 Conference."
     are_you_sure: "Are you sure to submit talk?"
     submit: "Submit your talk"

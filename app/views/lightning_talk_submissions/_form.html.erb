@@ -1,0 +1,49 @@
+<% content_for :inline_css do -%>
+<style type="text/css" rel="stylesheet" media="screen">
+  form#new_lightning_talk_submission {
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+
+  form#new_lightning_talk_submission input.email {
+    font-size: 22px;
+  }
+
+  input.submit {
+    font-size: 22px;
+  }
+</style>
+<% end -%>
+<% form_for(@lightning_talk_submission, :url => {:action => 'create'}) do |f| %>
+  <%= f.error_messages %>
+  <p>
+  <%= f.label :name, t_required('activerecord.attributes.lightning_talk_submission.name') %><br />
+  <%= f.text_field :name, :size => 60 %>
+  </p>
+  <p>
+  <%= f.label :organization, t('activerecord.attributes.lightning_talk_submission.organization') %><br />
+  <%= f.text_field :organization, :size => 60 %>
+  </p>
+  <p>
+  <%= f.label :email, t_required('activerecord.attributes.lightning_talk_submission.email') %><br />
+  <%= f.text_field :email, :size => 60 %>
+  </p>
+  <p>
+  <%= f.label :title, t_required('activerecord.attributes.lightning_talk_submission.title') %><br />
+  <%= f.text_field :title, :size => 60 %>
+  </p>
+  <p>
+  <%= f.label :abstract, t_required('activerecord.attributes.lightning_talk_submission.abstract') %><br />
+  <%= f.text_area :abstract, :cols => 60, :rows => 10 %>
+  </p>
+  <p>
+  <%= f.label :note, t('activerecord.attributes.lightning_talk_submission.note') %><br />
+  <%= f.text_area :note, :cols => 60, :rows => 3 %>
+  </p>
+  <p>
+  <%= f.check_box :has_ticket %> <%= f.label :has_ticket, t('lt.has_ticket') %>
+  </p>
+  <p>
+  <%= f.submit t('lt.submit'), :class => 'submit', :confirm => t('lt.are_you_sure') %>
+  </p>
+<% end %>

@@ -1,38 +1,5 @@
 <div class="item">
   <h2><%=t :lightning_talk_submission %></h2>
   <p>English description goes here. <%# TODO %></p>
-  <% form_for(@lightning_talk_submission, :url => {:action => 'create'}) do |f| %>
-    <%= f.error_messages %>
-
-    <p>
-    <%= f.label :name, 'Name (required)' %><br />
-    <%= f.text_field :name %>
-    </p>
-    <p>
-    <%= f.label :organization, 'Organization' %><br />
-    <%= f.text_field :organization %>
-    </p>
-    <p>
-    <%= f.label :email, 'E-mail (required)' %><br />
-    <%= f.text_field :email, :size => 40 %>
-    </p>
-    <p>
-    <%= f.label :title, 'Subject (required)' %><br />
-    <%= f.text_field :title, :size => 60 %>
-    </p>
-    <p>
-    <%= f.label :abstract, 'Abstract (required)' %><br />
-    <%= f.text_area :abstract, :cols => 60, :rows => 10 %>
-    </p>
-    <p>
-    <%= f.label :note, 'Message' %><br />
-    <%= f.text_area :note, :cols => 60, :rows => 5 %>
-    </p>
-    <p>
-    <%= f.check_box :has_ticket %> <%= f.label :has_ticket, 'I have my own ticket for RubyKaigi2009 Conference.' %>
-    </p>
-    <p>
-    <%= f.submit 'Submit', :confirm => 'Are you sure?' %>
-    </p>
-  <% end %>
+  <%= render :partial => "form" %>
 </div>

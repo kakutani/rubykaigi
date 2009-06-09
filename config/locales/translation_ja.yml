@@ -3,17 +3,44 @@ ja:
     models:
       account: "アカウント"
       lightning_talk_submission: 'ライトニングトーク応募'
+      exchange_ticket: "交換券"  #g
+      headline_entry: "見出し項目"  #g
+      paypal_transaction: "PayPalのトランザクション"  #g
 
     attributes:
       account:
         identity_url: "OpenID"
+
       lightning_talk_submission:
         name: 'お名前'
-        title: '発表タイトル'
-        abstract: '概要'
+        title: 'トークのタイトル'
+        abstract: 'トークの概要'
         email: 'E-mail'
         has_ticket: '私はRubyKaigi2009本編チケットを持っています'
-        note: '備考'
+        note: 'ひとこと'
+        organization: "ご所属"
+
+      exchange_ticket:
+        code4u: "Code4u"  #g
+        paypal_transaction: "PayPalのトランザクション"  #g
+
+      headline_entry:
+        title: "タイトル"  #g
+        time: "時間"  #g
+        link: "リンク"  #g
+        content: "内容"  #g
+
+      paypal_transaction:
+        item_number: "アイテムコード"  #g
+        payer_email: "パイヤーメール"  #g
+        last_name: "姓"  #g
+        first_name: "名前"  #g
+        payment_status: "支払状況"  #g
+        residence_country: "居住国"  #g
+        verify: "検証"  #g
+        notified_json: "JSONを通知"  #g
+        memo: "メモ"  #g
+        exchange_ticket: "交換券"  #g
 
   rubykaigi2009: "日本Ruby会議2009"
   RubyKaigiDiary: "RubyKaigi日記"
@@ -32,12 +59,5 @@ ja:
   lightning_talk_submission: 'ライトニングトーク応募'
   required: "必須"
   lt:
-    name: "お名前"
-    organization: "ご所属"
-    email: "メールアドレス"
-    subject: "トークのタイトル"
-    abstract: "トークの概要"
-    note: "ひとこと"
-    has_ticket: "私はRubyKaigi2009本編のチケットを持っています。"
     are_you_sure: "確認です。この内容でライトニングトークに応募しますか？"
     submit: "このトークを応募する"

@@ -35,3 +35,7 @@
   background: #cbf285;
   border: 1px solid #3cab09;
 }
+
+span.required {
+  color: #c00;
+}

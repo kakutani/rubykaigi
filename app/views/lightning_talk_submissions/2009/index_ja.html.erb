@@ -1,38 +1,5 @@
 <div class="item">
   <h2><%=t :lightning_talk_submission %></h2>
   <p>日本語の説明はここに書く<%# TODO %></p>
-  <% form_for(@lightning_talk_submission, :url => {:action => 'create'}) do |f| %>
-    <%= f.error_messages %>
-
-    <p>
-    <%= f.label :name, 'お名前(必須)' %><br />
-    <%= f.text_field :name %>
-    </p>
-    <p>
-    <%= f.label :organization, '所属' %><br />
-    <%= f.text_field :organization %>
-    </p>
-    <p>
-    <%= f.label :email, 'E-mail(必須)' %><br />
-    <%= f.text_field :email, :size => 40 %>
-    </p>
-    <p>
-    <%= f.label :title, '発表タイトル(必須)' %><br />
-    <%= f.text_field :title, :size => 60 %>
-    </p>
-    <p>
-    <%= f.label :abstract, '概要(必須)' %><br />
-    <%= f.text_area :abstract, :cols => 60, :rows => 10 %>
-    </p>
-    <p>
-    <%= f.label :note, '備考/メッセージ' %><br />
-    <%= f.text_area :note, :cols => 60, :rows => 5 %>
-    </p>
-    <p>
-    <%= f.check_box :has_ticket %> <%= f.label :has_ticket, '私はRubyKaigi2009本編チケットを持っています' %>
-    </p>
-    <p>
-    <%= f.submit '投稿する', :confirm => '投稿してよろしいですか？' %>
-    </p>
-  <% end %>
+  <%= render :partial => "form" %>
 </div>

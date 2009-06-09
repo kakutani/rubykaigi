@@ -7,4 +7,9 @@ module ApplicationHelper
   def registration_open?(now = Time.now)
     registration_open_at <= now
   end
+
+  # TODO support :scope
+  def t_required(locale_name)
+    "#{t(locale_name)}&nbsp;<span class='required'>(#{t(:required)})</span>"
+  end
 end
