@@ -10,6 +10,13 @@
         <!-- <li><%= link_to(t(:sponsors), "/2009/#{I18n.locale}/Sponsors") %></li> -->
       </ul>
     </dd>
+    <% if I18n.locale == "ja" -%>
+    <dd>
+      <ul>
+        <li><%= link_to '取材をご希望の方へ', "/2009/ja/Press" %></li>
+      </ul>
+    </dd>
+    <% end -%>
   </dl><!-- navigation -->
 
   <!-- <dl id="sponsors">
