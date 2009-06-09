@@ -15,7 +15,7 @@ en:
         has_ticket: 'I have my own ticket for RubyKaigi2009 Conference.'
         note: 'Message'
         organization: "Organization"
-        the_birthstone_of_july: 'The birthstone of July'
+        the_birthstone_of_july: 'The birthstone of July is:'
 
   rubykaigi2009: "RubyKaigi2009"
   RubyKaigiDiary: "RubyKaigi Diary"
@@ -38,3 +38,4 @@ We'll mail you back the exchange ticket information(s) (including private url)."
     are_you_sure: "Are you sure to submit talk?"
     submit: "Submit your talk"
     is_ruby: "is 'ruby'"
+    select_to_avoid_spam: "Please select to avoid spam."
