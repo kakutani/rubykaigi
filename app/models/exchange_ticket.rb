@@ -22,7 +22,7 @@ class ExchangeTicket < ActiveRecord::Base
     unless (recepit_id_label = paypal_transaction.receipt_id).blank?
       recepit_id_label
     else
-      "N/A"
+      "---"
     end
   end
 
