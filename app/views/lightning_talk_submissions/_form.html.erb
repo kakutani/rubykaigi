@@ -44,6 +44,10 @@
   <%= f.check_box :has_ticket %> <%= f.label :has_ticket, t('activerecord.attributes.lightning_talk_submission.has_ticket') %>
   </p>
   <p>
+  <%= f.label :the_birthstone_of_july, t('activerecord.attributes.lightning_talk_submission.the_birthstone_of_july') %>
+  <%= f.select :the_birthstone_of_july, ['pearl', 'ruby', 'diamond'] %>
+  </p>
+  <p>
   <%= f.submit t('lt.submit'), :class => 'submit', :confirm => t('lt.are_you_sure') %>
   </p>
 <% end %>

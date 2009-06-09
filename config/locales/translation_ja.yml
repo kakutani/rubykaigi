@@ -19,6 +19,7 @@ ja:
         has_ticket: '私はRubyKaigi2009本編チケットを持っています'
         note: 'ひとこと'
         organization: "ご所属"
+        the_birthstone_of_july: "7月の誕生石"
 
       exchange_ticket:
         code4u: "Code4u"  #g
@@ -61,3 +62,4 @@ ja:
   lt:
     are_you_sure: "確認です。この内容でライトニングトークに応募しますか？"
     submit: "このトークを応募する"
+    is_ruby: "はrubyです"
