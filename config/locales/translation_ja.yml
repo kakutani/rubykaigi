@@ -47,7 +47,7 @@ ja:
   RubyKaigiDiary: "RubyKaigi日記"
   NihonRubynoKai: "日本Rubyの会"
   signin: "サインイン"
-  tickets: "チケット"
+  registration: "参加登録"
   sponsors: "スポンサー"
   ago: "前"
   exchange_ticket_reissue: "Exchange Ticket (再発行)"
@@ -57,7 +57,7 @@ ja:
   processing: "処理中..."
   reissue_mailback: "入力されたメールアドレスが正しければ、Exchange Ticketに関する情報が次のアドレス宛に送信されています: "
   reissue_when_match_exactly: "このメールアドレスがPayPal.comでの決済に利用したアドレス以外の場合、メールは送信されません"
-  lightning_talk_submission: 'ライトニングトーク応募'
+  lightning_talk_submission: 'ライトニングトークスへの応募'
   required: "必須"
   lt:
     are_you_sure: "確認です。この内容でライトニングトークに応募しますか？"
