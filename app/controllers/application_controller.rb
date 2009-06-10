@@ -37,4 +37,12 @@ class ApplicationController < ActionController::Base
   def registration_open?(now = Time.now)
     registration_open_at <= now
   end
+
+  def lt_submission_close_at
+    Time.parse(configatron.lt_submission.close_at)
+  end
+
+  def lt_submission_open?(now = Time.now)
+    lt_submission_close_at >= now
+  end
 end
