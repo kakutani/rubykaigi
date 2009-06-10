@@ -65,6 +65,6 @@ describe ExchangeTicket, "#receipt_id" do
       @ticket.paypal_transaction = @paypal
     end
     subject { @ticket.receipt_id }
-    it { should == "N/A" }
+    it { should == "---" }
   end
 end
