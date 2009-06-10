@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyText
+  organization: MyText
+  email: MyText
+  title: MyText
+  abstract: MyText
+  has_ticket: 
+  note: MyText
+
+two:
+  name: MyText
+  organization: MyText
+  email: MyText
+  title: MyText
+  abstract: MyText
+  has_ticket: 
+  note: MyText

@@ -52,3 +52,10 @@
 </div>
   <p><%= link_to_if controller.registration_open?, 'Registration', registrations_path(:year => '2009', :locale => 'en') %> will be open on <strong>2009-06-17 12:30 JST</strong>.</p>
 </div>
+
+<div class="item">
+  <h2><%= link_to_if controller.lt_submission_open?, 'Call For Lightning Talk(LT) Presenters', "/2009/#{I18n.locale}/lightning_talk_submissions" %></h2>
+
+  <p>RubyKaigi2009 is currently accepting <%= link_to_if controller.lt_submission_open?, 'submissions', "/2009/#{I18n.locale}/lightning_talk_submissions" %> for Lightning Talks. We're looking for talks on a wide range of topics, from demos of Ruby applications, to your opinions about Ruby itself, and so forth. Please apply if you're interested!</p>
+
+</div>

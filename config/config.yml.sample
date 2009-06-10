@@ -21,6 +21,11 @@ development: &local
   gmail:
     user_name: gmail_user_name
     password: gmail_password
+  action_mailer:
+    from: "RubyKaigi2009 <2009@rubykaigi.org>"
+    bcc: "RubyKaigi2009 <2009@rubykaigi.org>"
+  lt_submission:
+    close_at: 2009-06-25 23:59:59
 production:
   basic_auth:
     admin:

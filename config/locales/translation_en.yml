@@ -7,11 +7,21 @@ en:
       account:
         identity_url: "OpenID"
 
+      lightning_talk_submission:
+        name: 'Name'
+        title: 'Title of your talk'
+        abstract: 'Abstract of your talk'
+        email: 'E-mail'
+        has_ticket: 'I have my own ticket for RubyKaigi2009 Conference.'
+        note: 'Message'
+        organization: "Organization"
+        the_birthstone_of_july: 'The birthstone of July is:'
+
   rubykaigi2009: "RubyKaigi2009"
   RubyKaigiDiary: "RubyKaigi Diary"
   NihonRubynoKai: "Nihon Ruby-no-Kai"
   signin: "Sign in"
-  tickets: "Tickets"
+  registration: "Registration"
   sponsors: "Sponsors"
   ago: " ago"
   exchange_ticket_reissue: "Exchange Ticket (Reissue)"
@@ -22,3 +32,14 @@ We'll mail you back the exchange ticket information(s) (including private url)."
   processing: "Processing..."
   reissue_mailback: "We mailed you back the exchange ticket(s) information to "
   reissue_when_match_exactly: "when the e-mail address was matched to our database exactly."
+  lightning_talk_submission: 'Lightning Talk Submission'
+  required: "Required"
+  lt:
+    are_you_sure: "Are you sure to submit talk?"
+    submit: "Submit your talk"
+    is_ruby: "is 'ruby'"
+    select_to_avoid_spam: "Please select to avoid spam."
+    convenient_date: "Check your convenient date(s) to talk:"
+    rubykaigi2009:
+      day1: "Friday, July 17"
+      day2: "Saturday, July 18"

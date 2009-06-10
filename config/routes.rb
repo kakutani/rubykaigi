@@ -2,6 +2,10 @@ ActionController::Routing::Routes.draw do |map|
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
   # Keep in mind you can assign values other than :controller and :action
+  map.lightning_talk_submissions("/:year/:locale/lightning_talk_submissions/:action",
+    :controller => 'lightning_talk_submissions', :action => 'index',
+    :requirements => {:year => /2\d{3}/, :locale => /en|ja/ })
+
   map.registrations("/:year/:locale/registrations/:action",
     :controller => 'registrations', :action => 'index',
     :requirements => {:year => /2\d{3}/, :locale => /en|ja/ })

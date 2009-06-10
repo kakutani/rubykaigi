@@ -2,16 +2,52 @@ ja:
   activerecord:
     models:
       account: "アカウント"
+      lightning_talk_submission: 'ライトニングトーク応募'
+      exchange_ticket: "交換券"  #g
+      headline_entry: "見出し項目"  #g
+      paypal_transaction: "PayPalのトランザクション"  #g
 
     attributes:
       account:
         identity_url: "OpenID"
 
+      lightning_talk_submission:
+        name: 'お名前'
+        title: 'トークのタイトル'
+        abstract: 'トークの概要'
+        email: 'E-mail'
+        has_ticket: '私はRubyKaigi2009本編チケットを持っています'
+        note: 'ひとこと'
+        organization: "ご所属"
+        the_birthstone_of_july: "7月の誕生石は:"
+
+      exchange_ticket:
+        code4u: "Code4u"  #g
+        paypal_transaction: "PayPalのトランザクション"  #g
+
+      headline_entry:
+        title: "タイトル"  #g
+        time: "時間"  #g
+        link: "リンク"  #g
+        content: "内容"  #g
+
+      paypal_transaction:
+        item_number: "アイテムコード"  #g
+        payer_email: "パイヤーメール"  #g
+        last_name: "姓"  #g
+        first_name: "名前"  #g
+        payment_status: "支払状況"  #g
+        residence_country: "居住国"  #g
+        verify: "検証"  #g
+        notified_json: "JSONを通知"  #g
+        memo: "メモ"  #g
+        exchange_ticket: "交換券"  #g
+
   rubykaigi2009: "日本Ruby会議2009"
   RubyKaigiDiary: "RubyKaigi日記"
   NihonRubynoKai: "日本Rubyの会"
   signin: "サインイン"
-  tickets: "チケット"
+  registration: "参加登録"
   sponsors: "スポンサー"
   ago: "前"
   exchange_ticket_reissue: "Exchange Ticket (再発行)"
@@ -21,3 +57,14 @@ ja:
   processing: "処理中..."
   reissue_mailback: "入力されたメールアドレスが正しければ、Exchange Ticketに関する情報が次のアドレス宛に送信されています: "
   reissue_when_match_exactly: "このメールアドレスがPayPal.comでの決済に利用したアドレス以外の場合、メールは送信されません"
+  lightning_talk_submission: 'ライトニングトークスへの応募'
+  required: "必須"
+  lt:
+    are_you_sure: "確認です。この内容でライトニングトークに応募しますか？"
+    submit: "応募する"
+    is_ruby: " 'ruby'です"
+    select_to_avoid_spam: "SPAM避けのために選択してください。ご協力よろしくお願いします。"
+    convenient_date: "ライトニングトークの発表に参加できる日程にチェックをつけてください:"
+    rubykaigi2009:
+      day1: "7月17日(金)"
+      day2: "7月18日(土)"

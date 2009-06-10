@@ -1,0 +1,9 @@
+<div class="item">
+  <h2>List of Lightning Talk Submissions</h2>
+  <% @lightning_talk_submissions.each do |lts| %>
+    <h3><%=h lts.id %>. <%=h lts.title %></h3>
+    <p>発表者: <%=h lts.name %> (<%=h lts.organization %>)</p>
+    <p><%=h lts.abstract %></p>
+    <p><%=h lts.day1 %>, <%=h lts.day2 %></p>
+  <% end %>
+</div>
