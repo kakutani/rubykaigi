@@ -6,7 +6,9 @@ class LightningTalkSubmissionsController < LocaleBaseController
 
   # GET /lightning_talk_submissions
   def index
-    @lightning_talk_submission = LightningTalkSubmission.new
+    @lightning_talk_submission = LightningTalkSubmission.new(
+      :day1 => LightningTalkSubmission::RubyKaigi2009.day1,
+      :day2 => LightningTalkSubmission::RubyKaigi2009.day2)
     year = params[:year]
     render :template => "lightning_talk_submissions/#{year}/#{action_name}_#{params[:locale]}"
   end

@@ -39,3 +39,7 @@ We'll mail you back the exchange ticket information(s) (including private url)."
     submit: "Submit your talk"
     is_ruby: "is 'ruby'"
     select_to_avoid_spam: "Please select to avoid spam."
+    convenient_date: "Check your convenient date(s) to talk:"
+    rubykaigi2009:
+      day1: "Friday, July 17"
+      day2: "Saturday, July 18"
