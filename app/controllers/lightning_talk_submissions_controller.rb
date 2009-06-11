@@ -1,7 +1,6 @@
 class LightningTalkSubmissionsController < LocaleBaseController
   layout proc{|c| "ruby_kaigi#{c.params[:year]}" }
 
-  before_filter :basic_auth_required_by_admin, :only => :list
   before_filter :check_submission_closed, :only => :index # 書いている途中のはPOSTしてもよい
 
   # GET /lightning_talk_submissions
@@ -11,10 +10,6 @@ class LightningTalkSubmissionsController < LocaleBaseController
       :day2 => LightningTalkSubmission::RubyKaigi2009.day2)
     year = params[:year]
     render :template => "lightning_talk_submissions/#{year}/#{action_name}_#{params[:locale]}"
-  end
-
-  def list
-    @lightning_talk_submissions = LightningTalkSubmission.all
   end
 
   # POST /lightning_talk_submissions
