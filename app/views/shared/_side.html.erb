@@ -8,7 +8,7 @@
         <li><%= link_to_if(controller.registration_open?, t(:registration), "/2009/#{I18n.locale}/registrations") %></li>
 		<li><%= link_to t(:exchange_ticket_reissue), "/exchange_tickets" %></li>
     <li><%= link_to_if controller.lt_submission_open?, t(:lightning_talk_submission), "/2009/#{I18n.locale}/lightning_talk_submissions" %></li>
-        <!-- <li><%= link_to(t(:sponsors), "/2009/#{I18n.locale}/Sponsors") %></li> -->
+        <li><%= link_to(t(:sponsors), "/2009/#{I18n.locale}/Sponsors") %></li>
       </ul>
     </dd>
     <% if I18n.locale == "ja" -%>
@@ -20,7 +20,7 @@
     <% end -%>
   </dl><!-- navigation -->
 
-  <!-- <dl id="sponsors">
+  <dl id="sponsors">
     <dt>Ruby <%=t :sponsors %></dt>
     <dd>
       <ul>
@@ -57,5 +57,5 @@
         <li><%= link_to(image_tag('sponsors/waicrew.png', :alt => 'ワイクル株式会社'), "http://www.waicrew.com/") %></li>
       </ul>
     </dd>
-  </dl> --><!-- sponsors -->
+  </dl><!-- sponsors -->
 </div><!-- side -->
