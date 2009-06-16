@@ -1,13 +1,16 @@
-<h3>Thank you for your registration.</h3>
+<h3><%= t("paypal.thanks.heading") %></h3>
 
 <p>
-Your transaction id is: <%=h @notified_transaction_id %><br />
+<%= t('paypal.thanks.your_txn_id_is') %> : <%=h @notified_transaction_id %><br />
 </p>
 
 <p>
-We'll sent you Exchange Ticket information via email (used for buying ticket on paypal.com) later.<br />
-Plese check it and bring printout to the venue for admission.
+<%= t('paypal.thanks.instruction') %>
 </p>
 
+<p>
+<%= t('paypal.thanks.how_about_lightning_talk', :lt_submission => link_to(t('lightning_talk'), "/2009/#{I18n.locale}/lightning_talk_submissions")) %>
+</p>
 
+<hr />
 <%= link_to 'RubyKaigi2009 Registration', "/2009/#{I18n.locale}/registrations" %>

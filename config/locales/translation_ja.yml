@@ -57,6 +57,7 @@ ja:
   processing: "処理中..."
   reissue_mailback: "入力されたメールアドレスが正しければ、Exchange Ticketに関する情報が次のアドレス宛に送信されています: "
   reissue_when_match_exactly: "このメールアドレスがPayPal.comでの決済に利用したアドレス以外の場合、メールは送信されません"
+  lightning_talk: 'ライトニングトーク'
   lightning_talk_submission: 'ライトニングトークスへの応募'
   required: "必須"
   lt:
@@ -68,3 +69,10 @@ ja:
     rubykaigi2009:
       day1: "7月17日(金)"
       day2: "7月18日(土)"
+  paypal:
+    thanks:
+      heading: "登録ありがとうございます。"
+      your_txn_id_is: "あなたのトランザクションID"
+      instruction: "後ほど、Exchange Ticket についての情報をメールで送信します(paypal.comで決済に使ったメールアドレス宛に送信します)。<br />
+当日はExchange Ticketのプリントアウトを会場までお持ちください。認証に利用します。"
+      how_about_lightning_talk: "ご一緒に {{lt_submission}} への応募はいかがですか？"
