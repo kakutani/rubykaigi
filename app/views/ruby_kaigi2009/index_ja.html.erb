@@ -22,9 +22,7 @@
         <li>3日間の通し券です(日割はいたしかねます)。</li>
         <li>決済には<a href="http://paypal.com/">PayPal</a>を利用しますが、購入にあたりPayPalアカウントの用意は必須ではありません。</li>
         <li>追加<%= link_to_if controller.registration_open?, '販売', registrations_path(:year => '2009', :locale => 'ja') %>は、<strong>6月17日(水) 12:30(JST)から行います。</strong></li>
-        <li>チケットは6月1日(月) 19:00(JST)から本サイトにて<%= link_to_if controller.registration_open?, '販売', registrations_path(:year => '2009', :locale => 'ja') %>しましたが、2時間弱で予定販売枚数を終了しました。</li>
-
-
+        <li>6月1日(月) 19:00(JST)から本サイトにて<%= link_to_if controller.registration_open?, '販売', registrations_path(:year => '2009', :locale => 'ja') %>したチケットは2時間弱で予定販売枚数を終了しました。</li>
       </ul>
     </li>
     <li>会期中はKaigiFreaksによるUstream.tv経由でのストリーミング配信を予定しています。配信品質はベストエフォートです。</li>
