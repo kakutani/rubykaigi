@@ -25,6 +25,11 @@ class PaypalController < ApplicationController
 
   def instant_payment_notification
     begin
+      @paypal = PaypalTransaction.find_by_txn_id(params[:txn_id])
+      if @paypal
+        logger.info("txn_id is already taken #{@paypal.txn_id}")
+        render :nothing => true, :status => 200
+      end
       @paypal = PaypalTransaction.create_for_verify_later!(params)
       if @paypal.validate_transaction
         @paypal.notify_exchange_ticket_information_to_payer
