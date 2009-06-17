@@ -29,6 +29,7 @@ class PaypalController < ApplicationController
       if @paypal
         logger.info("txn_id is already taken #{@paypal.txn_id}")
         render :nothing => true, :status => 200
+        return
       end
       @paypal = PaypalTransaction.create_for_verify_later!(params)
       if @paypal.validate_transaction
