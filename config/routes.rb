@@ -13,7 +13,11 @@ ActionController::Routing::Routes.draw do |map|
   map.registrations("/:year/:locale/registrations/:action",
     :controller => 'registrations', :action => 'index',
     :requirements => {:year => /2\d{3}/, :locale => /en|ja/ })
-
+  
+  map.resources(:talks, :path_prefix => "/:year/:locale",
+    :requirements => {:year => /2\d{3}/, :locale => /en|ja/ },
+    :only => [ :index, :show ])
+  
   map.paypal("/paypal/:action",
     :controller => 'paypal', :action => 'index')
 
