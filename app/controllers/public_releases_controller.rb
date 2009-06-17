@@ -4,7 +4,7 @@ class PublicReleasesController < LocaleBaseController
   before_filter :readonly
   before_filter :page_name_is_valid
   before_filter :redirect_to_past_kaigi
-  before_filter :sponsors_only
+#  before_filter :sponsors_only
 
   layout proc{|c| "ruby_kaigi#{c.params[:year]}" }
 
