@@ -1,3 +1,5 @@
-
-<%= link_to 'Edit', edit_talk_path(@talk) %> |
-<%= link_to 'Back', talks_path %>
+<div class="talk">
+  <h2 class="title"><%=h @talk.title%></h2>
+  <p class="speaker"><%= h @talk.speaker %></p>
+  <div class="summary"><%= h @talk.summary %></div>
+</div>
