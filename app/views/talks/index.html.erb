@@ -1,18 +1,441 @@
-<h1>Listing talks</h1>
+<%- content_for :css do -%>
+<%= stylesheet_link_tag "timetables" %>
+<%- end -%>
 
-<table>
-  <tr>
-  </tr>
+<h2>7/17</h2>
+<table class="timetable">
+  <thead>
+    <tr>
+      <th class="time">&nbsp;</th>
+      <th class="room">Room1</th>
+      <th class="room">Room2</th>
+      <th class="room">Room3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>13:30 - 14:30</th>
+      <td>
+        <div class="session">
+          <p class="title">Using Git and GitHub to Develop One Million Times Faster</p>
+          <p class="speaker">Scott Chacon</p>
+        </div>
+      </td>
+      <td class="empty">-</td>
+      <td class="empty">-</td>
+    </tr>
 
-<% @talks.each do |talk| %>
-  <tr>
-    <td><%= link_to 'Show', talk %></td>
-    <td><%= link_to 'Edit', edit_talk_path(talk) %></td>
-    <td><%= link_to 'Destroy', talk, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+    <tr>
+      <th>14:30 - 16:00</th>
+      <td>
+        <div class="session">
+          <p class="title">Pragmatic Patterns of Ruby on Rails - 現場で役立つRuby on Railsパターン</p>
+          <p class="speaker">大場寧子</p>
+        </div>
+        <div class="session">
+          <p class="title">『エンタープライズRails』に学ぶ企業ユーザのためのRails活用の極意</p>
+          <p class="speaker">高井直人</p>
+        </div>
+      </td>
+      <td>
+        <div class="session">
+          <p class="title">Railsエコシステムの研究</p>
+          <p class="speaker">松田明</p>
+        </div>
+        <div class="session">
+          <p class="title">Using Adhearsion to Voice Enable your Ruby Applications</p>
+          <p class="speaker">Jason Goecke</p>
+        </div>
+      </td>
+      <td>
+        <div class="session">
+          <p class="title">Rubyの数</p>
+          <p class="speaker">後藤謙太郎</p>
+        </div>
+        <div class="session">
+          <p class="title">乱数生成器ライブラリの紹介および処理系への組込みの提案</p>
+          <p class="speaker">村田賢太</p>
+        </div>
+        <div class="session">
+          <p class="title">Rubyで楽しむBDD,ZDD</p>
+          <p class="speaker">倉井 龍太郎</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <th>16:00 - 16:30</th>
+      <td class="break" colspan="3">break</td>
+    </tr>
+
+    <tr>
+      <th>16:30 - 17:30</th>
+      <td>
+        <div class="session">
+          <p class="title">From Rails to Rack: Making Rails 3 a Better Ruby Citizen</p>
+          <p class="speaker">Yehuda Katz</p>
+        </div>
+      </td>
+      <td class="empty">-</td>
+      <td>
+        <div class="session">
+          <p class="title">静的型付けを持ったRubyっぽい言語の設計と実装</p>
+          <p class="speaker">橋本和典、木山真人</p>
+        </div>
+        <div class="session">
+          <p class="title">YARV Maniacs Live!</p>
+          <p class="speaker">笹田耕一</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <th>17:30 - 18:30</th>
+      <td>
+        <div class="session">
+          <p class="title">Lightning Talks</p>
+          <p class="speaker"></p>
+        </div>
+      </td>
+      <td class="empty">-</td>
+      <td class="empty">-</td>
+    </tr>
+
+    <tr>
+      <th>16:00 - 16:30</th>
+      <td class="break" colspan="3">break</td>
+    </tr>
+
+  </tbody>
 </table>
 
-<br />
 
-<%= link_to 'New talk', new_talk_path %>
+
+<h2>7/18</h2>
+<table class="timetable">
+  <thead>
+    <tr>
+      <th class="time">&nbsp;</th>
+      <th class="room">Room1</th>
+      <th class="room">Room2</th>
+      <th class="room">Room3</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <th>10:00 - 12:00</th>
+      <td>
+        <div class="session">
+          <p class="title">Ruby 1.8 のゆくえ</p>
+          <p class="speaker">卜部昌平</p>
+        </div>
+        <div class="session">
+          <p class="title">Ruby 1.9.2ロードマップ</p>
+          <p class="speaker">Yugui</p>
+        </div>
+        <div class="session">
+          <p class="title">Ruby リファレンスマニュアル刷新計画 2009 夏</p>
+          <p class="speaker">okkez</p>
+        </div>
+        <div class="session">
+          <p class="title">Rubyist Magazine が出来るまで</p>
+          <p class="speaker">ささだこういち</p>
+        </div>
+      </td>
+      <td>
+        <div class="session">
+          <p class="title">Sequel: The Database Toolkit for Ruby</p>
+          <p class="speaker">Jeremy Evans</p>
+        </div>
+        <div class="session">
+          <p class="title">Sinatra: The Framework Within</p>
+          <p class="speaker">Aaron Quint</p>
+        </div>
+        <div class="session">
+          <p class="title">The innate beauty of Ramaze</p>
+          <p class="speaker">Michael Fellinger</p>
+        </div>
+      </td>
+      <td>
+        <div class="session">
+          <p class="title">1/60秒でRuby ～Rubyでゲームを作ったら～</p>
+          <p class="speaker">kumaryu</p>
+        </div>
+        <div class="session">
+          <p class="title">Ruby製アプリケーションを配布するn個の方法</p>
+          <p class="speaker">原悠</p>
+        </div>
+        <div class="session">
+          <p class="title">コーディングチェックサービス</p>
+          <p class="speaker">松前健太郎</p>
+        </div>
+      </td>
+    </tr>
+
+
+    <tr>
+      <th>12:00 - 13:30</th>
+      <td class="break" colspan="3">lunch break</td>
+    </tr>
+
+    <tr>
+      <th>13:30 - 14:30</th>
+      <td>
+        <div class="session">
+          <p class="title">Keynote</p>
+          <p class="speaker">まつもとゆきひろ</p>
+        </div>
+      </td>
+      <td class="empty">-</td>
+      <td class="empty">-</td>
+    </tr>
+
+    <tr>
+      <th>14:30 - 15:30</th>
+      <td>
+        <div class="session">
+          <p class="title">Lightning Talks</p>
+          <p class="speaker"></p>
+        </div>
+      </td>
+      <td class="empty">-</td>
+      <td class="empty">-</td>
+    </tr>
+
+    <tr>
+      <th>15:30 - 16:00</th>
+      <td class="break" colspan="3">break</td>
+    </tr>
+
+    <tr>
+      <th>16:00 - 18:30</th>
+      <td>
+        <div class="session">
+          <p class="title">スポンサー・セッション</p>
+          <p class="speaker"></p>
+        </div>
+      </td>
+      <td>
+        <div class="session">
+          <p class="title">Ruby C10K challenge: High Performance Networking</p>
+          <p class="speaker">Ilya Grigorik</p>
+        </div>
+        <div class="session">
+          <p class="title">NeverBlock and I/O Concurrency in Ruby</p>
+          <p class="speaker">Mohammad A. Ali</p>
+        </div>
+        <div class="session">
+          <p class="title">JRuby Update 2009</p>
+          <p class="speaker">Charles Oliver Nutter</p>
+        </div>
+      </td>
+      <td>
+        <div class="session">
+          <p class="title">分散オブジェクトシステム DeepConnect とその応用</p>
+          <p class="speaker">石塚圭樹</p>
+        </div>
+        <div class="session">
+          <p class="title">rubygems autoload hell?(仮)</p>
+          <p class="speaker">西山和広</p>
+        </div>
+        <div class="session">
+          <p class="title">concov: 時系列に注目したテストカバレッジビューア</p>
+          <p class="speaker">遠藤侑介</p>
+        </div>
+        <div class="session">
+          <p class="title">RubyのGC改善による私のエコライフ ～レジ袋は結構ですよ(2009夏)～</p>
+          <p class="speaker">nari</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <th>18:30 - 19:00</th>
+      <td class="break" colspan="3">break</td>
+    </tr>
+
+    <tr>
+      <th></th>
+      <td class="empty">-</td>
+      <td>
+        <div class="session">
+          <p class="title">Party</p>
+          <p class="speaker"></p>
+        </div>
+      </td>
+      <td class="empty">-</td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+<h2>7/19</h2>
+<table class="timetable">
+  <thead>
+    <tr>
+      <th class="time">&nbsp;</th>
+      <th class="room">Room1</th>
+      <th class="room">Room2</th>
+      <th class="room">Room3</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <th>09:30 - 12:00</th>
+      <td>
+        <div class="session">
+          <p class="title">Edo Cabinet</p>
+          <p class="speaker">メトロー　ジョン</p>
+        </div>
+        <div class="session">
+          <p class="title">Checking Interactively-Developed Code</p>
+          <p class="speaker">Andriy Hnativ</p>
+        </div>
+        <div class="session">
+          <p class="title">To the Edge of Web Performance and Beyond</p>
+          <p class="speaker">Joshua Hull</p>
+        </div>
+      </td>
+      <td>
+        <div class="session">
+          <p class="title">スクリプト言語Ruby</p>
+          <p class="speaker">arton</p>
+        </div>
+        <div class="session">
+          <p class="title">ソケットライブラリの改善</p>
+          <p class="speaker">田中哲</p>
+        </div>
+        <div class="session">
+          <p class="title">あらためて仕事で使うRuby</p>
+          <p class="speaker">後藤謙太郎</p>
+        </div>
+        <div class="session">
+          <p class="title">BigTableへの屈折した憧憬 - RindaをMapReduceに適合させようとした者の末路</p>
+          <p class="speaker">関将俊</p>
+        </div>
+      </td>
+      <td>
+        <div class="session">
+          <p class="title">Regional RubyKaigi会議</p>
+          <p class="speaker">角谷信太郎</p>
+        </div>
+        <div class="session">
+          <p class="title">上海のRailsコミュニティー！　日本がぼやぼやしている間に、上海はアツイ！</p>
+          <p class="speaker">天狗こと増満工将</p>
+        </div>
+        <div class="session">
+          <p class="title">Hello World From The Other Side Of Earth</p>
+          <p class="speaker">Daniel Bovensiepen</p>
+        </div>
+        <div class="session">
+          <p class="title">Evolving a Media Platform with Ruby, Rails and Linux</p>
+          <p class="speaker">Srihari Srinivasan, Karthik Ramachandra</p>
+        </div>
+      </td>
+    </tr>
+
+
+    <tr>
+      <th>12:00 - 13:30</th>
+      <td class="break" colspan="3">lunch break</td>
+    </tr>
+
+    <tr>
+      <th>13:30 - 15:30</th>
+      <td>
+        <div class="session">
+          <p class="title">How Lazy Americans Monitor Servers</p>
+          <p class="speaker">James Edward Gray II</p>
+        </div>
+        <div class="session">
+          <p class="title">Journey through a pointy forest: XML parsing in Ruby</p>
+          <p class="speaker">Aaron Patterson</p>
+        </div>
+      </td>
+      <td>
+        <div class="session">
+          <p class="title">RubyならMacでしょう・Ruby, on your Mac of course</p>
+          <p class="speaker">Vincent Isambart</p>
+        </div>
+        <div class="session">
+          <p class="title">RubyCocoa/HotCocoa(RHC) ～RubyによるMac OS Xデスクトップアプリケーション開発～</p>
+          <p class="speaker">高尾　宏治</p>
+        </div>
+        <div class="session">
+          <p class="title">RubyではじめるiPhoneアプリ開発</p>
+          <p class="speaker">森 琢磨</p>
+        </div>
+      </td>
+      <td>
+        <div class="session">
+          <p class="title">Rubyで早く開発する(仮)</p>
+          <p class="speaker">ujihisa</p>
+        </div>
+        <div class="session">
+          <p class="title">レガシーWebアプリケーションのruby1.9対応の道のり(仮)</p>
+          <p class="speaker">柴田博志</p>
+        </div>
+        <div class="session">
+          <p class="title">HamlKaigi2009</p>
+          <p class="speaker">浦嶌 啓太</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <th>15:30 - 16:00</th>
+      <td class="break" colspan="3">break</td>
+    </tr>
+
+    <tr>
+      <th>16:00 - 17:00</th>
+      <td>
+        <div class="session">
+          <p class="title">Re-introduction to Ruby</p>
+          <p class="speaker">前田修吾</p>
+        </div>
+      </td>
+      <td>
+        <div class="session">
+          <p class="title">Getting Things &quot;Done Done&quot; As Cool As Cucumber</p>
+          <p class="speaker">角谷信太郎</p>
+        </div>
+      </td>
+      <td>
+        <div class="session">
+          <p class="title">Erubis徹底解説</p>
+          <p class="speaker">桑田誠</p>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <th>17:00 - 18:00</th>
+      <td>
+        <div class="session">
+          <p class="title">Keynote</p>
+          <p class="speaker"></p>
+        </div>
+      </td>
+      <td class="empty">-</td>
+      <td class="empty">-</td>
+    </tr>
+
+    <tr>
+      <th>18:00 - 20:00</th>
+      <td class="empty">-</td>
+      <td>
+        <div class="session">
+          <p class="title">Reject Kaigi</p>
+          <p class="speaker"></p>
+        </div>
+      </td>
+      <td class="empty">-</td>
+    </tr>
+
+  </tbody>
+</table>
