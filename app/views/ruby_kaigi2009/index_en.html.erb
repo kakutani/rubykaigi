@@ -10,7 +10,7 @@
       <li>Dates: July 17-19 2009</li>
     	<li>Fee: 6,000 JPY (Planned price; 3 days pass)
 		  <ul>
-			<li><%= link_to_if controller.registration_open?, 'Registration', registrations_path(:year => '2009', :locale => 'en') %> 2nd round ticket for RubyKaigi 2009 go on sale from <strong>2009-06-17 12:30 JST</strong>.</li>
+			<li><%= link_to_if controller.registration_open?, 'Registration', registrations_path(:year => '2009', :locale => 'en') %> 2nd round ticket for RubyKaigi 2009 <del>go on sale from <strong>2009-06-17 12:30 JST</strong></del>&nbsp;<strong>sold out</strong>.</li>
 			<li>ticketing 1st round(2009-06-01 19:00-) was sold out in 111 minutes.</li>
 		  </ul>
     	</li>
@@ -39,7 +39,7 @@
   	<li>Place: in the nearby RubyKaigi2009 venue.</li>
   </ul>
   <ul>
-	<li><%= link_to_if controller.registration_open?, 'Registration', registrations_path(:year => '2009', :locale => 'en') %> 2nd round ticket for RubyKaigi 2009 go on sale from <strong>2009-06-17 12:30 JST</strong>.</li>
+	<li><del><%= link_to_if controller.registration_open?, 'Registration', registrations_path(:year => '2009', :locale => 'en') %> 2nd round ticket for RubyKaigi 2009 go on sale from 2009-06-17 12:30 JST</del>&nbsp;<strong>sold out</strong>.</li>
 	<li>ticketing 1st round(2009-06-01 19:00-) was sold out in 111 minutes.</li>
   </ul>
 </div>
@@ -47,10 +47,9 @@
 <div class="item">
   <h2><%= link_to_if controller.registration_open?, 'Registration', registrations_path(:year => '2009', :locale => 'en') %></h2>
   <div class="soldout_notice"
->1st round Tickets to RubyKaigi 2009 have sold out. Sorry for the inconvenience.<br />
-2nd round ticket for RubyKaigi 2009 go on sale from <strong>2009-06-17 12:30 JST</strong>.
+>RubyKaigi 2009 ticket is sold out.
 </div>
-  <p><%= link_to_if controller.registration_open?, 'Registration', registrations_path(:year => '2009', :locale => 'en') %> will be open on <strong>2009-06-17 12:30 JST</strong>.</p>
+  <p><del><%= link_to_if controller.registration_open?, 'Registration', registrations_path(:year => '2009', :locale => 'en') %> will be open on 2009-06-17 12:30 JST.</del> sold out</p>
 </div>
 
 <div class="item">

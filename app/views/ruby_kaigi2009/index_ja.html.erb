@@ -21,7 +21,7 @@
       <ul>
         <li>3日間の通し券です(日割はいたしかねます)。</li>
         <li>決済には<a href="http://paypal.com/">PayPal</a>を利用しますが、購入にあたりPayPalアカウントの用意は必須ではありません。</li>
-        <li>追加<%= link_to_if controller.registration_open?, '販売', registrations_path(:year => '2009', :locale => 'ja') %>は、<strong>6月17日(水) 12:30(JST)から行います。</strong></li>
+        <li>追加<%= link_to_if controller.registration_open?, '販売', registrations_path(:year => '2009', :locale => 'ja') %>は、<del><strong>6月17日(水) 12:30(JST)から行います</del>&nbsp;完売しました。</strong></li>
         <li>6月1日(月) 19:00(JST)から本サイトにて<%= link_to_if controller.registration_open?, '販売', registrations_path(:year => '2009', :locale => 'ja') %>したチケットは2時間弱で予定販売枚数を終了しました。</li>
       </ul>
     </li>
@@ -44,7 +44,7 @@
     <li>日程: 2009 年 7 月 17日(金)</li>
     <li>料金: 5,000円</li>
     <li>会場: 神保町周辺</li>
-    <li>チケットは6月1日(月) 19:00(JST)から本サイトにて<%= link_to_if controller.registration_open?, '販売', registrations_path(:year => '2009', :locale => 'ja') %>します。</li>
+    <li>チケットは<del>6月1日(月) 19:00(JST)から本サイトにて<%= link_to_if controller.registration_open?, '販売', registrations_path(:year => '2009', :locale => 'ja') %>します。</del> 完売しました。</li>
     <li>決済にはPayPalを利用します。
   </ul>
 </div>
@@ -52,10 +52,9 @@
 <div class="item">
   <h2><%= link_to_if controller.registration_open?, '参加登録について', registrations_path(:year => '2009', :locale => 'ja') %></h2>
   <div class="soldout_notice"
->RubyKaigi2009本編のチケットは予定販売枚数を終了しました。<br/>
-追加販売を、<strong>6月17日(水) 12:30(JST)から行います。</strong>
+>RubyKaigi2009本編のチケットは予定販売枚数を終了しました。
   </div>
-  <p>RubyKaigi2009への参加にあたっては、事前にチケットの購入が必要です。チケットの追加販売は6月17日(水) 12:30(JST)から<%= link_to_if controller.registration_open?, '販売', registrations_path(:year => '2009', :locale => 'ja') %>します。決済にはpaypal.comを利用します。</p>
+  <p>RubyKaigi2009への参加にあたっては、事前にチケットの購入が必要です。チケットの追加販売は<del>6月17日(水) 12:30(JST)から<%= link_to_if controller.registration_open?, '販売', registrations_path(:year => '2009', :locale => 'ja') %>します。決済にはpaypal.comを利用します。</del> 完売しました。</p>
   <p>懇親会についても同様です。</p>
 </div>
 
