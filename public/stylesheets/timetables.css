@@ -1,21 +1,28 @@
+#timetables h2 {
+  margin: 0px;
+  background-color: #e6e6e6;
+}
+
 .timetable {
-  border: solid 1px #cccccc;
   border-collapse: separate;
   border-spacing: 1px;
 }
 
 .timetable thead th {
-  background-color: #ffffcc;
+  background-color: #333333;
+  color: #ffffff;
+  padding: 5px;
 }
 .timetable thead th.time {
   width: 100px;
 }
 .timetable thead th.room {
+  width: 29%;
 }
 
 
 .timetable tbody th {
-  background-color: #333366;
+  background-color: #1b1b1b;
   color: #ffffff;
 }
 
@@ -27,7 +34,7 @@
 
 .timetable .break {
   text-align: center;
-  background-color: #330000;
+  background-color: #5a2a2a;
   color: #ffffff;
   font-weight: bold;
   padding: 10px;
