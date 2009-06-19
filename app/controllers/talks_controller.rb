@@ -2,7 +2,6 @@ class TalksController < LocaleBaseController
   layout proc{|c| "ruby_kaigi#{c.params[:year]}" }
   
   def index
-    @talks = Talk.all
   end
 
   def show
