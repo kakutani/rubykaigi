@@ -1,0 +1,54 @@
+#timetables h2 {
+  margin: 0px;
+  background-color: #e6e6e6;
+}
+
+.timetable {
+  border-collapse: separate;
+  border-spacing: 1px;
+}
+
+.timetable thead th {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 5px;
+}
+.timetable thead th.time {
+  width: 100px;
+}
+.timetable thead th.room {
+  width: 29%;
+}
+
+
+.timetable tbody th {
+  background-color: #1b1b1b;
+  color: #ffffff;
+}
+
+
+.timetable .empty {
+  text-align: center;
+  background-color: #cccccc;
+}
+
+.timetable .break {
+  text-align: center;
+  background-color: #5a2a2a;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.timetable .session {
+  margin: 20px 10px;
+}
+
+.session .title, .session .speaker {
+  margin: 0;
+  padding: 0;
+}
+
+.session .title {
+  font-weight: bold;
+}

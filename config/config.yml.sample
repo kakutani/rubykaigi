@@ -6,6 +6,9 @@ development: &local
     sponsor:
       username: sponsor_username
       password: sponsor_password
+    speaker:
+      username: speaker_username
+      password: speaker_password
   paypal:
     base_url: https://www.sandbox.paypal.com
     request_uri: /cgi-bin/webscr
