@@ -1,6 +1,10 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe TalksController do
+  before do
+    stub(controller).basic_auth_required_by_speaker { true }
+  end
+
   describe "GET index" do
     it "exposes all talks" do
       get :index, :year => "2009", :locale => "en"
