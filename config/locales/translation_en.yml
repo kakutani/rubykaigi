@@ -51,3 +51,4 @@ We'll mail you back the exchange ticket information(s) (including private url)."
       instruction: "We'll sent you Exchange Ticket information via email (used for buying ticket on paypal.com) later.<br />
 Plese check it and bring printout to the venue for admission."
       how_about_lightning_talk: "How about {{lt_submission}} submission with registration?"
+  timetable: "Timetable"

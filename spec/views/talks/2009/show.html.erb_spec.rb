@@ -1,6 +1,6 @@
-require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
+require File.expand_path(File.dirname(__FILE__) + '/../../../spec_helper')
 
-describe "/talks/show.html.erb" do
+describe "/talks/2009/show.html.erb" do
   include TalksHelper
   before(:each) do
     assigns[:talk] = @talk = Talk.new

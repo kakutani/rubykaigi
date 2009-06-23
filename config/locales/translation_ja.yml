@@ -76,3 +76,4 @@ ja:
       instruction: "後ほど、Exchange Ticket についての情報をメールで送信します(paypal.comで決済に使ったメールアドレス宛に送信します)。<br />
 当日はExchange Ticketのプリントアウトを会場までお持ちください。認証に利用します。"
       how_about_lightning_talk: "ご一緒に {{lt_submission}} への応募はいかがですか？"
+  timetable: "タイムテーブル"

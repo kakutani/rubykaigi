@@ -1,11 +1,17 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/talks/index.html.erb" do
+describe "/talks/2009" do
   include TalksHelper
 
-  before do
-    render
+  describe "/talks/2009/index_ja.html.erb" do
+    before { render }
+    subject { template }
+    it { should_not be_nil }
   end
 
-  it { template.should_not be_nil }
+  describe "/talks/2009/index_en.html.erb" do
+    before { render }
+    subject { template }
+    it { should_not be_nil }
+  end
 end

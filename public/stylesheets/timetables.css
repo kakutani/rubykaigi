@@ -20,6 +20,10 @@
   width: 29%;
 }
 
+.timetable tbody td.sessions {
+  vertical-align: top;
+}
+
 
 .timetable tbody th {
   background-color: #1b1b1b;
