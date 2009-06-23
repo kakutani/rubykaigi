@@ -30,13 +30,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def basic_auth_required_by_speaker
-    authenticate_or_request_with_http_basic("restricted ared: speakerss only.") do |username, password|
-      username == configatron.basic_auth.speaker.username &&
-        password == configatron.basic_auth.speaker.password
-    end
-  end
-
   def registration_open_at
     @registration_open_at = Time.parse(configatron.paypal.open_at)
   end
