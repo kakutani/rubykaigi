@@ -1,5 +1,5 @@
 <% content_for :inline_css do -%>
-<style type="text/css">
+<style type="text/css" media="all">
 pre { white-space: pre-wrap; }
 
 table.lt_submissions {
@@ -62,6 +62,40 @@ dd {
   margin-bottom: 10px;
 }
 
+div.sec_selection {
+  margin-bottom: 10px;
+  margin-left: 1em;
+}
+
+div.sec_selection form {
+  margin-left: 1em;
+}
+
+h4 {
+  margin: 0;
+  color: #000;
+  font-weight: bold;
+}
+
+</style>
+<style type="text/css" media="print">
+div.submission {
+  page-break-after: always;
+}
+
+h1, h2,div.sec_selection {
+  display:none;
+}
+
+h3 {
+  font-size: 150%;
+}
+
+span.name {
+  font-size: 120%;
+  font-weight: bold;
+}
+
 </style>
 <% end -%>
 <h2>ライトニングトーク応募者のみなさん</h2>
@@ -73,7 +107,7 @@ dd {
 	  <dl>
 		<dt>発表者</dt>
 		<dd>
-		  <span><%=h submission.name %></span>&nbsp;<span>&lt;<%=h submission.email %>&gt;</span><br />
+		  <span class="name"><%=h submission.name %></span>&nbsp;<span>&lt;<%=h submission.email %>&gt;</span><br />
 		  <% unless submission.organization.blank? -%>
 			<span>(<%=h submission.organization %>)</span>
 		  <% end -%>
@@ -100,8 +134,11 @@ dd {
 		<dd><div><%= submission.note.blank? ? "&nbsp;" : submission.note %></div></dd>
 	  </dl>
 	</div><!-- detail -->
-	<div class="selection">
+	<div class="sec_selection">
+	  <h4>選考</h4>
+	  <div class="selection">
 	  <!-- TODO radio button -->
-	</div>
+	  </div><!-- selection -->
+	</div><!-- sec_selection -->
   </div><!-- submission -->
 <% end -%>
