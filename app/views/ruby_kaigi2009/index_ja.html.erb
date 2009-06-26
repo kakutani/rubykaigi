@@ -60,7 +60,12 @@
 </div>
 
 <div class="item">
-  <h2><%= link_to_if controller.lt_submission_open?, 'ライトニングトークの発表者を募集しています', "/2009/#{I18n.locale}/lightning_talk_submissions" %></h2>
+  <h2>ライトニングトークスについて</h2>
+  <div class="soldout_notice"
+>ライトニングトーク発表の募集は締め切りました。たくさんのご応募ありがとうございました。
+  </div>
+
+
   <p>いわゆるライトニングトークの発表者を<%= link_to_if controller.lt_submission_open?, '募集しています', "/2009/#{I18n.locale}/lightning_talk_submissions" %>。毎年好評なので、今年は会期中に2回ライトニングトークスをおこなう予定です(応募数次第ではありますが)。皆さまからのたくさんのご応募お待ちしております。</p>
 </div>
 
