@@ -1,7 +1,107 @@
-<h2>LT応募者一覧</h2>
-<% @lightning_talk_submissions.each do |lts| %>
-  <h3><%=h lts.id %>. <%=h lts.title %></h3>
-  <p>発表者: <%=h lts.name %> (<%=h lts.organization %>)</p>
-  <p><%=h lts.abstract %></p>
-  <p><%=h lts.day1 %>, <%=h lts.day2 %></p>
-<% end %>
+<% content_for :inline_css do -%>
+<style type="text/css">
+pre { white-space: pre-wrap; }
+
+table.lt_submissions {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+table.lt_submissions th {
+  border: 1px solid #ccc;
+  padding: 3px;
+}
+
+table.lt_submissions td {
+  border: 1px solid #ccc;
+  padding: 4px 10px;
+}
+
+th.id {
+  width:2em;
+}
+
+th.selection {
+  width:4em;
+}
+
+td.selection {
+  text-align: center;
+}
+
+span.organization {
+  font-size: 80%;
+}
+
+div.submission {
+  margin: 10px;
+  padding: 0px;
+  border: 1px solid #ccc;
+}
+
+div.submission div.detail {
+  margin: 1em;
+}
+
+h3 {
+  margin: 0;
+  padding: 3px 10px;
+  color: #000;
+  background-color: #eee;
+}
+
+dt {
+  color: #000;
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 10px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+</style>
+<% end -%>
+<h2>ライトニングトーク応募者のみなさん</h2>
+<% @lightning_talk_submissions.each_with_index do |submission, idx| -%>
+  <% seq = idx + 1 %>
+  <div class="submission">
+	<h3><%=h seq %>. <%=h submission.title %></h3>
+	<div class="detail">
+	  <dl>
+		<dt>発表者</dt>
+		<dd>
+		  <span><%=h submission.name %></span>&nbsp;<span>&lt;<%=h submission.email %>&gt;</span><br />
+		  <% unless submission.organization.blank? -%>
+			<span>(<%=h submission.organization %>)</span>
+		  <% end -%>
+		</dd>
+		<dt>チケット</dt>
+		<dd>
+		  <% if submission.has_ticket? -%>
+			<span style="font-weight:bold;color:#0a0">持ってます</span>
+		  <% else -%>
+			<span style="font-weight:bold;color:#f00">持ってません</span>
+		  <% end -%>
+		</dd>
+		<dt>発表概要</dt>
+		<dd>
+		  <pre><%=h submission.abstract %></pre>
+		</dd>
+		<dt>発表可能日</dt>
+		<dd>
+		  <%=h [:day1, :day2].map { |day|
+			     Time.parse(submission.send(day)).to_date.to_s(:db) unless submission.send(day).blank?
+			   }.compact.join(", ") %>
+		</dd>
+		<dt>ひとこと</dt>
+		<dd><div><%= submission.note.blank? ? "&nbsp;" : submission.note %></div></dd>
+	  </dl>
+	</div><!-- detail -->
+	<div class="selection">
+	  <!-- TODO radio button -->
+	</div>
+  </div><!-- submission -->
+<% end -%>

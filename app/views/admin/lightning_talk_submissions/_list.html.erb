@@ -1,0 +1,29 @@
+<h2>LT応募者一覧</h2>
+<p>
+<table class="lt_submissions">
+<tr>
+  <th class="id">ID</th><th>タイトル</th><th>発表者</th><th class="selection">7/17(金)</th><th class="selection">7/18(土)</th>
+</tr>
+<% @lightning_talk_submissions.each do |submission| -%>
+<tr>
+  <td><%=h submission.id %></td>
+  <td><%=h submission.title %></td>
+  <td><%=h submission.name %> &lt;<%=h submission.email %>&gt;<br />(<span class="organization"><%=h submission.organization %></span>)</td>
+  <td class="selection">
+  <% if submission.day1.blank? -%>
+&nbsp;
+  <% else -%>
+当/落
+  <% end -%>
+  </td>
+  <td class="selection">
+  <% if submission.day1.blank? -%>
+&nbsp;
+  <% else -%>
+当/落
+  <% end -%>
+  </td>
+</tr>
+<% end -%>
+</table>
+</p>
