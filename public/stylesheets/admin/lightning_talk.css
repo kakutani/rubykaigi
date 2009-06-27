@@ -1,0 +1,35 @@
+pre { white-space: pre-wrap; }
+
+div.submission {
+  margin: 10px;
+  padding: 0px;
+  border: 1px solid #ccc;
+}
+
+div.submission div.detail {
+  margin: 1em;
+}
+
+h3 {
+  margin: 0;
+  padding: 3px 10px;
+  color: #000;
+  background-color: #eee;
+}
+
+h4 {
+  margin: 0;
+  color: #000;
+  font-weight: bold;
+}
+
+dt {
+  color: #000;
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 10px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}

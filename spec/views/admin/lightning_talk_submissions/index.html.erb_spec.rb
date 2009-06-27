@@ -7,6 +7,6 @@ describe "/admin/lightning_talk_submissions/index" do
   end
 
   it "should tell you where to find the file" do
-    response.should have_tag('h2', %r[LT応募者一覧])
+    response.should have_tag('h2', %r[ライトニングトーク応募者のみなさん])
   end
 end

@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
-    admin.resources :lightning_talk_submissions
+    admin.resources :lightning_talk_submissions, :has_one => :lightning_talk_selection
+    admin.resources :lightning_talk_selections, :only => [:index]
   end
 
   # Sample of regular route:
@@ -13,11 +14,11 @@ ActionController::Routing::Routes.draw do |map|
   map.registrations("/:year/:locale/registrations/:action",
     :controller => 'registrations', :action => 'index',
     :requirements => {:year => /2\d{3}/, :locale => /en|ja/ })
-  
+
   map.resources(:talks, :path_prefix => "/:year/:locale",
     :requirements => {:year => /2\d{3}/, :locale => /en|ja/ },
     :only => [ :index, :show ])
-  
+
   map.paypal("/paypal/:action",
     :controller => 'paypal', :action => 'index')
 

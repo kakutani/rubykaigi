@@ -4,6 +4,8 @@ class Admin::LightningTalkSubmissionsController < AdminController
   end
 
   def show
+    @submission = LightningTalkSubmission.find(params[:id])
+    @seq = params[:seq] || 0
   end
 
 end

@@ -17,7 +17,7 @@ describe LightningTalkSubmission do
     end
 
     it { should be_valid }
-    it { subject.lightning_talk_selection.result.should == "NOTYET" }
+    it { subject.lightning_talk_selection.result.should == -1 }
 
   end
 end

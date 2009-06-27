@@ -1,0 +1,33 @@
+<% content_for :inline_css do -%>
+<style text="text/css">
+div.group {
+  margin-bottom: 20px;
+  border: 1px #333 solid;
+}
+
+div.group div.list {
+  padding: 5px;
+}
+
+div.list ul {
+  margin: 10px 30px;
+}
+
+div.group h2 {
+  margin: 0;
+  padding: 4px 10px;
+  background-color: #ccc;
+  font-size: 18px;
+}
+
+</style>
+<% end -%>
+<div>
+<%= link_to("応募内容の一覧", admin_lightning_talk_submissions_path)  %>
+</div>
+<% [LightningTalkSelection::Result.day1_2009, LightningTalkSelection::Result.day2_2009, LightningTalkSelection::Result.rejected,LightningTalkSelection::Result.initial].each do |t| -%>
+  <%= render :partial => "result_type_grouped_list", :locals => { :result_type => t } %>
+<% end -%>
+<div>
+<%= link_to("応募内容の一覧", admin_lightning_talk_submissions_path)  %>
+</div>

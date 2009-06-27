@@ -1,0 +1,73 @@
+<% content_for :css do -%>
+    <%= stylesheet_link_tag "admin/lightning_talk" %>
+<% end -%>
+<% content_for :inline_css do -%>
+<style type="text/css" media="all">
+div.sec_selection {
+  margin-bottom: 10px;
+  margin-left: 1em;
+}
+
+div.sec_selection form {
+  margin-left: 1em;
+}
+
+</style>
+<style type="text/css" media="print">
+div.submission {
+  page-break-after: always;
+}
+
+h1, h2,div.sec_selection {
+  display:none;
+}
+
+h3 {
+  font-size: 150%;
+}
+
+span.name {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+</style>
+<% end -%>
+<div class="submission">
+  <h3><%=h seq %>. <%=h submission.title %></h3>
+  <div class="detail">
+	<dl>
+	  <dt>発表者</dt>
+	  <dd>
+		<span class="name"><%=h submission.name %></span>&nbsp;<span>&lt;<%=h submission.email %>&gt;</span><br />
+		<% unless submission.organization.blank? -%>
+		  <span>(<%=h submission.organization %>)</span>
+		<% end -%>
+	  </dd>
+	  <dt>チケット</dt>
+	  <dd>
+		<% if submission.has_ticket? -%>
+		  <span style="font-weight:bold;color:#0a0">持ってます</span>
+		<% else -%>
+		  <span style="font-weight:bold;color:#f00">持ってません</span>
+		<% end -%>
+	  </dd>
+	  <dt>発表概要</dt>
+	  <dd>
+		<pre><%=h submission.abstract %></pre>
+	  </dd>
+	  <dt>発表可能日</dt>
+	  <dd>
+		<%=h [:day1, :day2].map { |day|
+			 Time.parse(submission.send(day)).to_date.to_s(:db) unless submission.send(day).blank?
+		   }.compact.join(", ") %>
+	  </dd>
+	  <dt>ひとこと</dt>
+	  <dd><div><%= submission.note.blank? ? "&nbsp;" : submission.note %></div></dd>
+	</dl>
+  </div><!-- detail -->
+  <div class="sec_selection">
+	<h4>選考</h4>
+    <%= render :partial => 'selection', :locals => {:selection => submission.selection } %>
+  </div><!-- sec_selection -->
+</div><!-- submission -->

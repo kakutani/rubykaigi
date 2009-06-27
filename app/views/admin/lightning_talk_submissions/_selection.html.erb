@@ -1,0 +1,12 @@
+<% submission = selection.lightning_talk_submission -%>
+<div class="selection" id="<%=dom_id(selection, :selection) %>">
+  <% remote_form_for(:selection, selection,
+	   { :url => admin_lightning_talk_submission_lightning_talk_selection_path(submission) },
+	   :html => {
+		 :method => :put, :id => dom_id(selection, :update_selection)}) do |f| -%>
+	<%= render_selection_radio_of(f, submission, selection, LightningTalkSelection::Result.initial) %>
+	<%= render_selection_radio_of(f, submission, selection, LightningTalkSelection::Result.rejected)  %><br />
+	<%= render_selection_radio_of(f, submission, selection, LightningTalkSelection::Result.day1_2009)  %><br />
+	<%= render_selection_radio_of(f, submission, selection, LightningTalkSelection::Result.day2_2009)  %>
+  <% end -%>
+</div>

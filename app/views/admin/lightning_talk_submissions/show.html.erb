@@ -1,2 +1,9 @@
-<h1>Admin::LightningTalkSubmission#show</h1>
-<p>Find me in app/views/admin/lightning_talk_submission/show.html.erb</p>
+<div>
+<%= link_to("応募内容の一覧", admin_lightning_talk_submissions_path)  %>, <%= link_to("審査状況の一覧", admin_lightning_talk_selections_path) %>
+</div>
+
+<%= render :partial => "submission", :locals => { :submission => @submission, :seq => @seq } %>
+
+<div>
+<%= link_to("応募内容の一覧", admin_lightning_talk_submissions_path)  %>, <%= link_to("審査状況の一覧", admin_lightning_talk_selections_path) %>
+</div>
