@@ -1,7 +1,7 @@
 class LightningTalkSubmission < ActiveRecord::Base
   RubyKaigi2009 = Struct.new(:day1, :day2).new('2009-07-17', '2009-07-18')
 
-  has_one :lightning_talk_selection
+  has_one :lightning_talk_selection, :dependent => :destroy
 
   validates_presence_of :name
   validates_presence_of :email
