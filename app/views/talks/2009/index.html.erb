@@ -83,8 +83,9 @@
       <th>17:50 - 18:50</th>
       <td>
         <div class="session">
-          <p class="title">Lightning Talks</p>
-          <p class="speaker"></p>
+          <% talk_for(2009, '17H05') do |talk, path| -%>
+            <p class="title"><%= link_to 'Lightning Talks', path %></p>
+          <% end -%>
         </div>
       </td>
       <td class="empty">-</td>
@@ -155,8 +156,9 @@
       <th>14:30 - 15:30</th>
       <td>
         <div class="session">
-          <p class="title">Lightning Talks</p>
-          <p class="speaker"></p>
+          <% talk_for(2009, '18H06') do |talk, path| -%>
+            <p class="title"><%= link_to 'Lightning Talks', path %></p>
+          <% end -%>
         </div>
       </td>
       <td class="empty">-</td>
