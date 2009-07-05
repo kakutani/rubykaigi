@@ -4,7 +4,7 @@
 <%- selection_list_id = "selection_list_#{result_type.abs}" -%>
 <ul id="selection_list_<%= selection_list_id %>">
 <% (@group = (@grouped_talks[result_type] || [])).dup.each_with_index do |talk, idx| -%>
-  <li><%= render_disp_order(talk, idx) %><%= "%02d" % (idx + 1) %>:&nbsp;<strong><%=link_to h(talk.title), admin_lightning_talk_submission_path(talk.id) %></strong>&nbsp;(<%=h [talk.name, (talk.organization ? talk.organization : nil)].join(", ") %>)</li>
+  <li><%= render_disp_order(talk, idx) %><%= "%02d" % (idx + 1) %>:&nbsp;(<%= "%02d" % (talk.id + 1) %>)<strong><%=link_to h(talk.title), admin_lightning_talk_submission_path(talk.id) %></strong>&nbsp;(<%=h [talk.name, (talk.organization ? talk.organization : nil)].join(", ") %>)</li>
 <% end -%>
 </ul>
 </div><!-- list -->

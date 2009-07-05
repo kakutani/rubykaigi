@@ -1,7 +1,7 @@
 class Admin::LightningTalkSelectionsController < AdminController
   def index
     # TODO move to model
-    @grouped_talks = LightningTalkSelection.all.group_by(&:result).inject({}){|h,g| h[g.first] = g.last.map(&:lightning_talk_submission);h}
+    @grouped_talks = LightningTalkSelection.all.group_by(&:result).inject({}){|h,g| h[g.first] = g.last.sort_by{|e| e.disp_order}.map(&:lightning_talk_submission);h}
   end
 
   def show
