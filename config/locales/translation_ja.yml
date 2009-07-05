@@ -43,6 +43,14 @@ ja:
         memo: "メモ"  #g
         exchange_ticket: "交換券"  #g
 
+      talk:
+        room: "会場"
+        title: "タイトル"
+        abstract: "概要"
+        speaker: "スピーカー"
+        profile: "スピーカープロフィール"
+        date: "日程"
+
   rubykaigi2009: "日本Ruby会議2009"
   RubyKaigiDiary: "RubyKaigi日記"
   NihonRubynoKai: "日本Rubyの会"
@@ -83,3 +91,4 @@ ja:
       medium: "中会議場(2F)"
       small: "特別会議室(1F)"
   start_on_10am: "(この部屋の開始時刻は10:00です)"
+  back_to_timetable: "タイムテーブルへ戻る"

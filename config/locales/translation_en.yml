@@ -16,6 +16,13 @@ en:
         note: 'Message'
         organization: "Organization"
         the_birthstone_of_july: 'The birthstone of July is:'
+      talk:
+        room: "Room"
+        title: "Title"
+        abstract: "Abstract"
+        speaker: "Speaker"
+        profile: "Speaker Profile"
+        date: "Date"
 
   rubykaigi2009: "RubyKaigi2009"
   RubyKaigiDiary: "RubyKaigi Diary"
@@ -58,3 +65,4 @@ Plese check it and bring printout to the venue for admission."
       medium: "Conference Room(2nd Floor)"
       small: "Conference Room(1st Floor)"
   start_on_10am: "(this room will start at 10:00)"
+  back_to_timetable: "Back to Timetable"

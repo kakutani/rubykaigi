@@ -2,20 +2,21 @@
 
 <%- end -%>
 <div class="item">
-<h2><%=h @talk.title %></h2>
-<h3>Speaker</h3>
+<% scope = %w[activerecord attributes talk] -%>
+<h2><%=t("title", :scope => scope) %>: <%=h @talk.title %></h2>
+<h3><%=t("speaker", :scope => scope) %></h3>
 <p class="speaker"><%=h @talk.speaker %></p>
-<h3>Abstract</h3>
+<h3><%=t("abstract", :scope => scope) %></h3>
 <p class="abstract"><%= render_hikidoc(@talk.abstract) %></p>
-<h3>Date</h3>
+<h3><%=t("date", :scope => scope) %></h3>
 <p class="date"><%= l(@talk.start_at.to_date, :format => :long) %></p>
-<h3>Room</h3>
+<h3><%= t("room", :scope => scope) %></h3>
 <p class="room"><%=h t(@talk.room) %></p>
-<h3>Speaker Profile</h3>
+<h3><%= t("profile", :scope => scope) %></h3>
 <p class="profile"><%= render_hikidoc(@talk.profile) %></p>
 
 <p style="margin-top:40px;text-align:right;">
-<%= link_to('Back to TimeTable', talks_path(:year => @year)) %>
+<%= link_to(t(:back_to_timetable), talks_path(:year => @year)) %>
 </p>
 
 </div>
