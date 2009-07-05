@@ -1,0 +1,322 @@
+<%- content_for :css do -%>
+<%= stylesheet_link_tag "timetables" %>
+<%- end -%>
+
+<div id="timetables">
+<a name="timetable-0717">
+<h2><%= I18n.l Date.new(2009, 7, 17), :format => :long %></h2>
+<table class="timetable">
+  <thead>
+    <tr>
+      <th class="time">&nbsp;</th>
+      <th class="room"><%= t("room.rubykaigi2009.hall") %></th>
+      <th class="room"><%= t("room.rubykaigi2009.medium") %></th>
+      <th class="room"><%= t("room.rubykaigi2009.small") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>13:30 - 14:30</th>
+      <td>
+		<%= render(:partial => 'talks/2009/talk',
+			  :locals => {:code => "17H01"}) %>
+      </td>
+      <td class="empty">-</td>
+      <td class="empty">-</td>
+    </tr>
+
+    <tr>
+      <th>14:30 - 14:40</th>
+      <td class="break" colspan="3">break</td>
+    </tr>
+
+
+    <tr>
+      <th>14:40 - 16:10</th>
+      <td class="sessions">
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "17H02"}) %>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "17H03"}) %>
+      </td>
+      <td class="sessions">
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "17M01"}) %>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "17M02"}) %>
+      </td>
+      <td class="sessions">
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "17S01"}) %>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "17S02"}) %>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "17S03"}) %>
+      </td>
+    </tr>
+
+    <tr>
+      <th>16:10 - 16:40</th>
+      <td class="break" colspan="3">break</td>
+    </tr>
+
+    <tr>
+      <th>16:40 - 17:40</th>
+      <td class="sessions">
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "17H04"}) %>
+      </td>
+      <td class="empty">-</td>
+      <td>
+        <div class="session">
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "17S04"}) %>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "17S05"}) %>
+      </td>
+    </tr>
+    <tr>
+      <th>17:40 - 17:50</th>
+      <td class="break" colspan="3">break</td>
+    </tr>
+    <tr>
+      <th>17:50 - 18:50</th>
+      <td>
+        <div class="session">
+          <p class="title">Lightning Talks</p>
+          <p class="speaker"></p>
+        </div>
+      </td>
+      <td class="empty">-</td>
+      <td class="empty">-</td>
+    </tr>
+    <tr>
+      <th>19:30 - </th>
+      <td class="break" colspan="3">Party (registration required)</td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+<a name="timetable-0718">
+<h2><%= I18n.l Date.new(2009, 7, 18), :format => :long %></h2>
+<table class="timetable">
+  <thead>
+    <tr>
+      <th class="time">&nbsp;</th>
+      <th class="room"><%= t("room.rubykaigi2009.hall") %></th>
+      <th class="room"><%= t("room.rubykaigi2009.medium") %></th>
+      <th class="room"><%= t("room.rubykaigi2009.small") %></th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <th>10:00 - 12:00</th>
+      <td class="sessions">
+		<% 4.times do |i| -%>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "18H#{'%02d' % (i + 1)}"}) %>
+		<% end -%>
+      </td>
+      <td class="sessions">
+		<% 3.times do |i| -%>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "18M#{'%02d' % (i + 1)}"}) %>
+		<% end -%>
+      </td>
+      <td class="sessions">
+		<% 3.times do |i| -%>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "18S#{'%02d' % (i + 1)}"}) %>
+		<% end -%>
+      </td>
+    </tr>
+
+
+    <tr>
+      <th>12:00 - 13:30</th>
+      <td class="break" colspan="3">lunch break</td>
+    </tr>
+
+    <tr>
+      <th>13:30 - 14:30</th>
+      <td>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "18H05"}) %>
+      </td>
+      <td class="empty">-</td>
+      <td class="empty">-</td>
+    </tr>
+
+    <tr>
+      <th>14:30 - 15:30</th>
+      <td>
+        <div class="session">
+          <p class="title">Lightning Talks</p>
+          <p class="speaker"></p>
+        </div>
+      </td>
+      <td class="empty">-</td>
+      <td class="empty">-</td>
+    </tr>
+
+    <tr>
+      <th>15:30 - 16:00</th>
+      <td class="break" colspan="3">break</td>
+    </tr>
+
+    <tr>
+      <th>16:00 - 18:30</th>
+      <td class="sessions">
+		<% (7..13).to_a.each do |i| -%>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "18H#{'%02d' % i}"}) %>
+		<% end -%>
+      </td>
+      <td class="sessions">
+		<% (4..6).to_a.each do |i| -%>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "18M#{'%02d' % i}"}) %>
+		<% end -%>
+      </td>
+      <td class="sessions">
+		<% (4..7).to_a.each do |i| -%>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "18S#{'%02d' % i}"}) %>
+		<% end -%>
+      </td>
+    </tr>
+
+    <tr>
+      <th>18:30 - 20:30</th>
+      <td class="empty">-</td>
+      <td>
+        <div class="session">
+          <p class="title">Beer bust</p>
+          <p class="speaker">(Bring your own food/drink)</p>
+        </div>
+      </td>
+      <td class="empty">-</td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+<a name="timetable-0719">
+<h2><%= I18n.l Date.new(2009, 7, 19), :format => :long %></h2>
+<table class="timetable">
+  <thead>
+    <tr>
+      <th class="time">&nbsp;</th>
+      <th class="room"><%= t("room.rubykaigi2009.hall") %></th>
+      <th class="room"><%= t("room.rubykaigi2009.medium") %></th>
+      <th class="room"><%= t("room.rubykaigi2009.small") %></th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <th>09:30 - 12:00</th>
+      <td class="sessions">
+		<% (1..3).to_a.each do |i| -%>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "19H#{'%02d' % i}"}) %>
+		<% end -%>
+      </td>
+      <td class="sessions">
+		<% (1..4).to_a.each do |i| -%>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "19M#{'%02d' % i}"}) %>
+		<% end -%>
+      </td>
+      <td class="sessions">
+        <div class="session">
+          <p class="title">&nbsp;</p>
+          <p class="speaker"><%= t("start_on_10am") %></p>
+        </div>
+		<% (1..3).to_a.each do |i| -%>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "19S#{'%02d' % i}"}) %>
+		<% end -%>
+      </td>
+    </tr>
+    <tr>
+      <th>12:00 - 13:30</th>
+      <td class="break" colspan="3">lunch break</td>
+    </tr>
+
+    <tr>
+      <th>13:30 - 15:30</th>
+      <td class="sessions">
+		<% (4..5).to_a.each do |i| -%>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "19H#{'%02d' % i}"}) %>
+		<% end -%>
+      </td>
+      <td class="sessions">
+		<% (5..7).to_a.each do |i| -%>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "19M#{'%02d' % i}"}) %>
+		<% end -%>
+      </td>
+      <td class="sessions">
+		<% (4..6).to_a.each do |i| -%>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "19S#{'%02d' % i}"}) %>
+		<% end -%>
+      </td>
+    </tr>
+
+    <tr>
+      <th>15:30 - 16:00</th>
+      <td class="break" colspan="3">break</td>
+    </tr>
+
+    <tr>
+      <th>16:00 - 17:00</th>
+      <td>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "19H06"}) %>
+      <td>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "19M08"}) %>
+      </td>
+      <td>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "19S07"}) %>
+      </td>
+    </tr>
+
+    <tr>
+      <th>17:00 - 17:10</th>
+      <td class="break" colspan="3">break</td>
+    </tr>
+
+    <tr>
+      <th>17:10 - 18:10</th>
+      <td>
+		<%= render(:partial => 'talks/2009/talk',
+		   :locals => {:code => "19H07"}) %>
+      </td>
+      <td class="empty">-</td>
+      <td class="empty">-</td>
+    </tr>
+    <tr>
+      <th>18:10 - 18:20</th>
+      <td>
+        <div class="session">
+          <p class="title">Closing</p>
+        </div>
+      </td>
+      <td class="empty">-</td>
+      <td class="empty">-</td>
+    </tr>
+
+  </tbody>
+</table>
+</div>

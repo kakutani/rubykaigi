@@ -9,7 +9,7 @@ describe "/paypal/thanks" do
       render 'paypal/thanks'
     end
     subject { response }
-    it { should have_tag('h3', 'Thank you for your registration.') }
+    it { should have_tag('h3') }
   end
 
   context "ja" do
@@ -19,6 +19,6 @@ describe "/paypal/thanks" do
       render 'paypal/thanks'
     end
     subject { response }
-    it { should have_tag('h3', '登録ありがとうございます。') }
+    it { should have_tag('h3') }
   end
 end

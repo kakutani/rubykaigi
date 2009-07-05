@@ -77,3 +77,9 @@ ja:
 当日はExchange Ticketのプリントアウトを会場までお持ちください。認証に利用します。"
       how_about_lightning_talk: "ご一緒に {{lt_submission}} への応募はいかがですか？"
   timetable: "タイムテーブル"
+  room:
+    rubykaigi2009:
+      hall: "一橋記念講堂(2F)"
+      medium: "中会議場(2F)"
+      small: "特別会議室(1F)"
+  start_on_10am: "(この部屋の開始時刻は10:00です)"

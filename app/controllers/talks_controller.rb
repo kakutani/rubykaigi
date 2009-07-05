@@ -3,12 +3,13 @@ class TalksController < LocaleBaseController
 
   def index
     @title = t(:timetable)
-    # TODO テンプレートはja/enで共通にする
-    render :template => "#{controller_name}/#{params[:year]}/#{action_name}_#{I18n.locale}"
+    render :template => "#{controller_name}/#{params[:year]}/#{action_name}"
   end
 
   def show
-    @talk = Talk.year(params[:year]).find(params[:id])
+    @year, code = [params[:year], params[:id]]
+    @talk = Talk.year(@year).find_by_code(code)
+    render :template => "#{controller_name}/#{@year}/#{action_name}"
   end
 
 end

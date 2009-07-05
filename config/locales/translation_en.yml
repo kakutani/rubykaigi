@@ -52,3 +52,9 @@ We'll mail you back the exchange ticket information(s) (including private url)."
 Plese check it and bring printout to the venue for admission."
       how_about_lightning_talk: "How about {{lt_submission}} submission with registration?"
   timetable: "Timetable"
+  room:
+    rubykaigi2009:
+      hall: "Hitotsubashi Memorial Hall"
+      medium: "Conference Room(2nd Floor)"
+      small: "Conference Room(1st Floor)"
+  start_on_10am: "(this room will start at 10:00)"

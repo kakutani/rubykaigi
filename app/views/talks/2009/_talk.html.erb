@@ -1,0 +1,6 @@
+<div class="session">
+  <% talk_for(2009, code) do |talk, path| -%>
+    <p class="title"><%= link_to talk.title, path %></p>
+    <p class="speaker"><%=h speaker_for_timetable(talk.speaker) %></p>
+  <% end -%>
+</div>
