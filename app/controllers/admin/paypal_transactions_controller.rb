@@ -6,10 +6,10 @@ class Admin::PaypalTransactionsController < AdminController
       wants.csv {
         paypal_txns = PaypalTransaction.find_all_by_item_number(item_number)
         csv = FasterCSV.generate(:col_sep => "\t") do |c|
-          c << ["row", "item_number", "txn_id", "email", "last_name", "first_name", "memo"]
+          c << ["row", "item_number", "4digit", "txn_id", "email", "last_name", "first_name", "memo"]
           paypal_txns.each_with_index do |txn, idx|
             memo = txn.memo && txn.memo.gsub(/\n/, "/")
-            c << [idx + 1, txn.item_number, txn.txn_id, txn.payer_email, txn.last_name, txn.first_name, memo]
+            c << [idx + 1, txn.item_number, txn.txn_id[0,4], txn.txn_id, txn.payer_email, txn.last_name, txn.first_name, memo]
           end
         end
         send_data(csv, :filename => "#{item_number}.csv",
