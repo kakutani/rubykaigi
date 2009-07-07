@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
     admin.resources :lightning_talk_submissions, :has_one => :lightning_talk_selection
     admin.resources :lightning_talk_selections, :only => [:index]
+    admin.resources :paypal_transactions, :collection => [:download]
   end
 
   # Sample of regular route:
