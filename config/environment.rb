@@ -31,6 +31,7 @@ Rails::Initializer.run do |config|
   config.gem "ruby-openid", :lib => "openid", :version => ">= 2.1.4"
   config.gem 'configatron'
   config.gem "ambethia-smtp-tls", :lib => "smtp-tls", :source => "http://gems.github.com/"
+  config.gem 'fastercsv'
 
   # Only load the plugins named here, in the order given. By default, all plugins
   # in vendor/plugins are loaded in alphabetical order.
