@@ -167,6 +167,7 @@ strong {
 .item ul,
 .item p,
 .item div,
+.item dl,
 .article {
   margin: 0 50px 1em;
 }
