@@ -10,6 +10,7 @@
 		    <li><%= link_to t(:exchange_ticket_reissue), "/exchange_tickets" %></li>
         <li><%= link_to_if controller.lt_submission_open?, t(:lightning_talk_submission), "/2009/#{I18n.locale}/lightning_talk_submissions" %></li>
         <li><%= link_to(t(:sponsors), "/2009/#{I18n.locale}/Sponsors") %></li>
+        <li><%= link_to(t(:staff), "/2009/#{I18n.locale}/Team") %></li>
         <% if I18n.locale == "ja" -%>
 		    <li><%= link_to 'Ruby会議日記', "http://rubykaigi.tdiary.net/" %></li>
         <% end -%>
