@@ -57,6 +57,7 @@ ja:
   signin: "サインイン"
   registration: "参加登録"
   sponsors: "スポンサー"
+  staff: "実行委員会"
   ago: "前"
   exchange_ticket_reissue: "Exchange Ticket (再発行)"
   exchange_ticket_reissue_desc: "PayPal.comでの決済に利用したメールアドレスを入力することで、Exchange Ticketを再発行できます。再発行されたExchange Ticketは、メールで通知されます。メールには、Webで表示させるためのプライベートなURLが含まれています。"
