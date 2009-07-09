@@ -36,6 +36,19 @@ describe Talk do
       it { subject.abstract.should == "毎年恒例のキーノートです" }
       it { subject.speaker.should == "まつもとゆきひろ(NaClとか)" }
       it { subject.profile.should == "Rubyのパパ" }
+
+      describe "#to_json" do
+        before do
+          json = @talk.to_json
+          @talk_json = ActiveSupport::JSON.decode(json)
+        end
+        subject { @talk_json["talk"] }
+        it { subject["code"].should == "18H05" }
+        it { subject["title"].should == "基調講演" }
+        it { subject["abstract"].should == "毎年恒例のキーノートです" }
+        it { subject["speaker"].should == "まつもとゆきひろ(NaClとか)" }
+        it { subject["profile"].should == "Rubyのパパ" }
+      end
     end
     context "en" do
       before do

@@ -63,6 +63,11 @@ class Talk < ActiveRecord::Base
     desc or fallback_desc(I18n.locale)
   end
 
+  def to_json_with_minimum
+    self.to_json_without_minimum(:only => [:code], :methods => [:title, :speaker, :abstract, :profile])
+  end
+  alias_method_chain :to_json, :minimum
+
   private
   def fallback_desc(locale)
     if locale == "ja" && (desc = descriptions.first).locale == "en"
