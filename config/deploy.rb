@@ -42,6 +42,11 @@ namespace :deploy do
     setup_shared("db", "production.sqlite3")
   end
 
+  task :after_symlink do
+    run "mkdir -p #{current_path}/public/tmp"
+    setup_shared("public/tmp", "pamphlet-20090708.zip")
+  end
+
   task :start, :roles => :app do
   end
 
