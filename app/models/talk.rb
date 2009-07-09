@@ -63,7 +63,7 @@ class Talk < ActiveRecord::Base
     desc or fallback_desc(I18n.locale)
   end
 
-  def to_json_with_minimum
+  def to_json_with_minimum(options = {})
     self.to_json_without_minimum(:only => [:code], :methods => [:title, :speaker, :abstract, :profile])
   end
   alias_method_chain :to_json, :minimum

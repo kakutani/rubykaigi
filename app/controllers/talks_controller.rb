@@ -1,9 +1,18 @@
 class TalksController < LocaleBaseController
   layout proc{|c| "ruby_kaigi#{c.params[:year]}" }
+  before_filter :capture_year
 
   def index
-    @title = t(:timetable)
-    render :template => "#{controller_name}/#{params[:year]}/#{action_name}"
+    respond_to do |wants|
+      wants.html do
+        @title = t(:timetable)
+        render :template => "#{controller_name}/#{params[:year]}/#{action_name}"
+      end
+      wants.json do
+        @talks = Talk.year(@year).sort_by {|t| t.code }
+        render :json => @talks
+      end
+    end
   end
 
   def show
@@ -17,7 +26,10 @@ class TalksController < LocaleBaseController
         render :json => @talk.to_json
       end
     end
-
   end
 
+  private
+  def capture_year
+    @year = params[:year]
+  end
 end
