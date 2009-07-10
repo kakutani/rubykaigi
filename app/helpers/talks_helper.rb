@@ -15,4 +15,9 @@ module TalksHelper
   def render_hikidoc(str)
     HikiDoc.to_html(str,{:use_wiki_name => false})
   end
+
+  def render_hikidoc_without_p(str)
+    /\A<p>(.*)<\/p>\Z/i =~ HikiDoc.to_html(str,{:use_wiki_name => false})
+    $1
+  end
 end

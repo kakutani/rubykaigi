@@ -14,13 +14,13 @@
 <h3><%=t("speaker", :scope => scope) %></h3>
 <p class="speaker"><%=h @talk.speaker %></p>
 <h3><%=t("abstract", :scope => scope) %></h3>
-<p class="abstract"><%= render_hikidoc(@talk.abstract) %></p>
+<p class="abstract"><%= render_hikidoc_without_p(@talk.abstract) %></p>
 <h3><%=t("date", :scope => scope) %></h3>
 <p class="date"><%= l(@talk.start_at.to_date, :format => :long) %></p>
 <h3><%= t("room", :scope => scope) %></h3>
 <p class="room"><%=h t(@talk.room) %></p>
 <h3><%= t("profile", :scope => scope) %></h3>
-<p class="profile"><%= render_hikidoc(@talk.profile) %></p>
+<p class="profile"><%= render_hikidoc_without_p(@talk.profile) %></p>
 
 <p style="margin-top:40px;text-align:right;">
 <%= link_to(t(:back_to_timetable), talks_path(:year => @year)) %>
