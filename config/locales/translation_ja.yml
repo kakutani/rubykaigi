@@ -59,6 +59,8 @@ ja:
   sponsors: "スポンサー"
   staff: "実行委員会"
   infomation: "参加者向け情報"
+  live: "配信"
+  irc: "IRC"
   ago: "前"
   exchange_ticket_reissue: "Exchange Ticket (再発行)"
   exchange_ticket_reissue_desc: "PayPal.comでの決済に利用したメールアドレスを入力することで、Exchange Ticketを再発行できます。再発行されたExchange Ticketは、メールで通知されます。メールには、Webで表示させるためのプライベートなURLが含まれています。"

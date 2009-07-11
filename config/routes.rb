@@ -23,6 +23,8 @@ ActionController::Routing::Routes.draw do |map|
   map.paypal("/paypal/:action",
     :controller => 'paypal', :action => 'index')
 
+  map.live("/:year/:locale/live/:page_name", :controller => 'live', :action => 'show')
+
   map.with_options( :controller => "public_releases", :action => "show",
                     :defaults => {:page_name => "index"} ) do |pr|
     pr.pub_release ":year/:locale/:page_name", :requirements => {:year => /2\d{3}/, :locale => /en|ja/ }

@@ -12,6 +12,13 @@
         <li><%= link_to(t(:sponsors), "/2009/#{I18n.locale}/Sponsors") %></li>
         <li><%= link_to(t(:staff), "/2009/#{I18n.locale}/Team") %></li>
         <li><%= link_to(t(:infomation), "/2009/#{I18n.locale}/Infomation") %></li>
+        <li><%=t :live %><br>
+        <ul><li>
+          <%= link_to(t("room.rubykaigi2009.hall"), "/2009/#{I18n.locale}/live/room1") %><br>
+          <%= link_to(t("room.rubykaigi2009.medium"), "/2009/#{I18n.locale}/live/room2") %><br>
+          <%= link_to(t("room.rubykaigi2009.small"), "/2009/#{I18n.locale}/live/room3") %>
+        </li></ul></li>
+        <li><%= link_to(t(:irc), "/2009/#{I18n.locale}/irc") %></li>
         <% if I18n.locale == "ja" -%>
         <li><%= link_to 'ジュンク堂書店RubyKaigi店', "http://rubykaigi.tdiary.net/20090709.html#p01" %></li>
 		    <li><%= link_to 'Ruby会議日記', "http://rubykaigi.tdiary.net/" %></li>
