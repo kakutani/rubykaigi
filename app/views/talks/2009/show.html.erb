@@ -1,5 +1,9 @@
 <%- content_for :inline_css do -%>
 <style type="text/css">
+  .item div {
+    margin: 0 2em 0 0;
+  }
+
   ol {
     margin-left: 2em;
   }
@@ -12,15 +16,15 @@
 <% scope = %w[activerecord attributes talk] -%>
 <h2><%=t("title", :scope => scope) %>: <%=h @talk.title %></h2>
 <h3><%=t("speaker", :scope => scope) %></h3>
-<p class="speaker"><%=h @talk.speaker %></p>
+<div class="speaker"><p><%=h @talk.speaker %></p></div>
 <h3><%=t("abstract", :scope => scope) %></h3>
-<p class="abstract"><%= render_hikidoc_without_p(@talk.abstract) %></p>
+<div class="abstract"><%= render_hikidoc(@talk.abstract) %></div>
 <h3><%=t("date", :scope => scope) %></h3>
-<p class="date"><%= l(@talk.start_at.to_date, :format => :long) %></p>
+<div class="date"><p><%= l(@talk.start_at.to_date, :format => :long) %></p></div>
 <h3><%= t("room", :scope => scope) %></h3>
-<p class="room"><%=h t(@talk.room) %></p>
+<div class="room"><p><%=h t(@talk.room) %></p></div>
 <h3><%= t("profile", :scope => scope) %></h3>
-<p class="profile"><%= render_hikidoc_without_p(@talk.profile) %></p>
+<div class="profile"><%= render_hikidoc(@talk.profile) %></div>
 
 <p style="margin-top:40px;text-align:right;">
 <%= link_to(t(:back_to_timetable), talks_path(:year => @year)) %>
