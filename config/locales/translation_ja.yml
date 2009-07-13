@@ -97,3 +97,6 @@ ja:
   start_on_10am: "(この部屋の開始時刻は10:00です)"
   back_to_timetable: "タイムテーブルへ戻る"
   admission: "開場・受付"
+  break: "休憩"
+  lunch_break: "昼休み"
+  conference_party: "懇親会(事前にチケットの購入が必要です)"
