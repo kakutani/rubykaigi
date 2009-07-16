@@ -1,0 +1,37 @@
+<%# coding: utf-8 -%>
+<div class="item">
+  <h2><%=t(:goodies) %></h2>
+  <p>RubyKaigi2009に関連するファイルなどを提供します。</p>
+  <h3><%=t(:wallpapers) %></h3>
+  <ul>
+    <li><%= link_to("type_a_1024x768.png", "/images/goodies/wallpapers/type_a_1024x768.png") %></li>
+    <li><%= link_to("type_a_1280x800.png", "/images/goodies/wallpapers/type_a_1280x800.png") %></li>
+    <li><%= link_to("type_a_1440x900.png", "/images/goodies/wallpapers/type_a_1440x900.png") %></li>
+    <li><%= link_to("type_a_1600x1200.png", "/images/goodies/wallpapers/type_a_1600x1200.png") %></li>
+    <li><%= link_to("type_a_1920x1200.png", "/images/goodies/wallpapers/type_a_1920x1200.png") %></li>
+    <li><%= link_to("type_b_1920x1200.png", "/images/goodies/wallpapers/type_b_1920x1200.png") %></li>
+    <li><%= link_to("type_c_1920x1200.png", "/images/goodies/wallpapers/type_c_1920x1200.png") %></li>
+    <li><%= link_to("type_d_1920x1200.png", "/images/goodies/wallpapers/type_d_1920x1200.png") %></li>
+  </ul>
+  <h3><%=t(:badge) %></h3>
+  <p>参加者用（RubyKaigi2009に参加される方はご自分のサイトに張りましょう！）</p>
+  <p>
+    <%= link_to(image_tag('goodies/badges/attendee.gif', :alt => 'attendee'), "http://rubykaigi.org/2009/") %></li>
+  </p>
+  <p>スピーカー用（RubyKaigi2009でスピーカーとして参加される方用）</p>
+  <p>
+    <%= link_to(image_tag('goodies/badges/speaker.gif', :alt => 'speaker'), "http://rubykaigi.org/2009/") %></li>
+  </p>
+  <p>スポンサー用（RubyKaigi2009にスポンサー企業様用）</p>
+  <p>
+    <%= link_to(image_tag('goodies/badges/sponsor.gif', :alt => 'sponsor'), "http://rubykaigi.org/2009/") %></li>
+  </p>
+  <p>スタッフ用</p>
+  <p>
+    <%= link_to(image_tag('goodies/badges/staff.gif', :alt => 'staff'), "http://rubykaigi.org/2009/") %></li>
+  </p>
+
+  <div>
+    <%=link_to('Permalink', pub_release_url(:year => 2009, :page_name => 'goodies', :locale => I18n.locale)) %>
+  </div>
+</div>
