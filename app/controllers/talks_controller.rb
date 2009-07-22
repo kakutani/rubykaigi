@@ -24,6 +24,7 @@ class TalksController < LocaleBaseController
     end
     respond_to do |wants|
       wants.html do
+        @title = @talk.title
         render :template => "#{controller_name}/#{@year}/#{action_name}"
       end
       wants.json do
