@@ -18,6 +18,10 @@ class TalksController < LocaleBaseController
   def show
     @year, code = [params[:year], params[:id]]
     @talk = Talk.year(@year).find_by_code(code)
+    unless @talk
+      render :file => "#{Rails.root}/public/404.html", :status => 404
+      return
+    end
     respond_to do |wants|
       wants.html do
         render :template => "#{controller_name}/#{@year}/#{action_name}"
