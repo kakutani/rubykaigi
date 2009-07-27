@@ -14,7 +14,9 @@ describe TalksController do
 
   describe "GET show" do
     before do
-      stub(@talk = Talk.new)
+      stub(@talk = Talk.new) {
+        title { "a talk title" }
+      }
       mock(Talk).year("2009").stub!.find_by_code("37") { @talk }
       get :show, :year => "2009", :locale => "ja", :id => "37"
     end
