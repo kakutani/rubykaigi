@@ -34,6 +34,12 @@
   <p>会期中に会場で使用したBGMです。</p>
   <p><div align="center"><object width="200" height="300" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" align="middle"><param name="allowScriptAccess" value="always" /><param name="wmode" value="transparent" /><param name="movie" value="http://widgets.jamendo.com/en/playlist/?playertype=2008&playlist_id=124718" /><param name="quality" value="high" /><param name="bgcolor" value="#FFFFFF" /><embed src="http://widgets.jamendo.com/en/playlist/?playertype=2008&playlist_id=124718" quality="high" wmode="transparent" bgcolor="#FFFFFF" width="200" height="300" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">&nbsp;</embed>&nbsp;</object></div></p>
 
+  <h3><%=t(:license) %></h3>
+  <p>
+  <%= link_to(image_tag('http://i.creativecommons.org/l/by/2.1/jp/88x31.png', :size => '88x31'), 'http://creativecommons.org/licenses/by/2.1/jp/') %><br />
+  <%= link_to('http://creativecommons.org/licenses/by/2.1/jp/', 'http://creativecommons.org/licenses/by/2.1/jp/') %>
+  </p>
+
   <div>
     <%=link_to('Permalink', pub_release_url(:year => 2009, :page_name => 'goodies', :locale => I18n.locale)) %>
   </div>
