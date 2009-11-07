@@ -9,6 +9,11 @@ class PublicReleasesController < LocaleBaseController
   layout proc{|c| "ruby_kaigi#{c.params[:year]}" }
 
   def show
+    if params[:year] == "2010"
+      render :file => "public/2010/index.html"
+      return
+    end
+
     # params[:page_name] pass white list at `page_name_is_valid'
     begin
       @headline_entries = HeadlineEntry.recent
@@ -36,8 +41,10 @@ class PublicReleasesController < LocaleBaseController
   def redirect_to_past_kaigi
     if (year = params[:year].to_i) < 2009
       redirect_to "http://jp.rubyist.net/RubyKaigi#{year}"
-    elsif 2009 < year
+    elsif 2010 < year
       render :file => "public/404.html"
+    else
+      true
     end
   end
 
