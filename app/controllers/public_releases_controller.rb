@@ -34,8 +34,10 @@ class PublicReleasesController < LocaleBaseController
   end
 
   def redirect_to_past_kaigi
-    if (past = params[:year].to_i) < 2009
-      redirect_to "http://jp.rubyist.net/RubyKaigi#{past}"
+    if (year = params[:year].to_i) < 2009
+      redirect_to "http://jp.rubyist.net/RubyKaigi#{year}"
+    elsif 2009 < year
+      render :file => "public/404.html"
     end
   end
 
