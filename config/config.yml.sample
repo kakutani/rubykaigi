@@ -26,6 +26,8 @@ development: &local
     bcc: "RubyKaigi2009 <2009@rubykaigi.org>"
   lt_submission:
     close_at: 2009-06-25 23:59:59
+  hoptoad:
+    api_key: HOPTOAD_API_KEY
 production:
   basic_auth:
     admin:

@@ -32,6 +32,7 @@ Rails::Initializer.run do |config|
   config.gem 'configatron'
   config.gem "ambethia-smtp-tls", :lib => "smtp-tls", :source => "http://gems.github.com/"
   config.gem 'fastercsv'
+  config.gem 'hoptoad_notifier'
 
   # Only load the plugins named here, in the order given. By default, all plugins
   # in vendor/plugins are loaded in alphabetical order.
