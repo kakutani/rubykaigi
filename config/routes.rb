@@ -20,8 +20,8 @@ ActionController::Routing::Routes.draw do |map|
     :requirements => {:year => /2\d{3}/, :locale => /en|ja/ },
     :only => [ :index, :show ])
 
-  map.paypal("/paypal/:action",
-    :controller => 'paypal', :action => 'index')
+  map.paypal_ipn("/paypal/instant_payment_notification",
+    :controller => 'paypal', :action => 'instant_payment_notification')
 
   map.live("/:year/:locale/live/:page_name", :controller => 'live', :action => 'show')
 
