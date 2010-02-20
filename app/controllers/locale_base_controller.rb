@@ -6,9 +6,6 @@ class LocaleBaseController < ApplicationController
   before_filter :assign_locale
 
   def assign_locale
-    # workaround for teaser
-    return true if params[:year] == '2010'
-
     if params[:locale]
       I18n.locale = params[:locale]
     else

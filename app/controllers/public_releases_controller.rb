@@ -10,7 +10,7 @@ class PublicReleasesController < LocaleBaseController
 
   def show
     if params[:year] == "2010"
-      render :file => "public/2010/index.html"
+      render :file => "public/2010/#{params[:locale]}/index.html"
       return
     end
 
