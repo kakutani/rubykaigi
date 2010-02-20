@@ -14,3 +14,4 @@ coverage.aggregate
 coverage
 coverage.features
 tmp/*.*
+mkmf.log
