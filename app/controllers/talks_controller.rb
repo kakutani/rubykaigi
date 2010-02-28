@@ -18,6 +18,8 @@ class TalksController < LocaleBaseController
   def show
     @year, code = [params[:year], params[:id]]
     @talk = Talk.year(@year).find_by_code(code)
+    require 'json'
+    @nicovideo_links = JSON.parse(@talk.nicovideo_links) # sm, title
     unless @talk
       render :file => "#{Rails.root}/public/404.html", :status => 404
       return

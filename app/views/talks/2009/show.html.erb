@@ -26,6 +26,18 @@
 <h3><%= t("profile", :scope => scope) %></h3>
 <div class="profile"><%= render_hikidoc(@talk.profile) %></div>
 
+<h3>Video footage</h3>
+<% unless @nicovideo_links.blank? -%>
+<% @nicovideo_links.each do |(sm, title)| -%>
+<div style="margin-left:2em;padding:30px;">
+<script type="text/javascript" src="http://ext.nicovideo.jp/thumb_watch/<%= sm %>?w=480&h=360"></script><noscript><a href="http://www.nicovideo.jp/watch/<%= sm %>"><%=h title %></a></noscript><br />
+<a href="http://www.nicovideo.jp/watch/<%= sm %>"><%=h title %></a>
+</div>
+<% end -%>
+<% else -%>
+<p>(sorry, currently not available)</p>
+<% end -%>
+
 <p style="margin-top:40px;text-align:right;">
 <%= link_to(t(:back_to_timetable), talks_path(:year => @year)) %>
 </p>

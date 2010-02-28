@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+$KCODE = 'u'
+require 'yaml'
+require 'nokogiri'
+require 'open-uri'
+def fetch_video_info(links)
+  links = [] unless links
+  links.map do |link|
+    sm = link[/(sm.+)/, 1]
+    n = Nokogiri(open("http://ext.nicovideo.jp/api/getthumbinfo/#{sm}").read)
+    title = n.search("title").inner_text
+    [sm, title]
+  end
+end
+
+def import_via_yaml(yaml)
+  yaml.each do |code, links|
+    talk = Talk.find_by_code(code)
+    attr = {:nicovideo_links =>
+      fetch_video_info(links).to_json
+    }
+    talk.update_attributes(attr)
+  end
+end
+
+files = Dir.glob(File.join(Rails.root, 'db', '*.yml'))
+files.each do |f|
+  data = YAML.load_file(f)
+  import_via_yaml(data)
+end
