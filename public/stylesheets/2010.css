@@ -22,7 +22,7 @@ p,li {
   text-align: left;
   font-size: 80%;
 }
-#spec {
+.spec {
   font-weight: bold;
   font-size: 100%;
 }
@@ -32,4 +32,3 @@ p,li {
 a {
   color: #ffee30;
 }
-
