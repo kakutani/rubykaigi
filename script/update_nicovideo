@@ -23,7 +23,7 @@ def import_via_yaml(yaml)
   end
 end
 
-files = Dir.glob(File.join(Rails.root, 'db', '*.yml'))
+files = Dir.glob(File.join(Rails.root, 'db', 'nicovideo_*.yml'))
 files.each do |f|
   data = YAML.load_file(f)
   import_via_yaml(data)
