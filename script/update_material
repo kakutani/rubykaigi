@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+$KCODE = 'u'
+require 'yaml'
+def import_via_yaml(yaml)
+  yaml.each do |code, links|
+    talk = Talk.find_by_code(code)
+    talk.update_attributes(:material_link =>
+      (links ? links.first : nil)
+    )
+  end
+end
+
+files = Dir.glob(File.join(Rails.root, 'db', 'materials.yml'))
+files.each do |f|
+  data = YAML.load_file(f)
+  import_via_yaml(data)
+end

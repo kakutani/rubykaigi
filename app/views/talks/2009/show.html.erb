@@ -26,6 +26,15 @@
 <h3><%= t("profile", :scope => scope) %></h3>
 <div class="profile"><%= render_hikidoc(@talk.profile) %></div>
 
+<h3>Presentation Material</h3>
+<div style="margin-left:2em;padding:10px 0 10px 30px;">
+<% if (material_link = @talk.material_link) -%>
+<%= link_to material_link, material_link %>
+<% else %>
+<span class="not_available">(Sorry, currently not available)</span>
+<% end %>
+</div>
+
 <h3>Video footage</h3>
 <% unless @nicovideo_links.blank? -%>
 <% @nicovideo_links.each do |(sm, title)| -%>
